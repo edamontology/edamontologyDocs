@@ -56,9 +56,9 @@ EDAM has 3 components:
 
 Status
 ------
-EDAM is a maturing ontology under active development.  Development is use-case driven, primarily by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_).  Future versions will not depart fundamentally from the current sub-ontologies or relations (see concepts below).  The development of EDAM can be followed at `GitHub <github.com/edamontology/edamontology>`_.
+EDAM is a maturing ontology under active development.  Development is use-case driven, primarily by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_).  Future versions will not depart fundamentally from the current sub-ontologies or relations.  The development of EDAM can be followed at `GitHub <https://github.com/edamontology/edamontology>`_.
 
-For ways to contribute, please see the `Contributors Guide <http://biotools.readthedocs.org/en/latest/contributors_guide.html>`_. 
+For ways to contribute, please see the `Contributors Guide <http://edamontology.readthedocs.org/en/latest/contributors_guide.html>`_. 
 
 Priorities
 ----------
