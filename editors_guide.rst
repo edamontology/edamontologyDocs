@@ -46,7 +46,7 @@ Modifying GitHub main repo.
    - Summarise what you actually did and why.
 
 Creating a new official EDAM release
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 From January 2016, EDAM tries to follow a bi-monthly release cycle to this schedule:
 
 1.  First Wed of every month
@@ -91,26 +91,8 @@ Before creating a new release, please make sure you have the approval of leader 
 11. Help apps that implement EDAM to update to the new version. In particular `bio.tools <http://bio.tools>`_.
 
 
-For Editors 
------------
-
-Modifications in a GitHub fork
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-GitHub makes it possible for any developer (even if you are not a ¡°core developer¡±) to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Prot¨¦g¨¦, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see ¡°Best practices for edition¡± below). If you get an agreement from the core developers to make large modifications in Protege, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
-
-The workflow is:
-
-- Fork the edamontology repository in your own account.
-- Make the modifications you want to suggest for inclusion in EDAM in this forked repository.
-- Open pull requests for each modification you make.
-
-Please make sure to:
-
-- Keep your forked repository synchronized with the core repository, to avoid inconsistencies.
-- Make sure to follow the "Best practices for edition" below.
-
 Editing the ChangeLog
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 The ChangeLog includes:
 
 1. `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ - a summary of the major changes and what motivated them
@@ -128,8 +110,10 @@ Some hacking of bubastis output is needed to identify (at least):
   - summary of activity, i.e. in which branches was most work focucssed ?
 
 
-Best practices for edition
---------------------------
+
+For Editors 
+-----------
+
 
 General guidelines
 ^^^^^^^^^^^^^^^^^^
@@ -215,5 +199,23 @@ Common problems include:
 The problems are easily fixed within Protege: ask on the mailing list if you're not sure how.  Finally, do not be tempted to click *Reasoner->Synchronise reasoner* between changes: it tends to hang Protege.  Instead, use *Reasoner->Stop reasoner* than *Reasoner->Start reasoner*.
 
 Continuous Integration
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 Every modification on the ontology pushed to GitHub triggers an automated test in Travis CI. For now, it only checks a few rules using the `edamxpathvalidator tool <https://github.com/edamontology/edamxpathvalidator>`_. The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee that it there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
+
+Modifications in a GitHub fork
+------------------------------
+GitHub makes it possible for any developer (even if you are not a ¡°core developer¡±) to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Prot¨¦g¨¦, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see ¡°Best practices for edition¡± below). If you get an agreement from the core developers to make large modifications in Protege, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
+
+The workflow is:
+
+- Fork the edamontology repository in your own account.
+- Make the modifications you want to suggest for inclusion in EDAM in this forked repository.
+- Open pull requests for each modification you make.
+
+Please make sure to:
+
+- Keep your forked repository synchronized with the core repository, to avoid inconsistencies.
+- Make sure to follow the "Best practices for edition" below.
+
+
+
