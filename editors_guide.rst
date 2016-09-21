@@ -1,27 +1,30 @@
 Editors Guide
 =============
-If you¡¯re not sure how to do something please first ask by mailing:
-edam@elixir-dk.org
+If you're not sure how to do something please ask on edam@elixir-dk.org.
+
+For EDAM Core Developers
+------------------------
 
 Modifying GitHub main repo.
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `EDAM Core Developers <http://edamontologydocs.readthedocs.io/en/latest/governance.html>`_ can edit the main repository.  The workflow is:
 
-1. Get the ¡°editing token¡± 
-   - Contact edam-core@elixir-dk.org and claim the ¡°editing token¡± after first checking that it is not currently taken :)
+1. Get the "editing token" 
+
+   - Contact edam-core@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
    - Say what you are doing, why, and about how long it will take
 
 2. Update your local repo with the latest files from the GitHub master:
 
     ``git pull``
    
-   If you¡¯ve not already done so, you will first need to clone the master repo:
+   If you've not already done so, you will first need to clone the master repo:
 
     ``git clone https://github.com/edamontology/edamontology.git``
 
-3. Make and commit your local changes. You **must** be working with the latest ¡°dev¡± version, _e.g._ EDAM_1.5_dev.owl. You should leave the version number unchanged, i.e. should not need to add any new files to the repo.
+3. Make and commit your local changes. You **must** be working with the latest "dev" version, *e.g.* ``EDAM_1.5_dev.owl``. You should leave the version number unchanged, *i.e.* should not need to add any new files to the repo.
 
-   - Check your changes and that the OWL file looks good in Prot¨¦g¨¦
+   - Check your changes and that the OWL file looks good in Protege
    - Ensure the ``next_id`` attribute is updated
    - Ensure that ``oboOther:date`` is updated to the current GMT/BST before the commit
    - Add the edited file to the commit
@@ -35,23 +38,27 @@ Modifying GitHub main repo.
 
     ``git push origin``
 
-** Please provide a meaningful commit message so that we can easily generate the ChangeLog upon next release **
+**Please provide a meaningful commit message so that we can easily generate the ChangeLog upon next release**
 
 5. Release the editing token for the other developers:
 
-   - Contact edam-core@elixir-dk.org and release the ¡°editing token¡± .
+   - Contact edam-core@elixir-dk.org and release the "editing token" .
    - Summarise what you actually did and why.
 
-Workflow for the creation of a new official release of EDAM (Core developers only)
-----------------------------------------------------------------------------------
-From January 2016, EDAM follows a monthly release cycle to this schedule:
+Creating a new official EDAM release
+------------------------------------
+From January 2016, EDAM tries to follow a bi-monthly release cycle to this schedule:
 
-1.  First Wed of every month:  EDAM team skype to discuss plans for this month.  Announcement (to edam-announcence) including short summary of plans, invitation for suggestions.
-2.  Last Mon of every month:  Announcement (to edam-announcence) saying that release is immiment, invitation for last-minute suggestions.
-3.  Last Wed of every month:  Complete the work for the release.  Make the release.  Ensure it works in BioPortal, OLS, and in bio.tools.
-4.  Last Fri of every month:  Announcee the release, incuding summary of changes.
+1.  First Wed of every month
+   - EDAM team skype to discuss plans for this month.  Announcement (to edam-announcence) including short summary of plans, invitation for suggestions.
+2.  Last Mon of every month
+   - Announcement (to edam-announcence) saying that release is immiment, invitation for last-minute suggestions.
+3.  Last Wed of every month
+   - Complete the work for the release.  Make the release.  Ensure it works in BioPortal, OLS, and in bio.tools.
+4.  Last Fri of every month
+   -  Announcee the release, incuding summary of changes.
 
-Before to create a new release, please make sure you have the approval of leader of EDAM core-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See section below on creating the ChangeLog files.  Once you're clear to go, do the following:
+Before creating a new release, please make sure you have the approval of leader of EDAM core-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See section below on creating the ChangeLog files.  Once you're clear to go, do the following:
 
 1. Update your local version of the repository:
 
@@ -73,21 +80,23 @@ Before to create a new release, please make sure you have the approval of leader
 
     ``git push origin``
 
-3. Update the file names of web/page_x.html and relations-and-properties_x.html: update the version number to n+1 (in file name, and multiple places in the contents), and also update the last update date in web/page_x.html.
+3. Update the file names of ``web/page_x.html`` and ``relations-and-properties_x.html``: update the version number to **n+1** (in file name, and multiple places in the contents), and also update the last update date in ``web/page_x.html``.
 4. Update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
 5. Update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.
 6. Create the release on GitHub (use the `_draft a new release_ <https://github.com/edamontology/edamontology/releases/new>`_ button of the `_releases_ <https://github.com/edamontology/edamontology/releases>`_ tab).
-7. Update the website, http://edamontology.org.
+7. Update http://edamontology.org.
 8. Submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
 9. Close GitHub issues labelled *done - staged for release*. 
 10. Announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
 11. Help apps that implement EDAM to update to the new version. In particular `bio.tools <http://bio.tools>`_.
 
 
-Modifications in a GitHub fork (non-core developers)
-----------------------------------------------------
-GitHub makes it possible for any developer (even if you are not a ¡°core developer¡±) to make modifications in a copy of EDAM and suggest these modifications are included in the original. 
-Please note that we discourage using this mechanism for large modifications made using Prot¨¦g¨¦, because merging OWL files which have been reformatted by Prot¨¦g¨¦ is notoriously unreliable (see ¡°Best practices for edition¡± below). If you get an agreement from the core developers to make large modifications in Prot¨¦g¨¦, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
+For Editors 
+-----------
+
+Modifications in a GitHub fork
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+GitHub makes it possible for any developer (even if you are not a ¡°core developer¡±) to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Prot¨¦g¨¦, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see ¡°Best practices for edition¡± below). If you get an agreement from the core developers to make large modifications in Protege, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
 
 The workflow is:
 
@@ -98,7 +107,7 @@ The workflow is:
 Please make sure to:
 
 - Keep your forked repository synchronized with the core repository, to avoid inconsistencies.
-- Make sure to follow the ¡°Best practices for edition¡± below.
+- Make sure to follow the "Best practices for edition" below.
 
 Editing the ChangeLog
 ---------------------
@@ -138,9 +147,9 @@ When adding new terms, you **MUST** specify the following (attributes are in par
 2. Preferred term (``rdfs:label``)
 3. Definition (``oboInOwl:hasDefinition``) 
 4. Parent concept (``rdfs:subClassOf``)
-5. Current dev version into ``created_in`` : type a value e.g. ¡°1.5¡±
-6. The ¡®edam¡¯ subset (``oboInOwl:inSubset``): in Protege, pick (don¡¯t type!) the value of `'edam'`
-7. The branch subset (``oboInOwl:inSubset``): pick one of ¡®topic¡¯, ¡®data¡¯, ¡®format¡¯ or ¡®operation¡¯
+5. Current dev version into ``created_in`` : type a value e.g.  ``1.5``
+6. The ¡®edam¡¯ subset (``oboInOwl:inSubset``): in Protege, pick (don't type!) the value of ``edam``
+7. The branch subset (``oboInOwl:inSubset``): pick one of ``topic``, ``data``, ``format`` or ``operation``
 8. Any specialised subset (pick as above, only if required) 
 9. The next ID ontology attribute (``next_id``)
 
@@ -160,7 +169,7 @@ NB: Do **not** include American spellings or case variants as synonyms.
 
 In addition, for **Format** concepts, please specify:
 
-1. The Data concept which the format applies to : define this relation in Protege using the pattern 'Format is_format_of some Data'
+1. The Data concept which the format applies to : define this relation in Protege using the pattern *Format is_format_of some Data*
 2. The URL of the format documentation, if available (``Documentation`` attribute) : in Protege, type a URL using the Protege IRI editor.  
 
 In addition, for **Identifier** concepts, specify:
