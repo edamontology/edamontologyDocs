@@ -19,5 +19,5 @@ Contents:
    Contributors Guide <contributors_guide>
    Editors Guide <editors_guide>
    Governance <governance>
-   Contributors <people>
+   Contributors <contributors>
 
