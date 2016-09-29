@@ -34,9 +34,7 @@ EDAM includes 4 main sub-ontologies or 'branches' of concepts:
 - **Operation** - *“A function that processes a set of inputs and results in a set of outputs, or associates arguments (inputs) with values (outputs).”*
 - **Topic** - *“A category denoting a rather broad domain or field of interest, of study, application, work, data, or technology. Topics have no clearly defined borders between each other.”*
 
-Noteworthy within the the Data sub-ontology is:
-
-- **Identifier** - *“A text token, number or something else which identifies an entity, but which may not be persistent (stable) or unique (the same identifier may identify multiple things).”*
+- **Data->Identifier** - *“A text token, number or something else which identifies an entity, but which may not be persistent (stable) or unique (the same identifier may identify multiple things).”*
 
 .. image:: https://raw.githubusercontent.com/edamontology/edamontology/master/web/EDAMconcepts.png
 
