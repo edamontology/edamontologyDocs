@@ -72,57 +72,69 @@ A Web service is considered as an arbitrary (but usually related) set of one or 
 
 Levels of annotation
 ^^^^^^^^^^^^^^^^^^^^
-Annotation of a WSDL file or associated XSD schema is possible at several levels. Assuming SAWSDL annotation ([http://www.w3.org/TR/sawsdl/](http://www.w3.org/TR/sawsdl/)), the XML elements that may be annotated by EDAM concepts are:
+Annotation of a WSDL file or associated XSD schema is possible at several levels. Assuming SAWSDL annotation (http://www.w3.org/TR/sawsdl/), the XML elements that may be annotated by EDAM concepts are:
 
-1.  **Web service** (as a whole) (<kbd><wsdl:portType></kbd>)
+1.  **Web service** (as a whole) (``<kbd><wsdl:portType></kbd>``)
+
     *   One (or more) *"Topic"* concepts to describe the general area(s) the service concerns
     *   If applicable, one (or more) *"Operation"* concepts to describe the functions of the service (if all operations peform essentially the same function)
-2.  **Operation** (<kbd><wsdl:operation></kbd> inside <kbd><wsdl:portType></kbd>)
+
+2.  **Operation** (``<kbd><wsdl:operation></kbd``> inside ``<kbd><wsdl:portType></kbd>``)
+
     *   One (or more) *"Operation"* concepts for each WSDL operation (more than one in exceptional circumstances)
-3.  **Input parameters and their sub-parts** (<kbd><xs:element></kbd>, <kbd><xs:complexType></kbd>, <kbd><xs:simpleType></kbd>, <kbd><xs:attribute></kbd>)
-    *   One (or more) *"Data"* concepts
-    *   One (or more) *"Format"* concepts
-4.  **Output parameters and their sub-parts** (<kbd><xs:element></kbd>, <kbd><xs:complexType></kbd>, <kbd><xs:simpleType></kbd>, <kbd><xs:attribute></kbd>)
+3.  **Input parameters and their sub-parts** (``<kbd><xs:element></kbd>``, ``<kbd><xs:complexType></kbd>``, ``<kbd><xs:simpleType></kbd>``, ``<kbd><xs:attribute></kbd>``)
     *   One (or more) *"Data"* concepts
     *   One (or more) *"Format"* concepts
 
-*NB.* The input and output parameters should be annotated inside the XML Schema that defines them. In case of services that are not following the highly recommended *document/literal wrapped* SOAP-binding style, the <kbd><wsdl:part></kbd> inside <kbd><wsdl:message></kbd> can be annotated (the same applies to *faults*, but meanings of faults are not modelled by EDAM)
+4.  **Output parameters and their sub-parts** (``<kbd><xs:element></kbd>``, ``<kbd><xs:complexType></kbd>``, ``<kbd><xs:simpleType></kbd>``, ``<kbd><xs:attribute></kbd>``)
+
+    *   One (or more) *"Data"* concepts
+    *   One (or more) *"Format"* concepts
+
+*NB.* The input and output parameters should be annotated inside the XML Schema that defines them. In case of services that are not following the highly recommended *document/literal wrapped* SOAP-binding style, the ``<kbd><wsdl:part></kbd>`` inside ``<kbd><wsdl:message></kbd>`` can be annotated (the same applies to *faults*, but meanings of faults are not modelled by EDAM)
 
 The following annotations might be useful but are not directly recommended by SAWSDL:
 
-1.  **Enumerated values of input/output parameters** (<kbd><xs:enumeration></kbd>)
+1.  **Enumerated values of input/output parameters** (``<kbd><xs:enumeration></kbd>``)
+
     *   One (or more) *"Format"* or *"Data"* concepts defining the particular enumerated value
 
-For details of incorporating the SAWSDL annotations into WSDLs and XSDs, see [EDAM URIs and SAWSDL annotation](#URIs).
+For details of incorporating the SAWSDL annotations into WSDLs and XSDs, see below.
 
 EDAM URIs and SAWSDL annotation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SAWSDL mandates the use of <kbd>sawsdl:modelReference</kbd> attributes for annotation. The format of EDAM URIs used inside this attribute includes the ontology name (*http://edamontology.org*), main sub-ontology, and the unique identifier (ID) of the particular concept:
 
+.. code-block:: xml
+
 <xmp> 
 <xs:element name="elementName" sawsdl:modelReference="http://edamontology.org/subontology_id">
 </xmp>
 
+
 Where ...
 
-*   <kbd>**xs:element**</kbd> is the XML element being annotated (can be also <kbd>xs:attribute</kbd>, <kbd>xs:complexType</kbd>, <kbd>xs:simpleType</kbd>, <kbd>sawsdl:attrExtension</kbd>, <kbd>wsdl:portType</kbd>, in special cases <kbd>wsdl:part</kbd>, or eventually <kbd>xs:enumeration</kbd>)
-*   <kbd>**elementName**</kbd> is the name of the XML element
+*   ``<kbd>xs:element</kbd>`` is the XML element being annotated (can be also ``<kbd>xs:attribute</kbd>``, ``<kbd>xs:complexType</kbd>``, ``<kbd>xs:simpleType</kbd>``, ``<kbd>sawsdl:attrExtension</kbd>``, ``<kbd>wsdl:portType</kbd>``, in special cases ``<kbd>wsdl:part</kbd>``, or eventually ``<kbd>xs:enumeration</kbd>``)
+*   ``<kbd>elementName</kbd>`` is the name of the XML element
 
-The value of the <kbd>sawsdl:modelReference</kbd> attribute is a URI pointing to the concept definition. The URI to use is in case of EDAM includes the concept's sub-ontology:
+The value of the ``<kbd>sawsdl:modelReference</kbd>`` attribute is a URI pointing to the concept definition. The URI to use is in case of EDAM includes the concept's sub-ontology:
 
-*   <kbd>**sub-ontology**</kbd> is the **top-level sub-ontology** of the EDAM concept; one of <kbd>topic, <kbd>data, <kbd>format, or <kbd>operation</kbd></kbd></kbd></kbd>
-*   <kbd>**id**</kbd> is the unique local identifier of the concept, *e.g.* <kbd>"0295"</kbd>
+*   ``<kbd>sub-ontology</kbd>`` is the **top-level sub-ontology** of the EDAM concept; one of ``<kbd>topic</kbd>``, ``<kbd>data</kbd>``, ``<kbd>format</kbd>``, or ``<kbd>operation</kbd>``
+*   ``<kbd>id</kbd>`` is the unique local identifier of the concept, *e.g.* ``<kbd>"0295"</kbd>``
 
 So for these 3 concepts:
+
+.. code-block:: xml
 
 <xmp>
 EDAM_topic:0182
 EDAM_operation:0292
 EDAM_data:0863
-
 </xmp>
 
 We'd have
+
+.. code-block:: xml
 
 <xmp>
 http://edamontology.org/topic_0182
@@ -132,13 +144,17 @@ http://edamontology.org/data_0863
 
 Which can be used in SAWSDL annotation, *e.g.*
 
+.. code-block:: xml
+
 <xmp>
 <wsdl:portType name="myService" sawsdl:modelReference="http://edamontology.org/topic_0182">
 <sawsdl:attrExtension sawsdl:modelReference="http://edamontology.org/operation_0292>
 <xs:element name="outfile" sawsdl:modelReference="http://edamontology.org/data_0863>
 </xmp>
 
-If more than one annotation of an element is required, these can be given in the <kbd>sawsdl:modelReference</kbd> attribute delimited by space characters:
+If more than one annotation of an element is required, these can be given in the ``<kbd>sawsdl:modelReference</kbd>`` attribute delimited by space characters:
+
+.. code-block:: xml
 
 <xmp><wsdl:portType name="myService" sawsdl:modelReference="http://edamontology.org/topic_0182 http://edamontology.org/operation_0292">
 </xmp>
@@ -147,11 +163,13 @@ If more than one annotation of an element is required, these can be given in the
 
 SAWSDL guidelines for annotating operations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-One peculiarity of the SAWSDL specification is that annotations on `<wsdl:operation>` element inside `<wsdl:portType>` should be handled using a `<sawsdl:attrExtensions>` element. This is not a requirement for other elements.
+One peculiarity of the SAWSDL specification is that annotations on ``<wsdl:operation>`` element inside ``<wsdl:portType>`` should be handled using a ``<sawsdl:attrExtensions>`` element. This is not a requirement for other elements.
 
-Importantly, the `<sawsdl:attrExtension>` element inside the wsdl:operation **<u>must</u> be before** `<wsdl:input>`, `<wsdl:output>` and `<wsdl:fault>` elements (so typically after the `<wsdl:documentation>` element).
+Importantly, the ``<sawsdl:attrExtension>`` element inside the wsdl:operation **must be before** ``<wsdl:input>``, ``<wsdl:output>`` and ``<wsdl:fault>`` elements (so typically after the ``<wsdl:documentation>`` element).
 
 For example:
+
+.. code-block:: xml
 
 <xmp> <wsdl:portType name="Clustalw2PortType" sawsdl:modelReference="http://edamontology.org/topic_0186 http://edamontology.org/operation_0496">
  <wsdl:operation name="submitClustalw2">

@@ -119,53 +119,27 @@ Rules by concept type
 ^^^^^^^^^^^^^^^^^^^^^
 **"Topic"**
 
-*   *"Topic"* **is a** *"Topic"*
-
-    ... a specialisation of a topic.
+*   *"Topic"* **is a** *"Topic"*  (specialisation of a topic)
 
 **"Operation"**
 
-*   *"Operation"* **is a** *"Operation"*
-
-    ... a specialisation of an operation.
-
-*   *"Operation"* **has input** *"Data"*
-
-    ... inputs a type of data.
-
-*   *"Operation"* **has output** *"Data"*
-
-    ... outputs a type of data.
-
-*   *"Operation"* **has topic** *"Topic"*
-
-    ... within a topic.
+*   *"Operation"* **is a** *"Operation"* (specialisation of an operation)
+*   *"Operation"* **has input** *"Data"* (inputs a type of data)
+*   *"Operation"* **has output** *"Data"* (outputs a type of data)
+*   *"Operation"* **has topic** *"Topic"* (within a topic)
 
 **"Data"**
 
-*   *"Data"* **is a** *"Data"*
-
-    ... a specialisation of a type of data.
-
-*   *"Data"* **has topic** *"Topic"*
-
-    ... within a topic.
+*   *"Data"* **is a** *"Data"* (specialisation of a type of data)
+*   *"Data"* **has topic** *"Topic"* (within a topic)
 
 **"Format"**
 
-*   *"Format"* **is a** *"Format"*
-
-    ... a specialisation of a data format.
-
-*   *"Format"* **is format of** *"Data"*
-
-    ... a format specification of a datatype.
+*   *"Format"* **is a** *"Format"* (specialisation of a data format)
+*   *"Format"* **is format of** *"Data"* (a format specification of a data type)
 
 **"Identifier"**
-
-*   *"Identifier"* **is identifier of** *"Data"*
-
-    ... identifier of a datatype.
+*   *"Identifier"* **is identifier of** *"Data"* (identifier of a data type)
 
 Rules by relation type
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -184,7 +158,7 @@ Rules by relation type
 
 *   *"Operation"* **has output** *"Data"*
 
-### has topic
+**has topic**
 
 *   *"Operation"* **has topic** *"Topic"*
 *   *"Data"* **has topic** *"Topic"*
@@ -201,8 +175,8 @@ Rules by relation type
 Concept deprecation
 -------------------
 *   EDAM uses numerical identifiers to uniquely identify concepts. These identifiers will persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does **not** imply names (terms), definitions and other fields will remain constant, but they will remain true to concept.
-*   Concepts that are deprecated will also persist; they will not be removed and will maintain their identifier and URI.
+*   Concepts that are deprecated will also persist; they will not be removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts.
 
 edamontology.org 
 ----------------
-The _edamontology.org_ site provides content negotiation with respect to the desired media type (_i.e._ format, _e.g._ HTML, OWL, _etc._). This applies also to the [URIs](guidelines_annot.html#URIs) of EDAM concepts that are in this way dereferencable, concise, and stable. Alternatively to requesting the format in the HTTP header, users can retrieve the desired content from a web browser by inserting _?format=<desiredformat>_ query into the URL.
+The *edamontology.org* site provides content negotiation with respect to the desired media type (*i.e.* format, *e.g.* HTML, OWL, *etc.*). This applies also to the URIs of EDAM concepts that are in this way dereferencable, concise, and stable. Alternatively to requesting the format in the HTTP header, users can retrieve the desired content from a web browser by inserting _?format=<desiredformat>_ query into the URL.
