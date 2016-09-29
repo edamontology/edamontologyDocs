@@ -107,9 +107,9 @@ SAWSDL mandates the use of <kbd>sawsdl:modelReference</kbd> attributes for annot
 
 .. code-block:: xml
 
-<xmp> 
-<xs:element name="elementName" sawsdl:modelReference="http://edamontology.org/subontology_id">
-</xmp>
+ <xmp> 
+ <xs:element name="elementName" sawsdl:modelReference="http://edamontology.org/subontology_id">
+ </xmp>
 
 
 Where ...
@@ -126,38 +126,38 @@ So for these 3 concepts:
 
 .. code-block:: xml
 
-<xmp>
-EDAM_topic:0182
-EDAM_operation:0292
-EDAM_data:0863
-</xmp>
+ <xmp>
+ EDAM_topic:0182
+ EDAM_operation:0292
+ EDAM_data:0863
+ </xmp>
 
 We'd have
 
 .. code-block:: xml
 
-<xmp>
-http://edamontology.org/topic_0182
-http://edamontology.org/operation_0292
-http://edamontology.org/data_0863
-</xmp>
+ <xmp>
+ http://edamontology.org/topic_0182
+ http://edamontology.org/operation_0292
+ http://edamontology.org/data_0863
+ </xmp>
 
 Which can be used in SAWSDL annotation, *e.g.*
 
 .. code-block:: xml
 
-<xmp>
-<wsdl:portType name="myService" sawsdl:modelReference="http://edamontology.org/topic_0182">
-<sawsdl:attrExtension sawsdl:modelReference="http://edamontology.org/operation_0292>
-<xs:element name="outfile" sawsdl:modelReference="http://edamontology.org/data_0863>
-</xmp>
+ <xmp>
+ <wsdl:portType name="myService" sawsdl:modelReference="http://edamontology.org/topic_0182">
+ <sawsdl:attrExtension sawsdl:modelReference="http://edamontology.org/operation_0292>
+ <xs:element name="outfile" sawsdl:modelReference="http://edamontology.org/data_0863>
+ </xmp>
 
 If more than one annotation of an element is required, these can be given in the ``<kbd>sawsdl:modelReference</kbd>`` attribute delimited by space characters:
 
 .. code-block:: xml
 
-<xmp><wsdl:portType name="myService" sawsdl:modelReference="http://edamontology.org/topic_0182 http://edamontology.org/operation_0292">
-</xmp>
+ <xmp><wsdl:portType name="myService" sawsdl:modelReference="http://edamontology.org/topic_0182 http://edamontology.org/operation_0292">
+ </xmp>
 
 *NB.* Such multiple annotations need not be in the same namespace, and need not at all to refer to the same ontology.
 
@@ -171,13 +171,13 @@ For example:
 
 .. code-block:: xml
 
-<xmp> <wsdl:portType name="Clustalw2PortType" sawsdl:modelReference="http://edamontology.org/topic_0186 http://edamontology.org/operation_0496">
- <wsdl:operation name="submitClustalw2">
- <wsdl:documentation>Submit a sequence and get a jobID</wsdl:documentation>
- <sawsdl:attrExtensions sawsdl:modelReference="http://edamontology.org/operation_0496"/>
- <wsdl:input message="submitClustalw2Msg"/>
- <wsdl:output message="submitClustalw2ResponseMsg"/>
- </wsdl:operation>
-</xmp>
+ <xmp> <wsdl:portType name="Clustalw2PortType" sawsdl:modelReference="http://edamontology.org/topic_0186 http://edamontology.org/operation_0496">
+  <wsdl:operation name="submitClustalw2">
+  <wsdl:documentation>Submit a sequence and get a jobID</wsdl:documentation>
+  <sawsdl:attrExtensions sawsdl:modelReference="http://edamontology.org/operation_0496"/>
+  <wsdl:input message="submitClustalw2Msg"/>
+  <wsdl:output message="submitClustalw2ResponseMsg"/>
+  </wsdl:operation>
+ </xmp>
 
 Some WSDL/XSD validators or SOAP libraries do not check for it, but some do require the strict order of these elements.
