@@ -176,7 +176,7 @@ Rules by relation type
 
 Concept deprecation
 -------------------
-*   EDAM uses numerical identifiers to uniquely identify concepts. These identifiers will persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does **not** imply names (terms), definitions and other fields will remain constant, but they will remain true to concept.
+*   EDAM uses numerical alphaidentifiers to uniquely identify concepts. These identifiers will persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does **not** imply names (terms), definitions and other fields will remain constant, but they will remain true to concept.
 *   Concepts that are deprecated will also persist; they will not be removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts.
 
 edamontology.org 
