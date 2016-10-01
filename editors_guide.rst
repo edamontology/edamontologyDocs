@@ -79,7 +79,6 @@ Before creating a new release, please make sure you have the approval of leader 
 
     ``git push origin``
 
-3. Update the file names of ``web/page_x.html`` and ``relations-and-properties_x.html``: update the version number to **n+1** (in file name, and multiple places in the contents), and also update the last update date in ``web/page_x.html``.
 4. Update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
 5. Update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.
 6. Create the release on GitHub (use the `_draft a new release_ <https://github.com/edamontology/edamontology/releases/new>`_ button of the `_releases_ <https://github.com/edamontology/edamontology/releases>`_ tab).
