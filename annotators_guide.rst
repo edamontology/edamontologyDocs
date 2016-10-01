@@ -18,10 +18,10 @@ Which EDAM sub-ontology to use?
 
 EDAM provides different semantic 'axes' for annotation. For example, annotation of a software tool might include:
 
-*   *Topic* - general scientific domain the software serves, *e.g.* ¡°Structural biology¡±
-*   *Operation* - the precise function of the tool, *e.g.* ¡°Homology modelling¡±
-*   *Data* - the primary input and output, *e.g.* ¡°Protein structure¡±
-*   *Format* - the supported format(s) of the input and output, *e.g.* ¡°PDB format¡±
+*   *Topic* - general scientific domain the software serves, *e.g.* "Structural biology"
+*   *Operation* - the precise function of the tool, *e.g.* "Homology modelling"
+*   *Data* - the primary input and output, *e.g.* "Protein structure"
+*   *Format* - the supported format(s) of the input and output, *e.g.* "PDB format"
 
 
 Use of other ontologies
@@ -30,7 +30,7 @@ The expectation is for EDAM to be used alongside other ontologies for annotation
 
 Picking concepts
 ^^^^^^^^^^^^^^^^
-If you have many annotations to do, it will help to familiarise yourself with EDAM first using a browser (see [Viewing](index.html#Viewing)).
+If you have many annotations to do, it will help to familiarise yourself with EDAM first using a `browser <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#browsing>`.
 
 1.  Identify the correct sub-ontology (*"Operation"*, *"Data"* *etc.*) of concepts considering what is being annotated (see above)
 2.  Search EDAM using keywords to find candidate concepts. Multiple searches using synonyms, alternative spellings and so are preferable.
@@ -103,7 +103,7 @@ For details of incorporating the SAWSDL annotations into WSDLs and XSDs, see bel
 
 EDAM URIs and SAWSDL annotation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SAWSDL mandates the use of <kbd>sawsdl:modelReference</kbd> attributes for annotation. The format of EDAM URIs used inside this attribute includes the ontology name (*http://edamontology.org*), main sub-ontology, and the unique identifier (ID) of the particular concept:
+SAWSDL mandates the use of (``<kbd>sawsdl:modelReference</kbd>``) attributes for annotation. The format of EDAM URIs used inside this attribute includes the ontology name (*http://edamontology.org*), main sub-ontology, and the unique identifier (ID) of the particular concept:
 
 .. code-block:: xml
 
