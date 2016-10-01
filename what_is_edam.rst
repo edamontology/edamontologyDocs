@@ -36,7 +36,7 @@ EDAM includes 4 main sub-ontologies or 'branches' of concepts:
 
 - **Data->Identifier** - *“A text token, number or something else which identifies an entity, but which may not be persistent (stable) or unique (the same identifier may identify multiple things).”*
 
-.. image:: https://raw.githubusercontent.com/edamontology/edamontology/master/web/EDAMconcepts.png
+.. image:: http://edamontology.org/EDAMconcepts.png 
 
 As a general rule, the **Data**, **Format** and **Operation** branches include concepts strictly in domain of bioinformatics and computational biology: concepts purely concerning biology, computer science *etc.* are not included. The **Topic** branch, in contrast, includes broader interdisciplinary concepts from the biological and biomedical domains.
 
@@ -49,7 +49,7 @@ EDAM has 3 components:
 - **Hierarchy** - Every concept (excluding top-level concepts) is related to one or more other concepts within the same branch by an **is a** (specialisation) relation. Hence EDAM has 4 primary hierarchies (for *Data*, *Format*, *Operation*, and *Topic*).
 - **Relations** - Concepts are related by defined relation types (see figure below), which reflect well established or self-evident principles, and are used primarily to define internal consistency of EDAM.
 
-.. image:: https://raw.githubusercontent.com/edamontology/edamontology/master/web/EDAMrelations.png
+.. image:: http://edamontology.org/EDAMrelations.png
 
 
 Status
@@ -67,7 +67,7 @@ Our core priority is to be responsive to users of EDAM. Furthermore, to establis
 - Community build-up and development including more formal, but agile, governance and maintenance models and mechanisms
 - Agile and responsive development of content in close collaboration with end-users and serving concrete use-cases
 - Technical refactoring to minimise the cost of routine housekeeping and content development 
-- Implementation of tooling for routine maintenance to serve the needs of end-users, _e.g._ harvesting change requests and mappings between concepts
+- Implementation of tooling for routine maintenance to serve the needs of end-users, *e.g.* harvesting change requests and mappings between concepts
 
 
 Principles
