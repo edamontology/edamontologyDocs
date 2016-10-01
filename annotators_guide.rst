@@ -30,7 +30,7 @@ The expectation is for EDAM to be used alongside other ontologies for annotation
 
 Picking concepts
 ^^^^^^^^^^^^^^^^
-If you have many annotations to do, it will help to familiarise yourself with EDAM first using a `browser <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#browsing>`.
+If you have many annotations to do, it will help to familiarise yourself with EDAM first using a `browser <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#browsing>`_ .
 
 1.  Identify the correct sub-ontology (*"Operation"*, *"Data"* *etc.*) of concepts considering what is being annotated (see above)
 2.  Search EDAM using keywords to find candidate concepts. Multiple searches using synonyms, alternative spellings and so are preferable.
