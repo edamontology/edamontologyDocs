@@ -200,7 +200,10 @@ The problems are easily fixed within Protege: ask on the mailing list if you're 
 
 Continuous Integration
 ----------------------
-Every modification on the ontology pushed to GitHub triggers an automated test in Travis CI. For now, it only checks a few rules using the `edamxpathvalidator tool <https://github.com/edamontology/edamxpathvalidator>`_. The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee that it there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
+Every modification on the ontology pushed to GitHub triggers an automated test in Travis CI. It checks:
+- a few rules using the `edamxpathvalidator tool <https://github.com/edamontology/edamxpathvalidator>`_.
+- the consistency of the ontology by running the Hermit reasoner automatically.
+The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee that it there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
 
 Modifications in a GitHub fork
 ------------------------------
