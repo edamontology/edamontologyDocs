@@ -134,8 +134,9 @@ When adding new terms, you **MUST** specify the following (attributes are in par
 5. Current dev version into ``created_in`` : type a value e.g.  ``1.5``
 6. The 'edam' subset (``oboInOwl:inSubset``): in Protege, pick (don't type!) the value of ``edam``
 7. The branch subset (``oboInOwl:inSubset``): pick one of ``topic``, ``data``, ``format`` or ``operation``
-8. Any specialised subset (pick as above, only if required) 
-9. The next ID ontology attribute (``next_id``)
+8. Any specialised subset (pick as above, only if required)
+
+Additionally, you **MUST** increment the next ID ontology attribute (``next_id``) in the header.
 
 Note that :
 
