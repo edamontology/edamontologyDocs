@@ -181,4 +181,4 @@ Concept deprecation
 
 edamontology.org 
 ----------------
-The *edamontology.org* site provides content negotiation with respect to the desired media type (*i.e.* format, *e.g.* HTML, OWL, *etc.*). This applies also to the URIs of EDAM concepts that are in this way dereferencable, concise, and stable. Alternatively to requesting the format in the HTTP header, users can retrieve the desired content from a web browser by inserting *?format=<desiredformat>* query into the URL.
+The *edamontology.org* site provides content negotiation with respect to the desired media type (*i.e.* format, *e.g.* HTML, OWL, *etc.*). This applies also to the URIs of EDAM concepts that are in this way dereferencable, concise, and stable. Alternatively to requesting the format in the HTTP header, users can retrieve the desired content from a web browser by inserting ``?format=<desiredformat>`` query into the URL.
