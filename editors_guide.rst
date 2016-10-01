@@ -117,8 +117,9 @@ General guidelines
 ^^^^^^^^^^^^^^^^^^
 
 1. As much as you can, try to make atomic changes and commit them independently. this improves greatly traceability in the long term
-2. Make trivial modifications using a text editor if possible, rather than Protege, because the actual modification is not hidden in haystack of Protege reformattings 
-3. Check and double-check your changes: errors are hard to track and fix later
+2. Make trivial modifications using a text editor if possible, rather than Protege, because the actual modification is not hidden in haystack of Protege reformattings
+3. **Immediately** add a description of your modifications in the changelog to facilitate tracking.
+4. Check and double-check your changes: errors are hard to track and fix later
 
 Adding concepts
 ^^^^^^^^^^^^^^^
