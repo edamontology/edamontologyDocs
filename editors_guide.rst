@@ -22,8 +22,7 @@ Modifying GitHub main repo.
 
     ``git clone https://github.com/edamontology/edamontology.git``
 
-3. Make and commit your local changes. You **must** be working with the latest "dev" version, *e.g.* ``EDAM_1.5_dev.owl``. You should leave the version number unchanged, *i.e.* should not need to add any new files to the repo.
-
+3. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
    - Check your changes and that the OWL file looks good in Protege
    - Ensure the ``next_id`` attribute is updated
    - Ensure that ``oboOther:date`` is updated to the current GMT/BST before the commit
