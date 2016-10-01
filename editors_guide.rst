@@ -32,7 +32,7 @@ Modifying GitHub main repo.
       ``git add <filepath>``
    - Commit your local changes, including a concise but complete summary of the major changes:
    
-      ``git commit -m °±commit message here°±``
+      ``git commit -m ‚Äùcommit message here‚Äù``
 
 4. Push your changes to the GitHub master:
 
@@ -119,7 +119,7 @@ General guidelines
 ^^^^^^^^^^^^^^^^^^
 
 1. As much as you can, try to make atomic changes and commit them independently. this improves greatly traceability in the long term
-2. Make trivial modifications using a text editor if possible, rather than Prot®¶g®¶, because the actual modification is not hidden in haystack of Prot®¶g®¶ reformattings 
+2. Make trivial modifications using a text editor if possible, rather than Protege, because the actual modification is not hidden in haystack of Protege reformattings 
 3. Check and double-check your changes: errors are hard to track and fix later
 
 Adding concepts
@@ -132,7 +132,7 @@ When adding new terms, you **MUST** specify the following (attributes are in par
 3. Definition (``oboInOwl:hasDefinition``) 
 4. Parent concept (``rdfs:subClassOf``)
 5. Current dev version into ``created_in`` : type a value e.g.  ``1.5``
-6. The °Æedam°Ø subset (``oboInOwl:inSubset``): in Protege, pick (don't type!) the value of ``edam``
+6. The 'edam' subset (``oboInOwl:inSubset``): in Protege, pick (don't type!) the value of ``edam``
 7. The branch subset (``oboInOwl:inSubset``): pick one of ``topic``, ``data``, ``format`` or ``operation``
 8. Any specialised subset (pick as above, only if required) 
 9. The next ID ontology attribute (``next_id``)
@@ -153,7 +153,7 @@ NB: Do **not** include American spellings or case variants as synonyms.
 
 In addition, for **Format** concepts, please specify:
 
-1. The Data concept which the format applies to : define this relation in Protege using the pattern *Format is_format_of some Data*
+1. The Data concept which the format applies to : define this relation in Protege using the pattern 'Format is_format_of some Data'
 2. The URL of the format documentation, if available (``Documentation`` attribute) : in Protege, type a URL using the Protege IRI editor.  
 
 In addition, for **Identifier** concepts, specify:
@@ -170,12 +170,12 @@ In addition, for **Topic** concepts, specify:
 
 Deprecating concepts
 ^^^^^^^^^^^^^^^^^^^^ 
-When deprecating concepts, you _**MUST**_ specify the following:
+When deprecating concepts, you **MUST** specify the following:
 
 1. Current dev version into ``obsolete_since``.
-2. The °Æobsolete°Ø subset (``oboInOwl:inSubset``): pick ``obsolete``.
+2. The 'obsolete' subset (``oboInOwl:inSubset``): pick ``obsolete``.
 3. The ``deprecated`` attribute (``owl:deprecated``): type the value of ``true``.
-4. The alternative °Øreplacement°Ø term to firmly use (``oboInOwl:replacedBy``), or to consider when less certain (``oboInOwl:consider``): pick a concept.
+4. The alternative 'replacement' term to firmly use (``oboInOwl:replacedBy``), or to consider when less certain (``oboInOwl:consider``): pick a concept.
 5. Set the parent concept (``rdfs:subClassOf``) to the ``ObsoleteClass``. 
 6. Remove all other class annotations (subsets, comments, synonyms etc.) and axioms (including parent concepts).
 
@@ -204,7 +204,7 @@ Every modification on the ontology pushed to GitHub triggers an automated test i
 
 Modifications in a GitHub fork
 ------------------------------
-GitHub makes it possible for any developer (even if you are not a °∞core developer°±) to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Prot®¶g®¶, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see °∞Best practices for edition°± below). If you get an agreement from the core developers to make large modifications in Protege, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
+GitHub makes it possible for any developer (even if you are not a "core developer") to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Protege, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see "Best practices for edition" below). If you get an agreement from the core developers to make large modifications in Protege, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
 
 The workflow is:
 
