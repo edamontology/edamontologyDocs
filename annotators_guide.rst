@@ -18,10 +18,10 @@ Which EDAM sub-ontology to use?
 
 EDAM provides different semantic 'axes' for annotation. For example, annotation of a software tool might include:
 
-*   *Topic* - general scientific domain the software serves, *e.g.* "Structural biology"
-*   *Operation* - the precise function of the tool, *e.g.* "Homology modelling"
-*   *Data* - the primary input and output, *e.g.* "Protein structure"
-*   *Format* - the supported format(s) of the input and output, *e.g.* "PDB format"
+*   *Topic* - general scientific domain the software serves, *e.g.* *"Structural biology"*
+*   *Operation* - the precise function of the tool, *e.g.* *"Homology modelling"*
+*   *Data* - the primary input and output, *e.g.* *"Protein structure"*
+*   *Format* - the supported format(s) of the input and output, *e.g.* *"PDB format"*
 
 
 Use of other ontologies
