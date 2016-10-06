@@ -23,4 +23,5 @@ Contents:
    Governance <governance>
    Contributors <contributors>
    Applications <applications>
+   License <license>
 
