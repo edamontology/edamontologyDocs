@@ -30,13 +30,14 @@ To suggest new concepts, please use the `GitHub tracker <https://github.com/edam
 Please specify for each concept:
 
 - EDAM sub-ontology (Topic, Operation, Format, Data, Identifier)
-- Term
+- Term (the most common term used to refer to the concept)
 
 It will speed up things a lot if you can also provide:
 
 - short description (a couple of sentences)
 - URL of suggested parent
-- synonyms
+- exact synonyms (other commonly-used terms, acronyms etc. by which the concept is referred to)
+- narrow synonyms (terms reflecting specialisations of the concept.  Narrow synonyms can be defined to avoid creating overly-specialised concepts.)
 - URL to formal specification (Format concepts only)
 - type of data represented (Format concepts only) 
 - file extension (Format concepts only) 
