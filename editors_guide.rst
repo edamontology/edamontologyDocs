@@ -53,7 +53,7 @@ From January 2016, EDAM tries to follow a bi-monthly release cycle to this sched
 2.  Last Mon of every month
    - Announcement (to edam-announcence) saying that release is immiment, invitation for last-minute suggestions.
 3.  Last Wed of every month
-   - Complete the work for the release.  Make the release.  Ensure it works in BioPortal, OLS, and in bio.tools.
+   - Complete the work for the release.  Make the release.  Ensure it works in BioPortal, OLS, AgroPortal and in bio.tools.
 4.  Last Fri of every month
    -  Announcee the release, incuding summary of changes.
 
