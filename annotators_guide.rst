@@ -1,7 +1,7 @@
 Annotators Guide
 ================
 
-Annotators may email the `EDAM mailing list <mailto:edam@elixir-dk.org>`_ or the `EDAM core developers <mailto:edam-core@elixir-dk.org>`_ for help.
+Annotators may email the `EDAM mailing list <mailto:edam@elixir-dk.org>`_ or the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_ for help.
 
 General guidelines
 ------------------

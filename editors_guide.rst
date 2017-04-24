@@ -2,16 +2,16 @@ Editors Guide
 =============
 If you're not sure how to do something please ask on edam@elixir-dk.org.
 
-For EDAM Core Developers
+For EDAM Developers
 ------------------------
 
 Modifying GitHub main repo.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-`EDAM Core Developers <http://edamontologydocs.readthedocs.io/en/latest/governance.html>`_ can edit the main repository.  The workflow is:
+`EDAM Developers <http://edamontologydocs.readthedocs.io/en/latest/governance.html>`_ can edit the main repository.  The workflow is:
 
 1. Get the "editing token" 
 
-   - Contact edam-core@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
+   - Contact edam-dev@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
    - Say what you are doing, why, and about how long it will take
 
 2. Update your local repo with the latest files from the GitHub master:
@@ -41,7 +41,7 @@ Modifying GitHub main repo.
 
 5. Release the editing token for the other developers:
 
-   - Contact edam-core@elixir-dk.org and release the "editing token" .
+   - Contact edam-dev@elixir-dk.org and release the "editing token" .
    - Summarise what you actually did and why.
 
 Creating a new official EDAM release
@@ -57,7 +57,7 @@ From January 2016, EDAM tries to follow a bi-monthly release cycle to this sched
 4.  Last Fri of every month
    -  Announcee the release, incuding summary of changes.
 
-Before creating a new release, please make sure you have the approval of leader of EDAM core-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See section below on creating the ChangeLog files.  Once you're clear to go, do the following:
+Before creating a new release, please make sure you have the approval of leader of EDAM-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See section below on creating the ChangeLog files.  Once you're clear to go, do the following:
 
 1. Update your local version of the repository:
 
@@ -207,7 +207,7 @@ The Travis-CI website shows you the current status `here <https://travis-ci.org/
 
 Modifications in a GitHub fork
 ------------------------------
-GitHub makes it possible for any developer (even if you are not a "core developer") to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Protege, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see "Best practices for edition" below). If you get an agreement from the core developers to make large modifications in Protege, we can provide you a core developer status on a temporary basis. This access will be removed once the task is accomplished.
+GitHub makes it possible for any developer to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Protege, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see "Best practices for edition" below).
 
 The workflow is:
 

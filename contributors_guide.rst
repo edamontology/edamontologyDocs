@@ -65,7 +65,7 @@ If you require many changes and additions, there's probably a more efficient way
 
 Joining the team
 ----------------
-We very much welcome you to join the EDAM team.  Please first read about the `Governance of EDAM <https://github.com/edamontology/edamontology#governance-of-edam>`_ to find the level that is right for you.  Then mail edam-core@elixir-dk.org to get started. 
+We very much welcome you to join the EDAM team.  Please first read about the `Governance of EDAM <https://github.com/edamontology/edamontology#governance-of-edam>`_ to find the level that is right for you.  Then mail edam-dev@elixir-dk.org to get started. 
 
 Hackathons
 ----------

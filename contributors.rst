@@ -1,6 +1,6 @@
 Contributors
 ============
-EDAM Core Developers
+EDAM Developers
 --------------------
 * Jon Ison (DTU, DK) **lead developer**
 * Matúš Kalaš (University of Bergen, NO)
