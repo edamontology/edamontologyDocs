@@ -176,8 +176,10 @@ When deprecating concepts, you **MUST** specify the following:
 2. The 'obsolete' subset (``oboInOwl:inSubset``): pick ``obsolete``.
 3. The ``deprecated`` attribute (``owl:deprecated``): type the value of ``true``.
 4. The alternative 'replacement' term to firmly use (``oboInOwl:replacedBy``), or to consider when less certain (``oboInOwl:consider``): pick a concept.
-5. Set the parent concept (``rdfs:subClassOf``) to the ``ObsoleteClass``. 
-6. Remove all other class annotations (subsets, comments, synonyms etc.) and axioms (including parent concepts).
+5. The ``oldParent`` attribute : specify the URI of the erstwhile parent of the now-deprecated concept.  If the concept had more than one parent, you should specify more than one ``oldParent`` attribute.
+6. Optionally, specify a comment as to why the concept was deprecated in the ``deprecation_comment`` attribute.
+7. Set the parent concept (``rdfs:subClassOf``) to the ``ObsoleteClass``. 
+8. Remove all other class annotations (subsets, comments, synonyms etc.) and axioms (including parent concepts).
 
 
 Ensuring logical consistency
