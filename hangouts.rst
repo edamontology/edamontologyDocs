@@ -12,6 +12,10 @@ Meeting times
 Meetings scheduled for the 1st Wed of each month at 10AM UK == 11AM CE(S)T.
 
 
+-------------
+Meeting notes
+-------------
+
 2017 May 3, 11 AM CEST
 -----------------------
 
