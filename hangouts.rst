@@ -24,7 +24,7 @@ Meetings scheduled for the 1st Wed of each month at 10AM UK == 11AM CE(S)T.
 - EDAM 1.18
 
   - clean-ups of Operations concepts 
-  - suggestions welcomed via GitHub please
+  - suggestions welcomed via `GitHub <https://github.com/edamontology/edamontology/issues/new>`_ please
 
 - Commit messages / changelog - revised docs (please adhere to meaningful reporting!)
 
