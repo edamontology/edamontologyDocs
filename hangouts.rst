@@ -15,13 +15,11 @@ Meetings scheduled for the 1st Wed of each month at 10AM UK == 11AM CE(S)T.
 2017 May 3, 11 AM CEST
 -----------------------
 
-- Schedule for EDAM calls & releases (in bio.tools calendar)
+- Schedule for EDAM calls & releases (in bio.tools calendar) ... with all of us trying to make this happen
 
-  - 1st Wed of month : EDAM team skype, msg. to edam-announce re plans for next version
+  - 1st Wed of month : EDAM team skype, msg. to edam-announce re plans for next release
   - Last Wed of month: EDAM release date
   - Last Fri of month: msg. to edam-announce re latest release
-
-... with all of us trying to make this happen
 
 - EDAM 1.18
 
