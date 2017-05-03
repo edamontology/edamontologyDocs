@@ -3,7 +3,7 @@ Hangouts
 
 Monthly informal hangouts to discuss all matters around EDAM development.
 
-If you'd like to attend a hangout, please mail `<edam-dev <mailto:edam-dev@elixir-dk.org>`_.
+If you'd like to attend a hangout, please mail `edam-dev <mailto:edam-dev@elixir-dk.org>`_.
 
 
 -------------
