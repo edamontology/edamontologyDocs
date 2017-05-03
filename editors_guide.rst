@@ -37,7 +37,12 @@ Modifying GitHub main repo.
 
     ``git push origin``
 
-**Please provide a meaningful commit message so that we can easily generate the ChangeLog upon next release**
+**Please provide a meaningful reporting on changes so that we can easily generate the ChangeLog upon next releas**
+
+   - in the Git commit message, including the GitHub issue number of any issues addressed (use ``fix #xxx`` syntax see https://help.github.com/articles/closing-issues-via-commit-messages.
+   - directly in the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_
+   
+     
 
 5. Release the editing token for the other developers:
 
