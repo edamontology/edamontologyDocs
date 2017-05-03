@@ -22,6 +22,7 @@ Contents:
    Annotators Guide <annotators_guide>
    Governance <governance>
    Contributors <contributors>
+   Hangouts <hangouts>
    Applications <applications>
    License <license>
 
