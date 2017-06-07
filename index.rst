@@ -25,4 +25,5 @@ Contents:
    Hangouts <hangouts>
    Applications <applications>
    License <license>
+   FAQ <faq>
 
