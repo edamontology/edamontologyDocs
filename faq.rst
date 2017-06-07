@@ -11,5 +11,5 @@ First read the `guidelines for requests <http://edamontologydocs.readthedocs.io/
 
 How do I cite EDAM?
 -------------------
-See the `citation instructions <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#citing-edam>`_
+See the `citation instructions <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#citing-edam>`_.
 
