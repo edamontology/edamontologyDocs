@@ -3,7 +3,7 @@ Frequently asked questions
 
 Where do I ask questions about EDAM?
 ------------------------------------
-You can contact the `mailing list <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#mailing-lists>`_.  Alternatively (and especially if you think your question if of general interest), you can post your question on `BioStars <https://www.biostars.org/>`_.
+You can contact the `mailing list <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#mailing-lists>`_.  Alternatively (and especially if you think your question if of general interest), you can post your question on `BioStars <https://www.biostars.org/t/edam/>`_.
 
 How I do I request new terms?
 -----------------------------
