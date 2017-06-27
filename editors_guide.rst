@@ -185,7 +185,7 @@ When deprecating concepts, you **MUST** specify the following:
 6. Optionally, specify a comment as to why the concept was deprecated in the ``deprecation_comment`` attribute.
 7. Set the parent concept (``rdfs:subClassOf``) to the ``ObsoleteClass``. 
 8. Remove all other class annotations (subsets, comments, synonyms etc.) and axioms (including parent concepts).
-
+8. **Importantly** remember to refactor all references (e.g. ``SubClassOf``) to this concept from other concepts.  You can see all such references in Protege in the "Class Usage"; each reference will need updating in turn: in case of many such references, this is easier to do globally in a text editor rather than Protege.
 
 Ensuring logical consistency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
