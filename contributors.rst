@@ -28,6 +28,8 @@ EDAM Steering Group
 * Karel Berka (ELIXIR CZ)
 * Søren Brunak (ELIXIR DK)
 * Steven Newhouse (ELIXIR EMBL-EBI)
+* Hedi Peterson (ELIXIR EE)
+* Michael Crusoe
 
 Contributors
 ------------
