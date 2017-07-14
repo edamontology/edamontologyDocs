@@ -3,9 +3,9 @@ Contributors
 EDAM Developers
 --------------------
 * Jon Ison (DTU, DK) **lead developer**
-* Matúš Kalaš (University of Bergen, NO)
-* Hervé Ménager (Institut Pasteur, FR)
-* Veit Schwämmle (SDU, DK)
+* Matúš Kalaš (University of Bergen, NO) 
+* Hervé Ménager (Institut Pasteur, FR) **releases manager**
+* Veit Schwämmle (SDU, DK) 
 
 EDAM Editors
 ------------
@@ -28,19 +28,6 @@ EDAM Steering Group
 * Karel Berka (ELIXIR CZ)
 * Søren Brunak (ELIXIR DK)
 * Steven Newhouse (ELIXIR EMBL-EBI)
-
-EDAM Advisory Group
--------------------
-* Anna-Lena Lamprecht (University of Potsdam, DE)
-* Dan Bolser (EMBL-EBI, UK)
-* Frederik Coppens (ELIXIR BE)
-* Hedi Peterson (ELIXIR EE)
-* Jane Lomax (Sanger Institute, UK)
-* Melissa Haendel (Oregon Health & Science University, USA)
-* Michael Crusoe (University of California)
-* Niclas Jareborg (ELIXIR SE)
-* Radka Svobodová (MU, CZ)
-* Rafael Jimenez (ELIXIR HUB)
 
 Contributors
 ------------
