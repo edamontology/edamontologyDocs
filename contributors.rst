@@ -21,15 +21,17 @@ EDAM Editors
 EDAM Steering Group
 -------------------
 * Alfonso Valencia (ELIXIR ES)
+* Anna-Lena Lamprecht (University of Potsdam, DE)
 * Cath Brooksbank (ELIXIR EMBL-EBI)
 * Christophe Blanchet (ELIXIR FR)
+* Hedi Peterson (ELIXIR EE)
 * Heinz Stockinger (ELIXIR CH)
 * Inge Jonassen (ELIXIR NO)
 * Karel Berka (ELIXIR CZ)
+* Michael Crusoe
 * Søren Brunak (ELIXIR DK)
 * Steven Newhouse (ELIXIR EMBL-EBI)
-* Hedi Peterson (ELIXIR EE)
-* Michael Crusoe
+
 
 Contributors
 ------------
