@@ -1,6 +1,6 @@
 Editors Guide
 =============
-If you're not sure how to do something please ask on edam@elixir-dk.org.
+If you're not sure how to do something please ask on edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
 For EDAM Developers
 ------------------------

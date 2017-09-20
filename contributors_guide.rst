@@ -12,7 +12,7 @@ edam@elixir-dk.org
 
 We'll make every effort to be responsive, given our limited resources, and will work with you to find the most efficient way to proceed, depending on your requirements, expertise and bandwidth.  
 
-To receive mail from the list above, subscribe here:
+To post or receive mail from the list above, subscribe here:
 
 http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam
 
@@ -61,7 +61,7 @@ Simple requests for one or a few changes can be made using this form:
 
 http://tinyurl.com/EDAMChangeRequest 
 
-If you require many changes and additions, there's probably a more efficient way to proceed: please contact edam@elixir-dk.org.
+If you require many changes and additions, there's probably a more efficient way to proceed: please contact edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
 Joining the team
 ----------------
