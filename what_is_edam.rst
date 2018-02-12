@@ -11,7 +11,7 @@ You can browse EDAM here:
 - `NCBO BioPortal <http://bioportal.bioontology.org/ontologies/EDAM/>`_
 - `OLS <http://www.ebi.ac.uk/ols/ontologies/edam>`_
 - `AberOWL Repository <http://aber-owl.net/ontology/EDAM>`_
-- `RAINBio browser <https://biosphere.france-bioinformatique.fr/edamontology/browser/>`_
+- `EDAM browser <https://biosphere.france-bioinformatique.fr/edamontology/browser/>`_
 
 Download
 --------
