@@ -17,7 +17,7 @@ RAINBio registry of bioinformatics cloud appliances
 ---------------------------------------------------
 The appliances of the IFB cloud come with preconfigured bioinformatics tools, and both are annotated with terms from the topics dictionnary of the EDAM ontology. To help you to find the right tools or appliances for your needs, you can browse the list of appliances and tools below and filter it with any terms.
 
-* http://rainbio.france-bioinformatique.fr/rainbio/)
+* https://biosphere.france-bioinformatique.fr/catalogue/
 
 SEQwiki
 -------
