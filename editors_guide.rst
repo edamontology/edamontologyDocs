@@ -90,9 +90,9 @@ Before creating a new release, please make sure you have the approval of leader 
 7. Update http://edamontology.org.
 8. Submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
 9. Close GitHub issues labelled *done - staged for release*.
-10. Confirm everything is working in bio.tools by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
+10. Confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
 11. Announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
-12. Help apps that implement EDAM to update to the new version. In particular `bio.tools <http://bio.tools>`_.
+12. Help apps that implement EDAM to update to the new version.
 
 
 Editing the ChangeLog
