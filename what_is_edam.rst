@@ -38,7 +38,7 @@ EDAM includes 4 main sub-ontologies or 'branches' of concepts:
 
 .. image:: http://edamontology.org/EDAMconcepts.png 
 
-As a general rule, the **Data**, **Format** and **Operation** branches include concepts strictly in domain of bioinformatics and computational biology: concepts purely concerning biology, computer science *etc.* are not included. The **Topic** branch, in contrast, includes broader interdisciplinary concepts from the biological and biomedical domains.
+As a general rule, the **Data**, **Format** and **Operation** branches include concepts strictly in the domain of informatics in the Life Sciences; primarily bioinformatics (broadly) and computational biology concepts useful for annotating software tools.  Concepts purely concerning biology, computer science *etc.* are not included. The **Topic** branch, in contrast, includes broader interdisciplinary concepts from the biological and biomedical domains.
 
 
 Architecture
