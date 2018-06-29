@@ -1,18 +1,42 @@
 Editors Guide
 =============
+
+.. caution
+   This document is undergoing heavy edits right now ... you may want to come back in a few days!
+
 If you're not sure how to do something please ask on edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
 General considerations
 ----------------------
-1. For EDAM **Topic** subontology to be sustainable and have practical applications, it will remain very small, a maximum of a few hundred topics in total. In this sense, EDAM is the polar opposite to `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>_.  Thus EDAM **topics** are very broad concepts; categories with no clearly defined borders between each other. Semantic richness is captured through synonyms (which are unlimited in number).
-2. The EDAM **Format** subontology includes the following types of concept
-   2.1 **Concrete data formats** (*i.e.* documented), and in some cases variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
-   2.2 **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
-   2.3 **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
-3. The EDAM **Data** subontology includes:
-   3.1 **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
-   3.2 **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).  
-4. Concepts may be deprecated (essentially marked up as not recommended for use) occasionally as part of routine EDAM housekeeping to ensure EDAM adheres to the rules of thumb: there are special `guidelines <todo>`_ for this.
+1. Concepts may be deprecated (essentially marked up as not recommended for use) occasionally as part of routine EDAM housekeeping to ensure EDAM adheres to the rules of thumb: there are special `guidelines <todo>`_ for this.
+   
+Topic
+^^^^^
+For the **Topic** subontology to be sustainable and have practical applications, it will remain very small, a maximum of a few hundred topics in total. In this sense, EDAM is the polar opposite to `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>_.  Thus EDAM **topics** are very broad concepts; categories with no clearly defined borders between each other. Semantic richness is captured through synonyms (which are unlimited in number).
+   
+Operation
+^^^^^^^^^
+The **Operation** subontology includes:
+* **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
+* **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
+
+Data
+^^^^
+The **Data** subontology includes:
+* **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
+* **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
+   
+Data->Identifier
+^^^^^^^^^^^^^^^^
+
+Format
+^^^^^^
+The EDAM **Format** subontology includes the following types of concept
+* **Concrete data formats** have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
+* **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
+* **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
+
+
 
    
 Rules of thumb for EDAM development 
@@ -33,7 +57,9 @@ General
 5. You **MUST NOT** add a concept if this implies that additional new concepts are needed (above point), but this extension in total would seriously overlap with an existing well-developed ontology that already serves this area better.  If in doubt you **MUST** discuss this with the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_.
 6. If you add a concept which you expect to remain a leaf node, *i.e.* EDAM will not include finer-grained concepts, then - if other well-developed ontologies exist that serve this conceptual niche - you **SHOULD** annotate this junction (see `todo <>`_).
 7. Concept labels **MUST** be unique within a sub-ontology and **SHOULD** be unique across all of EDAM (rare exceptions are allowed).
-8. 
+8. With the exception of **topics**, you **MUST NOT** add a concept with significant conceptual overlap to an existing concept, which you means you **MUST** check carefully, especially the siblings of the new concept.
+9. **SHOULD NOT** define multiple parents of a concept unless there is a very unambivalent case. This rule is even stronger for **Topics** (where most overlap with each other). 
+
 ..note:
   The 3-level depth of **Format** depth is achieved:
 
@@ -49,10 +75,13 @@ Topic
    2.2 **MUST NOT** include any concept tied to a concrete project or product
    2.3 **SHOULD NOT** include anything that is more tangible than a very general topic, *e.g.* specific cell types, diseases, biological processes, environment types *etc*.  Such fine-grained concepts belong in their own ontology, but **MAY** be captured, where desirable, as synonyms in EDAM.  Rare exceptions are allowed where a term really is in extremely prevalent usage (pragmatism rules!)
 2. **MUST NOT** conflate terms in a concept label where these terms exist as independent topics already, *e.g.* *Disease pathways* is disallowed because there are already concepts for *Disease* (synonym of *Pathology*) and *Pathways* (synonym of *Molecular interactions, pathways and networks*).  Instead, if such conflations are required, they **MAY** be added as synonyms of one concept or the other.
+3. **MUST NOT** define multiple parents of the term, with the exception of the strongest cases only, where it would be incongruous not to do so *e.g.* *Biochemistry* is a child of both *Biology* and *Chemistry*.
    
 Operation
 ^^^^^^^^^
-
+1. Concepts **MUST** conceptually be clearly distinct from other (non-placeholder) Operations, and this **MUST** be reflected in the label and definition of the concept.
+2. Concepts **SHOULD** should never be more fine-grained than is useful for practical search purposes, and **SHOULD NOT** include fine-grained specialisations of a basic function, individiaul algorithms etc. (a few exceptions are allowed for very highly prevalent concepts)
+   
 Data
 ^^^^
 1. Placholder concepts **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>``.
@@ -60,16 +89,23 @@ Data
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
+1. A new identifier (or it's ancestor) **MUST** be annotated (via *is_identifier_of*) to indicate the type of data that is identified but you **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept. 
+
 
 Format
 ^^^^^^
 1. Leaf nodes **MUST** be concrete data formats, see `to-do <>`_ and `to-do <>`_).
 2. Concrete data formats **MUST** descend from *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* or *YAML*, but you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Textual format*, but the kids of *FASTA-like (text)* format are not.
 3. Concrete data formats **MUST** descended from `Format (by type of data) <http://edamontology.org/format_2350>`_ (or it's kids), but again, you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Sequence record format* -> *FASTA-like*, but the kids of *FASTA-like (text)* format are not.
-4. Concepts which are not concrete data formats **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>`` - this annotation type will soon be refactored (to be made more specific).
-5. Where file extensions are in common use, all of these **SHOULD** be annotated and you **MUST** preserve the common capitalisation and **MUST NOT** include period ('.') in the annotation, *e.g.* "txt" not ".txt".
-6. A new format (or it's ancestor) **MUST** be annotated (via *is_format_of*) to indicate the type of data that is formatted but you **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept. 
+4. **MUST NOT** add new placeholder concepts (kids of `Format (by type of data) <http://edamontology.org/format_2350>`_) unless there is a corresponding concrete data format descending from it.
+5. Concepts which are not concrete data formats **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>`` - this annotation type will soon be refactored (to be made more specific).
+6. Where file extensions are in common use, all of these **SHOULD** be annotated and you **MUST** preserve the common capitalisation and **MUST NOT** include period ('.') in the annotation, *e.g.* "txt" not ".txt".
+7. A new format (or it's ancestor) **MUST** be annotated (via *is_format_of*) to indicate the type of data that is formatted but you **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept. 
+8. **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available, seee `todo <>`_.
+9. **MUST** annotate the specification or documentation of concrete data formats (see `todo <>`_)
 
+   
+   
 For EDAM Developers
 -------------------
 
