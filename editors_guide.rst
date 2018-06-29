@@ -1,14 +1,16 @@
 Editors Guide
 =============
 
-.. caution
+.. caution::
+   **UNDER CONSTRUCTION**
    This document is undergoing heavy edits right now ... you may want to come back in a few days!
 
+   
 If you're not sure how to do something please ask on edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
 General considerations
 ----------------------
-1. Concepts may be deprecated (essentially marked up as not recommended for use) occasionally as part of routine EDAM housekeeping to ensure EDAM adheres to the rules of thumb: there are special `guidelines <todo>`_ for this.
+Concepts may be deprecated (essentially marked up as not recommended for use) occasionally as part of routine EDAM housekeeping to ensure EDAM adheres to the rules of thumb: there are special `guidelines <todo>`_ for this.
    
 Topic
 ^^^^^
@@ -17,14 +19,15 @@ For the **Topic** subontology to be sustainable and have practical applications,
 Operation
 ^^^^^^^^^
 The **Operation** subontology includes:
-* **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
-* **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
+
+- **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
+- **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
 
 Data
 ^^^^
 The **Data** subontology includes:
-* **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
-* **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
+- **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
+- **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
@@ -32,9 +35,9 @@ Data->Identifier
 Format
 ^^^^^^
 The EDAM **Format** subontology includes the following types of concept
-* **Concrete data formats** have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
-* **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
-* **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
+- **Concrete data formats** have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
+- **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
+- **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
 
 
 
