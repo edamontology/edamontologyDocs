@@ -22,9 +22,9 @@ We use the following terms when talking about EDAM:
 - *Root* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, and `Format <http://edamontology.org/format_1915>`_.  And (depending on context) `Identifier <http://edamontology.org/data_0842>`_.
 - *Tier* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" means everything immediately under `Data <http://edamontology.org/data_0006>`_.
 - *Top-level* refers to Tier 1 concepts.
-- *Child*, *Children of*, *Kids* *etc.* refers to concept(s) defined as a specialisation of another (the OWL geek "subClass").  Conversely *Parent* means the opposite (a generalisation of a concept).
+- *Child*, *Children of*, *Kids* *etc.* refers to concept(s) defined as an immediate specialisation of another (*i.e.* "is_a", or the OWL geek "subClass").  Conversely *Parent* means the opposite (a generalisation of a concept).
 - *Ancestor* means *Parent* or the parent's parent *etc.* Conversely *Descendant* means *Child* or the children's children *etc.*
-- *related to* refers to when a concept in one subontology is defined as formally related in specific way to a concept in another, but excluding the basic specialisation/generalisation relationship.
+- *related to* means a concept in one subontology is formally defined as related (in various ways) to a concept in another, but excluding basic specialisation/generalisation relationships.
 - *Node* refers to a concept when it's being discussed in context of the hierachy.
 - *Leaf* refers to a concept at the bottom of the tree (without children).
 
@@ -36,9 +36,9 @@ General considerations
 1. EDAM concepts are of two types:
    
 - **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for concrete concepts (below). They're not intended to be used much, or at all, for annotation.
-- **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  With the exception of **Topic** subontology, all leaf nodes are concrete.
+- **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  With the exception of **Topic** subontology (which has no concreate concepts), *all* leaf nodes are concrete.
 
-These types are clarified for different EDAM subontologies below.
+The types are clarified for different EDAM subontologies (see sections below).
   
 2. EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: there are special `deprecation guidelines <todo>`_ for this.
    
@@ -50,7 +50,7 @@ These types are clarified for different EDAM subontologies below.
 Topic
 ^^^^^
 
-The **Topic** subontology will only ever include a few hundred concepts in total, semantic richness is captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications. Hence EDAM **topics** are conceptually very broad categories with no clearly defined borders between each other.  This is a contrastisg approach to *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>`_.
+The **Topic** subontology will only ever include a few hundred concepts in total, semantic richness is captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications. Hence EDAM **topics** are conceptually very broad categories with no clearly defined borders between each other (the notion of placeholder and concrete concepts doesn't apply).  This somewhat contrasts *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>`_.
 
    
 Operation
@@ -58,14 +58,14 @@ Operation
 The **Operation** subontology includes:
 
 - **Placeholder operations** currently include *all* concepts at the first tier, *e.g.* `Analysis <http://edamontology.org/operation_2945>`_, `Prediction and recognition <http://edamontology.org/operation_2423>`_ *etc.*, and some second tier concepts *e.g.* `Sequence analysis <http://edamontology.org/operation_2403>`_.
-- **Concrete operations** (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_ and sub-variants of these (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_).
+- **Concrete operations** (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_ and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_) of these.
 
 Data
 ^^^^
 The **Data** subontology includes:
 
-- **Placeholder data concepts** are basic types of data, either technical (*e.g.* `Score <http://edamontology.org/data_1772>`_) or biological (*e.g.* `Phylogenetic data <http://edamontology.org/data_2523>`_).  They all appear in the **first tier only** (but not all Tier 1 **Data** concepts are placeholders.)
-- **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
+- **Placeholder data concepts** are basic types of data, either technical (*e.g.* `Score <http://edamontology.org/data_1772>`_) or biological (*e.g.* `Phylogenetic data <http://edamontology.org/data_2523>`_).  They mostly appear in the **first tier** (but not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
+- **Concrete types of data** *i.e.* for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
@@ -110,12 +110,12 @@ General
 8. With the exception of **topics**, you **MUST NOT** add a concept with significant conceptual overlap to an existing concept, which you means you **MUST** check carefully, especially the siblings of the new concept.
 9. **SHOULD NOT** define multiple parents of a concept unless there is a very unambivalent case. This rule is even stronger for **Topics** (where most overlap with each other). 
 
-..note::
-  The 3-level depth of **Format** depth is achieved:
+.. note::
+   The 3-level depth of **Format** depth is achieved:
 
-  *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format (leaves)
+   *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format (leaves)
 
-  See `to-do <>`_ below.
+   See `to-do <>`_ below.
 
 Topic
 ^^^^^
@@ -136,7 +136,7 @@ Operation
 Data
 ^^^^
 1. Placholder concepts **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>``.
-2. **MUST NOT** contain any chains of placeholder concepts, *i.e.* placholders are only allowed in the first tier.
+2. **SHOULD NOT** contain any chains of placeholder concepts, *i.e.* placholders are normally allowed (with a few rare exceptions) in the first tier.
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
