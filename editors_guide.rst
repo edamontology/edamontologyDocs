@@ -10,7 +10,8 @@ If you're not sure how to do something please ask on edam@elixir-dk.org.  You'll
 
 Terminology
 -----------
-1. We use the following terms when talking about EDAM:
+We use the following terms when talking about EDAM:
+
 - *"EDAM*" refers to the EDAM ontology in totality
 - *"Subontology* and occasionally *branch* refers to one of the EDAM subontologies, *i.e.* **Topic**, **Operation**, **Data** and **Format**.  **Data->Identifier** (a branch of **Data**) is is also a subontology with it's own guidelines.
 - *"Concept"* is the basic unit of information in EDAM: it includes a definition of the concept, terms and other metadata 
@@ -18,8 +19,8 @@ Terminology
 - *"Synonym"* means an exact, narrow, broad or related synonym (see `<todo>_`).  They can also be used for annotation.
 - *"Term"* and *"terms"* refer to primary labels and synonyms collectively.
 - *"Hierarchy"* refers to the EDAM tree structure, resulting from EDAM concepts being defined as specialisations/generalisations of one another (PS. EDAM isn't a tree, it's a `DAG <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_.)
-- *"Root"* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>_`, `Operation <http://edamontology.org/operation_0004>_`, `Data <http://edamontology.org/data_0006>_`, `Identifier <http://edamontology.org/data_0842>_` and `Format <http://edamontology.org/format_1915>_`.
-- *"Tier"* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" include everything under `Data <http://edamontology.org/data_0006>_`.
+- *"Root"* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>`_`, `Operation <http://edamontology.org/operation_0004>`_`, `Data <http://edamontology.org/data_0006>`_`, `Identifier <http://edamontology.org/data_0842>`_` and `Format <http://edamontology.org/format_1915>`_`.
+- *"Tier"* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" include everything under `Data <http://edamontology.org/data_0006>`_`.
 - *"Top-level"* refers to Tier 1 concepts.
 - *"Child"*, *"Children of"*, *"Kids"* *etc.* refers to concept(s) defined as a specialisation of another (what OWL geeks call "subClassOf").  Conversely *Parent* means the opposite (a generalisation of a concept).
 - *"Ancestor*" means *"Parent*" or the parent's parent etc. Conversely "Descendant" means "Child" or the children's children *etc.*
@@ -28,7 +29,7 @@ Terminology
 - *"Leaf"* refers to a concept at the bottom of the tree, without children.
 
 
-For a technical definition of these things, see `<todo>_`.
+For a technical definition of these things, see `todo <http://todo>`_.
 
 General considerations
 ----------------------  
