@@ -8,20 +8,54 @@ Editors Guide
    
 If you're not sure how to do something please ask on edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
+Terminology
+-----------
+1. We use the following terms when talking about EDAM:
+- *"EDAM*" refers to the EDAM ontology in totality
+- *"Subontology* and occasionally *branch* refers to one of the EDAM subontologies, *i.e.* **Topic**, **Operation**, **Data** and **Format**.  **Data->Identifier** (a branch of **Data**) is is also a subontology with it's own guidelines.
+- *"Concept"* is the basic unit of information in EDAM: it includes a definition of the concept, terms and other metadata 
+- *"Primary label"* or simply *"Label"* refers to primary term by which the concept is referred to.  They're used for annotation purposes.
+- *"Synonym"* means an exact, narrow, broad or related synonym (see `<todo>_`).  They can also be used for annotation.
+- *"Term"* and *"terms"* refer to primary labels and synonyms collectively.
+- *"Hierarchy"* refers to the EDAM tree structure, resulting from EDAM concepts being defined as specialisations/generalisations of one another (PS. EDAM isn't a tree, it's a `DAG <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_.)
+- *"Root"* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>_`, `Operation <http://edamontology.org/operation_0004>_`, `Data <http://edamontology.org/data_0006>_`, `Identifier <http://edamontology.org/data_0842>_` and `Format <http://edamontology.org/format_1915>_`.
+- *"Tier"* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" include everything under `Data <http://edamontology.org/data_0006>_`.
+- *"Top-level"* refers to Tier 1 concepts.
+- *"Child"*, *"Children of"*, *"Kids"* *etc.* refers to concept(s) defined as a specialisation of another (what OWL geeks call "subClassOf").  Conversely *Parent* means the opposite (a generalisation of a concept).
+- *"Ancestor*" means *"Parent*" or the parent's parent etc. Conversely "Descendant" means "Child" or the children's children *etc.*
+- *related to* refers to when a concept in one subontology is defined as formally related in specific way to a concept in another, but excluding the basic specialisation/generalisation relationship.
+- *"Node"* refers to a concept when it's being discussed in context of the hierachy.
+- *"Leaf"* refers to a concept at the bottom of the tree, without children.
+
+
+For a technical definition of these things, see `<todo>_`.
+
 General considerations
-----------------------
-Concepts may be deprecated (essentially marked up as not recommended for use) occasionally as part of routine EDAM housekeeping to ensure EDAM adheres to the rules of thumb: there are special `guidelines <todo>`_ for this.
+----------------------  
+1. EDAM concepts are of two types:
+- **Placeholder concepts** are high-level (conceptually broad), are used primarily to structure EDAM and serve as placeholders for concrete concepts (below). They're not intended to be used much, or at all, for annotation.
+- **Concrete concepts** are lower-level (conceptually more narrow) and intended for annotation.  With the exception of **Topic** subontology, all leaf nodes are concrete.
+
+Clarification of these types for different EDAM subontologies is below; bear in mind the notions are not hard and fast!
+  
+2. EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: there are special `deprecation guidelines <todo>`_ for this.
+   
+
+
+
    
 Topic
 ^^^^^
-For the **Topic** subontology to be sustainable and have practical applications, it will remain very small, a maximum of a few hundred topics in total. In this sense, EDAM is the polar opposite to `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>_.  Thus EDAM **topics** are very broad concepts; categories with no clearly defined borders between each other. Semantic richness is captured through synonyms (which are unlimited in number).
+
+The **Topic** subontology will only ever include a few hundred concepts in total, semantic richness captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications. EDAM **topics** are very broad concepts; categories with no clearly defined borders between each other.  This is a contrastist approach than *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>_.
+
    
 Operation
 ^^^^^^^^^
 The **Operation** subontology includes:
 
-- **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
-- **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
+- **Placeholder operations** which include all concepts at the first tier, *e.g.* *Analysis*, *Prediction and recognition* *etc.* and sometimes in the second tier *e.g.* *Sequence analysis*, *Protein feature detection* *etc.*
+- **Concrete operations** and in some cases variants and sub-variants of these 
 
 Data
 ^^^^
@@ -109,8 +143,8 @@ Format
 
    
    
-For EDAM Developers
--------------------
+EDAM release process
+--------------------
 
 Modifying GitHub main repo.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -221,9 +255,32 @@ Some hacking of bubastis output is needed to identify (at least):
   - summary of activity, i.e. in which branches was most work focucssed ?
 
 
+Continuous Integration
+----------------------
+Every modification on the ontology pushed to GitHub triggers an automated test in Travis CI. It checks:
+- a few rules using the `edamxpathvalidator tool <https://github.com/edamontology/edamxpathvalidator>`_.
+- the consistency of the ontology by running the Hermit reasoner automatically.
+The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee that it there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
 
-For Editors 
------------
+Modifications in a GitHub fork
+------------------------------
+GitHub makes it possible for any developer to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Protege, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see "Best practices for edition" below).
+
+The workflow is:
+
+- Fork the edamontology repository in your own account.
+- Make the modifications you want to suggest for inclusion in EDAM in this forked repository.
+- Open pull requests for each modification you make.
+
+Please make sure to:
+
+- Keep your forked repository synchronized with the core repository, to avoid inconsistencies.
+- Make sure to follow the "Best practices for edition" below.
+
+    
+
+Technical recipes
+-----------------
 
 
 General guidelines
@@ -313,27 +370,6 @@ Common problems include:
 
 The problems are easily fixed within Protege: ask on the mailing list if you're not sure how.  Finally, do not be tempted to click *Reasoner->Synchronise reasoner* between changes: it tends to hang Protege.  Instead, use *Reasoner->Stop reasoner* than *Reasoner->Start reasoner*.
 
-Continuous Integration
-----------------------
-Every modification on the ontology pushed to GitHub triggers an automated test in Travis CI. It checks:
-- a few rules using the `edamxpathvalidator tool <https://github.com/edamontology/edamxpathvalidator>`_.
-- the consistency of the ontology by running the Hermit reasoner automatically.
-The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee that it there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
-
-Modifications in a GitHub fork
-------------------------------
-GitHub makes it possible for any developer to make modifications in a copy of EDAM and suggest these modifications are included in the original.  Please note that we discourage using this mechanism for large modifications made using Protege, because merging OWL files which have been reformatted by Protege is notoriously unreliable (see "Best practices for edition" below).
-
-The workflow is:
-
-- Fork the edamontology repository in your own account.
-- Make the modifications you want to suggest for inclusion in EDAM in this forked repository.
-- Open pull requests for each modification you make.
-
-Please make sure to:
-
-- Keep your forked repository synchronized with the core repository, to avoid inconsistencies.
-- Make sure to follow the "Best practices for edition" below.
 
 
 
