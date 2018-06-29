@@ -12,21 +12,21 @@ Terminology
 -----------
 We use the following terms when talking about EDAM:
 
-- *"EDAM*" refers to the EDAM ontology in totality
-- *"Subontology* and occasionally *branch* refers to one of the EDAM subontologies, *i.e.* **Topic**, **Operation**, **Data** and **Format**.  **Data->Identifier** (a branch of **Data**) is is also a subontology with it's own guidelines.
-- *"Concept"* is the basic unit of information in EDAM: it includes a definition of the concept, terms and other metadata 
-- *"Primary label"* or simply *"Label"* refers to primary term by which the concept is referred to.  They're used for annotation purposes.
-- *"Synonym"* means an exact, narrow, broad or related synonym (see `<todo>_`).  They can also be used for annotation.
-- *"Term"* and *"terms"* refer to primary labels and synonyms collectively.
-- *"Hierarchy"* refers to the EDAM tree structure, resulting from EDAM concepts being defined as specialisations/generalisations of one another (PS. EDAM isn't a tree, it's a `DAG <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_.)
-- *"Root"* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>`_`, `Operation <http://edamontology.org/operation_0004>`_`, `Data <http://edamontology.org/data_0006>`_`, `Identifier <http://edamontology.org/data_0842>`_` and `Format <http://edamontology.org/format_1915>`_`.
-- *"Tier"* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" include everything under `Data <http://edamontology.org/data_0006>`_`.
-- *"Top-level"* refers to Tier 1 concepts.
-- *"Child"*, *"Children of"*, *"Kids"* *etc.* refers to concept(s) defined as a specialisation of another (what OWL geeks call "subClassOf").  Conversely *Parent* means the opposite (a generalisation of a concept).
-- *"Ancestor*" means *"Parent*" or the parent's parent etc. Conversely "Descendant" means "Child" or the children's children *etc.*
+- *EDAM* refers to the ontology in totality (all subontologies).
+- *Subontology* and occasionally *branch* refers to an EDAM subontology, *i.e.* **Topic**, **Operation**, **Data** or **Format**.  Also **Data->Identifier** (a branch of **Data**).
+- *Concept* is the basic unit of information in EDAM: including concept definition, terms and other metadata 
+- *Primary label* or simply *Label* is the primary term by which the concept is referred to.  They're used for annotation purposes.
+- *Synonym* means an exact, narrow, broad or related synonym (see `todo <https://todo>`_).  They can also be used for annotation.
+- *Term* and *terms* refer to primary labels and synonyms collectively.
+- *Hierarchy* refers to the EDAM tree structure, resulting from EDAM concepts being defined as specialisations/generalisations of one another (PS. EDAM isn't a tree, it's a `DAG <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_.)
+- *Root* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, and `Format <http://edamontology.org/format_1915>`_.  And (depending on context) `Identifier <http://edamontology.org/data_0842>`_.
+- *Tier* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" means everything immediately under `Data <http://edamontology.org/data_0006>`_.
+- *Top-level* refers to Tier 1 concepts.
+- *Child*, *Children of*, *Kids* *etc.* refers to concept(s) defined as a specialisation of another (the OWL geek "subClass").  Conversely *Parent* means the opposite (a generalisation of a concept).
+- *Ancestor* means *Parent* or the parent's parent *etc.* Conversely *Descendant* means *Child* or the children's children *etc.*
 - *related to* refers to when a concept in one subontology is defined as formally related in specific way to a concept in another, but excluding the basic specialisation/generalisation relationship.
-- *"Node"* refers to a concept when it's being discussed in context of the hierachy.
-- *"Leaf"* refers to a concept at the bottom of the tree, without children.
+- *Node* refers to a concept when it's being discussed in context of the hierachy.
+- *Leaf* refers to a concept at the bottom of the tree (without children).
 
 
 For a technical definition of these things, see `todo <http://todo>`_.
@@ -35,35 +35,36 @@ General considerations
 ----------------------  
 1. EDAM concepts are of two types:
    
-- **Placeholder concepts** are high-level (conceptually broad), are used primarily to structure EDAM and serve as placeholders for concrete concepts (below). They're not intended to be used much, or at all, for annotation.
-- **Concrete concepts** are lower-level (conceptually more narrow) and intended for annotation.  With the exception of **Topic** subontology, all leaf nodes are concrete.
+- **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for concrete concepts (below). They're not intended to be used much, or at all, for annotation.
+- **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  With the exception of **Topic** subontology, all leaf nodes are concrete.
 
-Clarification of these types for different EDAM subontologies is below; bear in mind the notions are not hard and fast!
+These types are clarified for different EDAM subontologies below.
   
 2. EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: there are special `deprecation guidelines <todo>`_ for this.
    
-
+.. note::
+   The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.
 
 
    
 Topic
 ^^^^^
 
-The **Topic** subontology will only ever include a few hundred concepts in total, semantic richness captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications. EDAM **topics** are very broad concepts; categories with no clearly defined borders between each other.  This is a contrastist approach than *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>_.
+The **Topic** subontology will only ever include a few hundred concepts in total, semantic richness is captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications. Hence EDAM **topics** are conceptually very broad categories with no clearly defined borders between each other.  This is a contrastisg approach to *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>`_.
 
    
 Operation
 ^^^^^^^^^
 The **Operation** subontology includes:
 
-- **Placeholder operations** which include all concepts at the first tier, *e.g.* *Analysis*, *Prediction and recognition* *etc.* and sometimes in the second tier *e.g.* *Sequence analysis*, *Protein feature detection* *etc.*
-- **Concrete operations** and in some cases variants and sub-variants of these 
+- **Placeholder operations** currently include *all* concepts at the first tier, *e.g.* `Analysis <http://edamontology.org/operation_2945>`_, `Prediction and recognition <http://edamontology.org/operation_2423>`_ *etc.*, and some second tier concepts *e.g.* `Sequence analysis <http://edamontology.org/operation_2403>`_.
+- **Concrete operations** (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_ and sub-variants of these (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_).
 
 Data
 ^^^^
 The **Data** subontology includes:
 
-- **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
+- **Placeholder data concepts** are basic types of data, either technical (*e.g.* `Score <http://edamontology.org/data_1772>`_) or biological (*e.g.* `Phylogenetic data <http://edamontology.org/data_2523>`_).  They all appear in the **first tier only** (but not all Tier 1 **Data** concepts are placeholders.)
 - **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
    
 Data->Identifier
@@ -135,7 +136,7 @@ Operation
 Data
 ^^^^
 1. Placholder concepts **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>``.
-2. **MUST NOT** contain any chains of placeholder concepts.
+2. **MUST NOT** contain any chains of placeholder concepts, *i.e.* placholders are only allowed in the first tier.
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
