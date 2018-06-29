@@ -34,6 +34,7 @@ For a technical definition of these things, see `todo <http://todo>`_.
 General considerations
 ----------------------  
 1. EDAM concepts are of two types:
+   
 - **Placeholder concepts** are high-level (conceptually broad), are used primarily to structure EDAM and serve as placeholders for concrete concepts (below). They're not intended to be used much, or at all, for annotation.
 - **Concrete concepts** are lower-level (conceptually more narrow) and intended for annotation.  With the exception of **Topic** subontology, all leaf nodes are concrete.
 
@@ -61,6 +62,7 @@ The **Operation** subontology includes:
 Data
 ^^^^
 The **Data** subontology includes:
+
 - **Placeholder concepts** which are high-level (broad) concepts intended primarily to structure EDAM and serve as placeholders for more specific conceps
 - **Concrete types of data** i.e. for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
    
@@ -70,6 +72,7 @@ Data->Identifier
 Format
 ^^^^^^
 The EDAM **Format** subontology includes the following types of concept
+
 - **Concrete data formats** have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
 - **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
 - **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
@@ -106,7 +109,7 @@ General
 8. With the exception of **topics**, you **MUST NOT** add a concept with significant conceptual overlap to an existing concept, which you means you **MUST** check carefully, especially the siblings of the new concept.
 9. **SHOULD NOT** define multiple parents of a concept unless there is a very unambivalent case. This rule is even stronger for **Topics** (where most overlap with each other). 
 
-..note:
+..note::
   The 3-level depth of **Format** depth is achieved:
 
   *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format (leaves)
@@ -117,6 +120,7 @@ Topic
 ^^^^^
 1. **SHOULD** have a corresponding term in `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_ and **MUST** provide a link (*via* **seeAlso** annotation) to the relevant Wikipedia page, if one exists.  Exceptions are OK, but if a Wikipedia page does not exist, one **MUST** consider carefully whether the concept is too fine-grained.
 2. **MUST** respect the scope, specifically:
+   
    2.1 **MUST NOT** include fine-grained operations or types of data.  As a rare exception, very high-level operations *e.g.* *Sequence analysis* **MAY** be included.
    2.2 **MUST NOT** include any concept tied to a concrete project or product
    2.3 **SHOULD NOT** include anything that is more tangible than a very general topic, *e.g.* specific cell types, diseases, biological processes, environment types *etc*.  Such fine-grained concepts belong in their own ontology, but **MAY** be captured, where desirable, as synonyms in EDAM.  Rare exceptions are allowed where a term really is in extremely prevalent usage (pragmatism rules!)
@@ -166,11 +170,11 @@ Modifying GitHub main repo.
 
 2. Update your local repo with the latest files from the GitHub master:
 
-    ``git pull``
+    ``git pull`` (or "Synch" from the Desktop client)
    
    If you've not already done so, you will first need to clone the master repo:
 
-    ``git clone https://github.com/edamontology/edamontology.git``
+    ``git clone https://github.com/edamontology/edamontology.git`` (or "Clone" from the Desktop client)
 
 3. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
    - Check your changes and that the OWL file looks good in Protege
