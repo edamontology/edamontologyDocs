@@ -1,18 +1,27 @@
 Technical details
 =================
 
+..note::
+  An outline of the technical implementation of EDAM is below.  EDAM makes light use of `OWL <https://www.w3.org/OWL/>`_ logic/modelling and focuses on providing quality information for a basic set of *concepts*, with *relations* between these concepts and a very simple set of *rules* governing the conceptual relationships.
+
 Concepts
 --------
+
+Topic
+^^^^^
+**"A general bioinformatics subject or category, such as a field of study, data, processing, analysis or technology."**
+
+*e.g.* *"Biology"*, *"Nucleic acid sites, features and motifs"*, *"Sequencing"*.
+
+**Topic** concepts provide very broad categories for annotation of diverse bioinformatics resources. There will only ever be a few hundred EDAM topics: biology or computer science is not exhaustively covered!
 
 Operation
 ^^^^^^^^^
 **"A function or process performed by a tool; what is done, but not (typically) how or in what context."**
 
-*e.g.* *"Sequence alignment"*, *"Pairwise sequence alignment"*, *"Sequence database search"*.
+*e.g.* *"Sequence alignment"*, *"Genome indexing"*, *"Sequence database search"*.
 
-*"Operation"* concepts provide mostly fine-grained concepts for annotation of tool functions.
-
-The top-level operations are necessarily coarse-grained (abstract) providing a navigable top-level. They serve as placeholders for other, more specific concepts lower down in the tree.
+**Operation** concepts enable the annotation of software tool functions, from quite broad to very specific.  There will be as many EDAM Operations as required to support pratical applications, *e.g.* description / finding tools in `bio.tools <https://biotools>`_.
 
 Data
 ^^^^
@@ -20,34 +29,8 @@ Data
 
 *e.g.* *"Sequence alignment"*, *"Comparison matrix"*, *"Phylogenetic tree"*.
 
-Data concepts:
+**Data** concepts enable the annotation of types of data, *e.g.* inputs and ouputs of tools.  There are some categories of data (for structuring EDAM), and some common tool parameters, but mostly they correspond to specific data formats (see below), *i.e.* complex biological data.  Note: a single type of data can be serialised in multiple data formats! 
 
-*   Provide coarse and fine-grained concepts for annotating types of data
-*   Cover everything from primitive types and simple parameters, through to derived types and complex, bioinformatics datatypes
-*   Reflect but do not describe how the data is specified or represented (syntax)
-*   Can be somewhat (necessarily) overlapping
-
-Topic
-^^^^^
-**"A general bioinformatics subject or category, such as a field of study, data, processing, analysis or technology."**
-
-*e.g.* *"Sequence analysis"*, *"Alignment"*, *"Sequencing"*.
-
-*"Topic"* concepts provide coarse-grained categories for annotation of diverse bioinformatics resources. They do not cover biology or computer science exhaustively.
-
-Format
-^^^^^^
-**"A specific layout for encoding a specific type of data in a computer file or memory."**
-
-*e.g.* *"FASTA format"*, *"PDB format"*, *"mmCIF"*.
-
-*"Format"* concepts:
-
-*   Provide mostly fine-grained concepts for annotation of data formats / syntaxes.
-*   Formats are generally only listed if they are in common use, for example by public databases or multiple tools.
-*   Concept statements may include a reference (typically a URL) to the format specification proper.
-
-Most concepts are nested under *"Binary format"*, *"Textual format"* and *"XML"*. The *"Format (typed)"* branch arranges formats by type of data and provides an additional axis over (the same set of) concepts under *"Binary format"*, *"Textual format"* and *"XML"*.
 
 Identifier
 ^^^^^^^^^^
@@ -55,60 +38,64 @@ Identifier
 
 *e.g.* *"UniProt accession"*, *"EC number"*, *"Gene symbol"*.
 
-*"Identifier"* concepts:
+**Identifier** concepts enable the annotation of identifiers of data.  There are some categories (for structuring EDAM), but mostly they correspond to specific data identifiers.  Identifiers are typically simple strings and EDAM includes regular expressions defining valid string values.  Identifiers are formally related in EDAM to **Data** concepts (see `is_identifier_of <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#is-identifier-of>`_).
 
-*   Provide mostly fine-grained concepts for annotation of identifiers of data.
-*   Typically correspond to simple strings.
-*   Have concept definitions which may include a regular expression defining valid string values.
+Format
+^^^^^^
+**"A specific layout for encoding a specific type of data in a computer file or memory."**
 
-As for *"Format"*, the *"Identifier (typed)"* branch provides an additional axis over (the same set of) concepts under *"Accession"* and *"Name"*.
+*e.g.* *"FASTA format"*, *"PDB format"*, *"mmCIF"*.
 
+**Format** concepts enable the annotation of specific data formats / syntaxes; some general purpose ones but mostly biological data formats.
+
+To be included, a format must be in common use and formally specified or documented; EDAM includes links to these things.  
+Formats are formally related in EDAM to **Data** concepts (see `is_format_of <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#is-format-of>`_).
 
 Relations
 ---------
-is a
+is_a
 ^^^^
-Defines a concept as a specialisation of another concept. If A **is a** B, then A is a specialisation of B, and B is a generalisation of A.
+Defines a concept as a specialisation of another concept. If A *is_a* B, then A is a specialisation (child) of B, and B is a generalisation (parent) of A.
 
-The **is a** relation is transitive: if A **is a** B and B **is a** C then A **is a** C.
+The *is_a* relation is transitive: if A *is_a* B and B *is_a* C then A *is_a* C.
 
-All relations are transitive over **is a**: *e.g.* if A **has input** B and B **is a** C then A **has input** C, and if A **is a** B and B **has input** C then A **has input** C.
+All relations are transitive over *is_a*: *e.g.* if A *has_input* B and B *is_a* C then A *has_input* C, and if A *is_a* B and B *has_input* C then A *has_input* C.
 
-*e.g.* *"Pairwise sequence alignment"* **is a** *"Sequence alignment"*
+*e.g.* *"Pairwise sequence alignment"* *is_a* *"Sequence alignment"*
 
-has input
+has_input
 ^^^^^^^^^
-Defines an *"Operation"* concept as reading (inputting) a *"Data"* concept.
+Defines an **Operation** concept as reading (inputting) a **Data** concept.
 
-*e.g.* *"Sequence alignment"* **has input** *"Sequence"*
+*e.g.* *"Sequence analysis"* *has_input* *"Sequence"*
 
-has output
-^^^^^^^^^
-
-Defines an *"Operation"* concept as writing (outputting) a *"Data"* concept.
-
-*e.g.* *"Sequence alignment"* **has output** *"Sequence alignment"*
-
-has topic
+has_output
 ^^^^^^^^^
 
-Defines a *"Data"* or *"Operation"* concept as being within the scope of a *"Topic"* concept.
+Defines an **Operation** concept as writing (outputting) a **Data** concept.
 
-*e.g.* *"PolyA signal identification"* **has topic** *"Sequence sites, features and motifs"*
+*e.g.* *"Sequence alignment"* *has_output* *"Sequence alignment"*
 
-is identifier of
+has_topic
+^^^^^^^^^
+
+Defines a **Data** or **Operation** concept as being within the scope of a **Topic** concept.
+
+*e.g.* *"Peptide identification"* *has_topic* *"Proteomics"*
+
+is_identifier_of
 ^^^^^^^^^^^^^^^^
 
-Defines that an *"Identifier"* concept identifies a *"Data"* concept.
+Defines that an **Identifier** concept identifies a **Data** concept.
 
-*e.g.* *"Sequence accession number"* **is identifier of** *"Sequence"*
+*e.g.* *"Sequence accession"* *is_identifier_of* *"Sequence"*
 
-is format of
+is_format_of
 ^^^^^^^^^^^^
 
-Defines that a *"Format"* concept is the format of a *"Data"* concept.
+Defines that a **Format** concept is the format of a **Data** concept.
 
-*e.g.* *"Sequence format"* **is format of** *"Sequence record"*
+*e.g.* *"Sequence record format"* *is_format_of* *"Sequence record"*
 
 
 
@@ -118,67 +105,82 @@ Rules define how concepts are related.
 
 Rules by concept type
 ^^^^^^^^^^^^^^^^^^^^^
-**"Topic"**
+**Topic**
 
-*   *"Topic"* **is a** *"Topic"*  (specialisation of a topic)
+*   **Topic** *is_a* **Topic**  (specialisation of a topic)
 
-**"Operation"**
+**Operation**
 
-*   *"Operation"* **is a** *"Operation"* (specialisation of an operation)
-*   *"Operation"* **has input** *"Data"* (inputs a type of data)
-*   *"Operation"* **has output** *"Data"* (outputs a type of data)
-*   *"Operation"* **has topic** *"Topic"* (within a topic)
+*   **Operation** *is_a* **Operation** (specialisation of an operation)
+*   **Operation** *has_input* **Data** (inputs a type of data)
+*   **Operation** *has_output* **Data** (outputs a type of data)
+*   **Operation** *has_topic* **Topic** (within a topic)
 
-**"Data"**
+**Data**
 
-*   *"Data"* **is a** *"Data"* (specialisation of a type of data)
-*   *"Data"* **has topic** *"Topic"* (within a topic)
+*   **Data** *is_a* **Data** (specialisation of a type of data)
+*   **Data** *has_topic* **Topic** (within a topic)
 
-**"Format"**
+**Format**
 
-*   *"Format"* **is a** *"Format"* (specialisation of a data format)
-*   *"Format"* **is format of** *"Data"* (a format specification of a data type)
+*   **Format** *is_a* **Format** (specialisation of a data format)
+*   **Format** *is_format_of* **Data** (a format specification of a data type)
 
-**"Identifier"**
+**Identifier**
 
-*   *"Identifier"* **is identifier of** *"Data"* (identifier of a data type)
+*   **Identifier** *is_identifier_of* **Data** (identifier of a data type)
 
 Rules by relation type
 ^^^^^^^^^^^^^^^^^^^^^^
-**is a**
+*is_a*
 
-*   *"Topic"* **is a** *"Topic"*
-*   *"Operation"* **is a** *"Operation"*
-*   *"Data"* **is a** *"Data"*
-*   *"Format"* **is a** *"Format"*
+*   **Topic** *is_a* **Topic**
+*   **Operation** *is_a* **Operation**
+*   **Data** *is_a* **Data**
+*   **Format** *is_a* **Format**
 
-**has input**
+*has_input*
 
-*   *"Operation"* **has input** *"Data"*
+*   **Operation** *has_input* **Data**
 
-**has output**
+*has_output*
 
-*   *"Operation"* **has output** *"Data"*
+*   **Operation** *has_output* **Data**
 
-**has topic**
+*has_topic*
 
-*   *"Operation"* **has topic** *"Topic"*
-*   *"Data"* **has topic** *"Topic"*
+*   **Operation** *has_topic* **Topic**
+*   **Data** *has_topic* **Topic**
 
-**is identifier of**
+*is_identifier_of*
 
-*   *"Identifier"* **is identifier of** *"Data"*
+*   **Identifier** *is_identifier_of* **Data**
 
-**is format of**
+*is_format_of*
 
-*   *"Format"* **is format of** *"Data"*
+*   **Format** *is_format_of* **Data**
 
 
-Concept deprecation
--------------------
-*   EDAM uses numerical alphaidentifiers to uniquely identify concepts. These identifiers will persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does **not** imply names (terms), definitions and other fields will remain constant, but they will remain true to concept.
-*   Concepts that are deprecated will also persist; they will not be removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts.
+Concept identifiers & persistent URLs
+-------------------------------------
+Each EDAM concept has an alphanumerical identifier that uniquely identifies that concept. The general form is:
 
-edamontology.org 
-----------------
-The *edamontology.org* site provides content negotiation with respect to the desired media type (*i.e.* format, *e.g.* HTML, OWL, *etc.*). This applies also to the URIs of EDAM concepts that are in this way dereferencable, concise, and stable. Alternatively to requesting the format in the HTTP header, users can retrieve the desired content from a web browser by inserting ``?format=<desiredformat>`` query into the URL.
+* ``<namespace>_<4-digit-ID>``
+
+where ``<namespace>`` is one of:
+* ``topic``
+* ``operation``
+* ``data``
+* ``format``
+
+and ``<4-digit-ID>`` uses numbers from 0 to 9, *e.g.*
+
+* ``topic_0121``
+
+The IDs are used in URLs that resolve to information about the concept, *e.g.*:  
+
+http://edamontology.org/topic_0121
+
+These identifiers (and the URLs) persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does **not** imply that terms, definitions and other information remains constant, but the IDs *will* remain essentially true to the original concept.
+
+Occasionally, concepts become *deprecated* - designated as not being recommended for use.  Deprecated concepts also persist; they are removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts; see the rules on `deprecatation <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#deprecating-concepts>`_ 

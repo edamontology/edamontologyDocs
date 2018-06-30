@@ -6,7 +6,7 @@ Editors Guide
    This document is undergoing heavy edits right now ... you may want to come back in a few days!
 
    
-If you're not sure how to do something please ask on edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
+If you're not sure how to do something please ask edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
 Terminology
 -----------
@@ -69,6 +69,8 @@ The **Data** subontology includes:
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
+, the *"Identifier (typed)"* branch provides an additional axis over (the same set of) concepts under *"Accession"* and *"Name"*.
+
 
 Format
 ^^^^^^
@@ -78,7 +80,7 @@ The EDAM **Format** subontology includes the following types of concept
 - **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
 - **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
 
-
+Most concepts are nested under *"Binary format"*, *"Textual format"* and *"XML"*. The *"Format (typed)"* branch arranges formats by type of data and provides an additional axis over (the same set of) concepts under *"Binary format"*, *"Textual format"* and *"XML"*.
 
    
 Rules of thumb for EDAM development 
@@ -155,6 +157,9 @@ Format
 8. **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available, seee `todo <>`_.
 9. **MUST** annotate the specification or documentation of concrete data formats (see `todo <>`_)
 
+
+   *   Formats are generally only listed if they are in common use, for example by public databases or multiple tools.
+*   Concept statements may include a reference (typically a URL) to the format specification proper.
    
    
 EDAM release process
