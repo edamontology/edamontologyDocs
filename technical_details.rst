@@ -2,7 +2,7 @@ Technical details
 =================
 
 .. note::
-  An outline of the technical implementation of EDAM is below.  EDAM makes light use of `OWL <https://www.w3.org/OWL/>`_ logic/modelling and focuses on providing quality information for a basic set of *concepts*, with *relations* between these concepts and a very simple set of *rules* governing the conceptual relationships.
+  An outline of the technical implementation of EDAM is below.  EDAM makes light use of `OWL <https://www.w3.org/OWL/>`_ logic/modelling and focuses on providing quality information for a basic set of *concepts*, with *relations* between these concepts and a very simple set of *rules* governing the conceptual relationships.  Concepts have unique IDs and persistently resolvable URLs.
 
 Concepts
 --------
