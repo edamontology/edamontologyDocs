@@ -168,6 +168,7 @@ Each EDAM concept has an alphanumerical identifier that uniquely identifies that
 * ``<namespace>_<4-digit-ID>``
 
 where ``<namespace>`` is one of:
+
 * ``topic``
 * ``operation``
 * ``data``
@@ -181,6 +182,6 @@ The IDs are used in URLs that resolve to information about the concept, *e.g.*:
 
 http://edamontology.org/topic_0121
 
-These identifiers (and the URLs) persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does **not** imply that terms, definitions and other information remains constant, but the IDs *will* remain essentially true to the original concept.
+These identifiers (and the URLs) persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does *not* imply that terms, definitions and other information remains constant, but the IDs *will* remain essentially true to the original concept.
 
-Occasionally, concepts become *deprecated* - designated as not being recommended for use.  Deprecated concepts also persist; they are removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts; see the rules on `deprecatation <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#deprecating-concepts>`_ 
+Occasionally, concepts become *deprecated* - designated as not being recommended for use.  Deprecated concepts also persist; they are removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts.  EDAM developers adhere to rules on `deprecatation <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#deprecating-concepts>`_.

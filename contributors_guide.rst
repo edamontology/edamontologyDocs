@@ -1,12 +1,12 @@
 Contributors Guide
 ==================
-EDAM is a community project: everyone is encouraged to get involved.
+EDAM is a community project: everyone is made to feel welcome and encouraged to get involved!
 
 
 
 Mailing lists
 -------------
-To find the most efficient way to contribute to EDAM, to get in help using EDAM for resource annotation and in software implementations, and for general discussions, mail:
+To find the most efficient way to contribute to EDAM, to get help using EDAM for annotation and in software implementations, and for general discussions, mail:
 
 edam@elixir-dk.org
 
@@ -19,6 +19,8 @@ http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam
 For low-traffic announcements, subscribe here:
 
 http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam-announce
+
+But note!  Most discussion occurs on the `GitHub tracker <https://github.com/edamontology/edamontology/issues/new>`_!
 
 
 Requests
