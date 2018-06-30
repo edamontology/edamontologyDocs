@@ -161,8 +161,8 @@ Rules by relation type
 *   **Format** *is_format_of* **Data**
 
 
-Concept identifiers & persistent URLs
--------------------------------------
+Identifiers & persistent URLs
+-----------------------------
 Each EDAM concept has an alphanumerical identifier that uniquely identifies that concept. The general form is:
 
 * ``<namespace>_<4-digit-ID>``
