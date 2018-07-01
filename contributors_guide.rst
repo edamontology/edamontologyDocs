@@ -1,5 +1,9 @@
 Contributors Guide
 ==================
+.. caution::
+   **UNDER CONSTRUCTION**
+   This document is undergoing heavy edits right now ... you may want to come back in a few days!
+
 EDAM is a community project: everyone is made to feel welcome and encouraged to get involved!
 
 
