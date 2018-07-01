@@ -19,6 +19,7 @@ Contents:
    Technical details <technical_details>
    Users Guide <users_guide>
    Editors Guide <editors_guide>
+   Developers Guide <developers_guide>   
    Governance <governance>
    Contributors <contributors>
    Hangouts <hangouts>
