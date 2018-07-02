@@ -48,8 +48,8 @@ Annotation of software tools
 If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#id12>`_ for this purpose.
 
 
-Annotation of RESTful Web APIs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Annotation of Web APIs
+^^^^^^^^^^^^^^^^^^^^^^
 There's been some R&D into EDAM annotation of Web APIs described using the `OpenAPI specification <https://github.com/OAI/OpenAPI-Specification>`_.  See the `update on progress <http://chem-bla-ics.blogspot.nl/2017/03/openapi-to-biotools-ensembl-example.html>`_ and `pre-publication <https://www.biorxiv.org/content/early/2017/07/30/170274>`_.
 
     
