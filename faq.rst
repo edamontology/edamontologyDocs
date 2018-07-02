@@ -3,11 +3,11 @@ Frequently asked questions
 
 Where do I ask questions about EDAM?
 ------------------------------------
-You can contact the `mailing list <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#mailing-lists>`_.  Alternatively (and especially if you think your question if of general interest), you can post your question on `BioStars <https://www.biostars.org/t/edam/>`_.
+You can contact the `mailing list <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html#mailing-lists>`_.  Alternatively (and especially if you think your question if of general interest), you can post your question on `BioStars <https://www.biostars.org/t/edam/>`_.
 
 How I do I request new terms?
 -----------------------------
-First read the `guidelines for requests <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#suggestions-requests>`_.  Then (usually) you can make your request via `GitHub <https://github.com/edamontology/edamontology/issues/>`_.
+First read the `guidelines for requests <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html#suggestions-requests>`_.  Then (usually) you can make your request via `GitHub <https://github.com/edamontology/edamontology/issues/>`_.
 
 How do I cite EDAM?
 -------------------
@@ -19,5 +19,5 @@ Please mail the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_ and we'll adv
 
 Can I join the EDAM team?
 -------------------------
-Yes please!  See `Joining the team <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#joining-the-team>`_.
+Yes please!  See `Joining the team <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html#joining-the-team>`_.
 

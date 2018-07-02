@@ -56,7 +56,7 @@ Status
 ------
 EDAM has been maturing steadily since its first creation ~2008.  It is under active development, developments are use-case driven, primarily by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_), [Galaxy](https://www.galaxyproject.org/) and other key bioinformatics infrastructure projects.  Future versions will not depart fundamentally from the current sub-ontologies or relations.  The development of EDAM can be followed at `GitHub <https://github.com/edamontology/edamontology>`_.
 
-For ways to contribute, please see the `Contributors Guide <http://edamontology.readthedocs.org/en/latest/contributors_guide.html>`_. 
+For ways to contribute, please see the `documentation <http://edamontology.readthedocs.org/en/latest/getting_involved.html>`_. 
 
 Priorities
 ----------

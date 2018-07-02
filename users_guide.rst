@@ -37,7 +37,7 @@ If you have many annotations to do, it will help to familiarise yourself with ED
 1.  Identify the correct sub-ontology (*"Operation"*, *"Data"* *etc.*) of concepts considering what is being annotated (see above)
 2.  Search EDAM using keywords to find candidate concepts. Multiple searches using synonyms, alternative spellings *etc.* are advisable.
 3.  Pick the most specific concept(s) available, or if a broader concept really captures what you need, then use it.  Bear in mind some concepts (especially EDAM topics, are necessarily overlapping or general.
-4.  Only pick a correct concept. If it doesn't exist, `request <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#suggestions-requests>`_ it's added to EDAM
+4.  Only pick a correct concept. If it doesn't exist, `request <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html#suggestions-requests>`_ it's added to EDAM
 
 
 Specific use-cases
@@ -55,7 +55,6 @@ There's been some R&D into EDAM annotation of Web APIs described using the `Open
     
 Annotation of Web service (SOAP+WSDL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 A Web service built on SOAP and WSDL is considered as an arbitrary (but usually related) set of one or more operations, reducing the problem of Web service interoperation to one of compatibility between operations.
 
 **Operation**
