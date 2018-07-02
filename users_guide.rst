@@ -1,7 +1,10 @@
 Users Guide
 ===========
 
-EDAM end-users may email the `EDAM mailing list <mailto:edam@elixir-dk.org>`_ or the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_ for help.
+.. important::
+   EDAM has many `applicatons <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#applications>`_.  If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#id12>`_ for this purpose.  A few more general, and more specific guidelines are below.
+
+You can email the `EDAM mailing list <mailto:edam@elixir-dk.org>`_ for help (after first `subscribing <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_).
 
 General guidelines
 ------------------
