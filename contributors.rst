@@ -4,7 +4,7 @@ EDAM Developers
 --------------------
 * Jon Ison (DTU, DK) **lead developer**
 * Matúš Kalaš (University of Bergen, NO) 
-* Hervé Ménager (Institut Pasteur, FR) **releases manager**
+* Hervé Ménager (Institut Pasteur, FR) 
 * Veit Schwämmle (SDU, DK) 
 
 EDAM Editors
