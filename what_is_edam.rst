@@ -10,8 +10,8 @@ You can browse EDAM here:
 
 - `NCBO BioPortal <http://bioportal.bioontology.org/ontologies/EDAM/>`_
 - `OLS <http://www.ebi.ac.uk/ols/ontologies/edam>`_
-- `AberOWL Repository <http://aber-owl.net/ontology/EDAM>`_
 - `EDAM browser <https://biosphere.france-bioinformatique.fr/edamontology/browser/>`_
+- `AberOWL Repository <http://aber-owl.net/ontology/EDAM>`_
 
 Download
 --------
@@ -45,23 +45,23 @@ Architecture
 ------------
 EDAM has 3 components:
 
-- **Concepts** - All concepts have a preferred label (or 'term') and definition. Further, a concept may have simple relations (see below) to other EDAM concepts, as well other intrinsic properties, *e.g.* an identifier may have a regular expression defining its syntax.
+- **Concepts** - All concepts have a preferred label (or 'term') and definition. Further, a concept may have simple relations (see below) to other EDAM concepts, as well other intrinsic properties, *e.g.* an identifier may have a regular expression defining its syntax, and formats have links to their documentation/specification.
 - **Hierarchy** - Every concept (excluding top-level concepts) is related to one or more other concepts within the same branch by an **is a** (specialisation) relation. Hence EDAM has 4 primary hierarchies (for *Data*, *Format*, *Operation*, and *Topic*).
-- **Relations** - Concepts are related by defined relation types (see figure below), which reflect well established or self-evident principles, and are used primarily to define internal consistency of EDAM.
+- **Relations** - Concepts are defined as sharing specific relationships(see figure below), reflecting well established or self-evident principles; these relationships are used primarily to define internal consistency of EDAM.
 
 .. image:: http://edamontology.org/EDAMrelations.png
 
 
 Status
 ------
-EDAM is a maturing ontology under active development.  Development is use-case driven, primarily by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_).  Future versions will not depart fundamentally from the current sub-ontologies or relations.  The development of EDAM can be followed at `GitHub <https://github.com/edamontology/edamontology>`_.
+EDAM has been maturing steadily since its first creation ~2008.  It is under active development, developments are use-case driven, primarily by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_), [Galaxy](https://www.galaxyproject.org/) and other key bioinformatics infrastructure projects.  Future versions will not depart fundamentally from the current sub-ontologies or relations.  The development of EDAM can be followed at `GitHub <https://github.com/edamontology/edamontology>`_.
 
 For ways to contribute, please see the `Contributors Guide <http://edamontology.readthedocs.org/en/latest/contributors_guide.html>`_. 
 
 Priorities
 ----------
 
-Our core priority is to be responsive to users of EDAM. Furthermore, to establish a more sustainable footing for essential EDAM maintenance and developments, including:
+Our core priority is to be responsive to users of EDAM. Further, to ensure essential EDAM maintenance and development remain on a sustainable footing, including:
 
 - Content review and refactoring to ensure structural and semantic simplicity ensuring high usability
 - Community build-up and development including more formal, but agile, governance and maintenance models and mechanisms
@@ -95,7 +95,7 @@ Applications
 ------------
 EDAM is suitable for large-scale semantic annotations and categorization of diverse bioinformatics resources, including:
 
-- Web services including REST and SOAP APIs
+- Web APIs including RESTful APIs and SOAP/WSDL Web Services
 - Application software
 - Tool collections and packages
 - Workflows / pipelines
@@ -106,10 +106,9 @@ EDAM is suitable for large-scale semantic annotations and categorization of dive
 - Resource catalogues
 - Training materials 
 - Courses, tutorials, and other events
-- Areas of scientific interest
 - Documents, such as scientific publications
 
-EDAM is also suitable for diverse application including for example within workbenches and workflow-management systems, software distributions, and resource registries.
+EDAM is suitable for diverse applications beyond annotation, for example within workbenches and workflow-management systems, software distributions, and resource registries.
 
 Citing EDAM
 -----------
