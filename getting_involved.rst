@@ -1,5 +1,5 @@
-Contributors Guide
-==================
+Getting involved
+================
 
 .. important::
    EDAM is a community project: everyone is made to feel welcome and encouraged to get involved.  The EDAM core developers only have so much capacity, so we rely on your enthusiasm, contributions and patience - please help us build a better EDAM!
