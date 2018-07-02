@@ -2,7 +2,7 @@ Technical details
 =================
 
 .. note::
-  An outline of the technical implementation of EDAM is below.  EDAM makes light use of `OWL <https://www.w3.org/OWL/>`_ logic/modelling and focuses on providing quality information for a basic set of *concepts*, with *relations* between these concepts and a very simple set of *rules* governing the conceptual relationships.  Concepts have unique IDs and persistently resolvable URLs.
+  An outline of the technical implementation of EDAM is below.  EDAM makes light use of `OWL <https://www.w3.org/OWL/>`_ logic/modelling and focuses on providing quality information for a basic set of *concepts*, with *relations* between these concepts and a very simple set of *rules* governing the conceptual relationships.  Concepts have unique IDs and persistent URLs which resolve to a Web page providing all the information for that concept.
 
 Concepts
 --------
@@ -167,21 +167,19 @@ Each EDAM concept has an alphanumerical identifier that uniquely identifies that
 
 * ``<namespace>_<4-digit-ID>``
 
-where ``<namespace>`` is one of:
+where ``<namespace>`` refers to an EDAM subontology, one of:
 
 * ``topic``
 * ``operation``
 * ``data``
 * ``format``
 
-and ``<4-digit-ID>`` uses numbers from 0 to 9, *e.g.*
-
-* ``topic_0121``
+and ``<4-digit-ID>`` uses numbers from 0 to 9.  Note this number is unique across all subontologies.
 
 The IDs are used in URLs that resolve to information about the concept, *e.g.*:  
+* ``topic_0121``
+* http://edamontology.org/topic_0121
 
-http://edamontology.org/topic_0121
+These identifiers (and the URLs) persist between versions: a given ID and URI are guaranteed to continue identifying the same concept. This does *not* imply that terms, definitions and other information remains constant, but the IDs *will* remain essentially true to the original concept.
 
-These identifiers (and the URLs) persist between versions: a given identifier and URI are guaranteed to continue identifying the same concept. This does *not* imply that terms, definitions and other information remains constant, but the IDs *will* remain essentially true to the original concept.
-
-Occasionally, concepts become *deprecated* - designated as not being recommended for use.  Deprecated concepts also persist; they are removed and will maintain their identifier and URI.  A replacement concept, or suggested replacement is given for all deprecated concepts.  EDAM developers adhere to rules on `deprecatation <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#deprecating-concepts>`_.
+Occasionally, concepts become *deprecated* - designated as not being recommended for use.  Deprecated concepts also persist; they are removed and will maintain their ID and URI. EDAM developers adhere to rules on `deprecatation <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#deprecating-concepts>`_, *e.g.* a replacement concept, or suggested replacement is given for all deprecated concepts.  
