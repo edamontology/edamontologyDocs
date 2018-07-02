@@ -19,7 +19,7 @@ Which EDAM sub-ontology to use?
 5.  *"Identifier"* (as a special type of *"Data"*) for annotation of identifiers (names and accessions) of data or other entities
 
 
-EDAM thus provides different semantic 'axes' for annotation. For example, annotation of a software tool might include:
+EDAM thus provides different semantic 'axes' for annotation. For example, `annotation of a software tool <http://biotools.readthedocs.io/en/latest/curators_guide.html#id7>`_ might include:
 
 *   *Topic* - general scientific domain the software serves, *e.g.* *"Structural biology"*
 *   *Operation* - the precise function of the tool, *e.g.* *"Homology modelling"*
@@ -28,26 +28,35 @@ EDAM thus provides different semantic 'axes' for annotation. For example, annota
 
 Use of other ontologies
 ^^^^^^^^^^^^^^^^^^^^^^^
-The expectation is for EDAM to be used alongside other ontologies for annotation where possible and desirable. For example, an operation that predicts specific features of a molecular sequence could be annotated with concepts from `SO <http://www.sequenceontology.org/>`_ (Sequence Ontology) for the features.  Other relevant ontologies include `GO <http://www.geneontology.org/>`_ (the Gene Ontology) and the `NCBI taxonomy <https://www.ncbi.nlm.nih.gov/taxonomy>`_.
+The expectation is for EDAM to be used alongside other ontologies for annotation where possible and desirable. For example, an operation that predicts specific features of a molecular sequence could be annotated with concepts from `SO <http://www.sequenceontology.org/>`_ (Sequence Ontology) for the features.  Other notable relevant ontologies include `GO <http://www.geneontology.org/>`_ (the Gene Ontology) and the `NCBI taxonomy <https://www.ncbi.nlm.nih.gov/taxonomy>`_.
 
 Picking concepts
 ^^^^^^^^^^^^^^^^
 If you have many annotations to do, it will help to familiarise yourself with EDAM first using a `browser <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#browsing>`_ .
 
 1.  Identify the correct sub-ontology (*"Operation"*, *"Data"* *etc.*) of concepts considering what is being annotated (see above)
-2.  Search EDAM using keywords to find candidate concepts. Multiple searches using synonyms, alternative spellings and so are preferable.
-3.  Pick the most specific concept(s) available, bearing in mind some concepts are necessarily overlapping or general.
-4.  Only pick a correct concept. If it doesn't exist, request it's added to EDAM
-
-The edamontology.org site provides content negotiation with respect to the desired media type (*i.e.* format ``HTML`` or ``OWL`` currently). This applies also to the URIs of EDAM concepts that are in this way dereferencable, concise, and stable. Alternatively to requesting the format in the HTTP header, users can retrieve the desired content from a web browser by inserting ``?format=\<desiredformat\>`` query into the URL.
+2.  Search EDAM using keywords to find candidate concepts. Multiple searches using synonyms, alternative spellings *etc.* are advisable.
+3.  Pick the most specific concept(s) available, or if a broader concept really captures what you need, then use it.  Bear in mind some concepts (especially EDAM topics, are necessarily overlapping or general.
+4.  Only pick a correct concept. If it doesn't exist, `request <http://edamontologydocs.readthedocs.io/en/latest/contributors_guide.html#suggestions-requests>`_ it's added to EDAM
 
 
-Annotation of Web services
---------------------------
+Specific use-cases
+------------------
 
-Model of a Web service
-^^^^^^^^^^^^^^^^^^^^^^
-A Web service is considered as an arbitrary (but usually related) set of one or more operations, reducing the problem of Web service interoperation to one of compatibility between operations.
+Annotation of software tools
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#id12>`_ for this purpose.
+
+
+Annotation of RESTful Web APIs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+There's been some R&D into EDAM annotation of Web APIs described using the `OpenAPI specification <https://github.com/OAI/OpenAPI-Specification>`_.  See the `update on progress <http://chem-bla-ics.blogspot.nl/2017/03/openapi-to-biotools-ensembl-example.html>`_ and `pre-publication <https://www.biorxiv.org/content/early/2017/07/30/170274>`_.
+
+    
+Annotation of Web service (SOAP+WSDL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A Web service built on SOAP and WSDL is considered as an arbitrary (but usually related) set of one or more operations, reducing the problem of Web service interoperation to one of compatibility between operations.
 
 **Operation**
 
@@ -76,7 +85,7 @@ A Web service is considered as an arbitrary (but usually related) set of one or 
 *   Have values in a specific syntax, either fully specified by the schema, or (occasionally) text in a specific file format which is not specified by the schema.
 
 Levels of annotation
-^^^^^^^^^^^^^^^^^^^^
+....................
 Annotation of a WSDL file or associated XSD schema is possible at several levels. Assuming SAWSDL annotation (http://www.w3.org/TR/sawsdl/), the XML elements that may be annotated by EDAM concepts are:
 
 1.  **Web service** (as a whole) (``<kbd><wsdl:portType></kbd>``)
@@ -107,7 +116,7 @@ The following annotations might be useful but are not directly recommended by SA
 For details of incorporating the SAWSDL annotations into WSDLs and XSDs, see below.
 
 EDAM URIs and SAWSDL annotation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...............................
 SAWSDL mandates the use of (``<kbd>sawsdl:modelReference</kbd>``) attributes for annotation. The format of EDAM URIs used inside this attribute includes the ontology name (*http://edamontology.org*), main sub-ontology, and the unique identifier (ID) of the particular concept:
 
 .. code-block:: xml
@@ -167,7 +176,7 @@ If more than one annotation of an element is required, these can be given in the
 *NB.* Such multiple annotations need not be in the same namespace, and need not at all to refer to the same ontology.
 
 SAWSDL guidelines for annotating operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...........................................
 One peculiarity of the SAWSDL specification is that annotations on ``<wsdl:operation>`` element inside ``<wsdl:portType>`` should be handled using a ``<sawsdl:attrExtensions>`` element. This is not a requirement for other elements.
 
 Importantly, the ``<sawsdl:attrExtension>`` element inside the wsdl:operation **must be before** ``<wsdl:input>``, ``<wsdl:output>`` and ``<wsdl:fault>`` elements (so typically after the ``<wsdl:documentation>`` element).
