@@ -1,10 +1,8 @@
 Contributors Guide
 ==================
-.. caution::
-   **UNDER CONSTRUCTION**
-   This document is undergoing heavy edits right now ... you may want to come back in a few days!
 
-EDAM is a community project: everyone is made to feel welcome and encouraged to get involved!
+.. important::
+   EDAM is a community project: everyone is made to feel welcome and encouraged to get involved.  The EDAM core developers only have so much capacity, so we rely on your enthusiasm, contributions and patience - please get involved!
 
 
 
@@ -32,27 +30,27 @@ Suggestions & requests
 ----------------------
 Suggestions for addition, corrections, and other improvements to EDAM are always welcome! 
 
-If you have a GitHub account, you can make suggestions and requests by opening a GitHub issue (if you don't have an account, we strongly recommend you get one - it only takes a minute!)  Our tracker includes templates for various `types of suggestion <https://github.com/edamontology/edamontology/issues/new/choose>`_
+If you have a GitHub account, you can make suggestions and requests by opening a GitHub issue.  We strongly recommend you get an account, if needed, - it only takes a minute!  Our tracker includes templates for various `types of suggestion <https://github.com/edamontology/edamontology/issues/new/choose>`_:
 
 - Go to https://github.com/edamontology/edamontology/issues and click on "New issue"
-- If you are not logged in, you will be asked first to log in or create an account
+- If you're not logged in, you'll be asked first to log in or create an account
 - Click the "Get started" next to the type of request you want to make
 - Provide a title, and then follow instructions in the template, providing as much information as possible
 
-Each template includes detailed instructions, which you'll see when you create an issue, or you can read about them beforehand [here](https://github.com/edamontology/edamontology/tree/master/.github/ISSUE_TEMPLATE).
+Each template includes detailed instructions, which you'll see when you create an issue, or you can read about them beforehand `here <https://github.com/edamontology/edamontology/tree/master/.github/ISSUE_TEMPLATE>`_.
 
-If you can't find the request type you need, click "Open a regular issue" and provide concise information, but sufficiently detailed to be actionable.
+If you can't find the template you need, click "Open a regular issue" and provide concise information, but sufficiently detailed to be actionable.
 
 When requesting new concepts, the bare-bones required information (common to all subontologies) is:
 
 - EDAM sub-ontology (Topic, Operation, Format, Data, Identifier)
-- Term (the most common term used to refer to the concept)
+- term (the most common term used to refer to the concept)
 - short description (a couple of sentences)
   
 It will speed up things a lot if you can provide as much information as possible, but especially:
 
 - URL of suggested parent
-- exact synonyms (other commonly-used terms, acronyms etc. by which the concept is referred to)
+- exact synonyms (other commonly-used terms, acronyms *etc.* by which the concept is referred to)
 - narrow synonyms (terms reflecting specialisations of the concept.  Narrow synonyms can be defined to avoid creating overly-specialised concepts.)
 
 If it turns out you need a lot of new concepts, we can find a more efficient way (*e.g.* shared Google sheet), and you can join us as an `EDAM Editor <http://edamontologydocs.readthedocs.io/en/latest/governance.html>`_
