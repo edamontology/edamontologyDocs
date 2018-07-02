@@ -15,7 +15,7 @@ Contents:
    :maxdepth: 2
 
    What is EDAM ? <what_is_edam>
-   Contributors Guide <contributors_guide>
+   Getting involved <getting_involved>
    Technical details <technical_details>
    Users Guide <users_guide>
    Editors Guide <editors_guide>
