@@ -15,13 +15,13 @@ We use the following terms when talking about EDAM:
 - *EDAM* refers to the ontology in totality (all subontologies).
 - *Subontology* and occasionally *branch* refers to an EDAM subontology, *i.e.* **Topic**, **Operation**, **Data** or **Format**.  Also **Data->Identifier** (a branch of **Data**).
 - *Concept* is the basic unit of information in EDAM: including concept definition, terms and other metadata 
-- *Primary label* or simply *Label* is the primary term by which the concept is referred to.  They're used for annotation purposes.
+- *Primary term*, *Primary label* or simply *Label* is the primary term by which the concept is referred to.  They're used for annotation purposes.
 - *Synonym* means an exact, narrow, broad or related synonym (see `todo <https://todo>`_).  They can also be used for annotation.
 - *Term* and *terms* refer to primary labels and synonyms collectively.
 - *Hierarchy* refers to the EDAM tree structure, resulting from EDAM concepts being defined as specialisations/generalisations of one another (PS. EDAM isn't a tree, it's a `DAG <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_.)
-- *Root* refers to the top-most concept in a subontology, i.e. `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, and `Format <http://edamontology.org/format_1915>`_.  And (depending on context) `Identifier <http://edamontology.org/data_0842>`_.
+- *Root* refers to the top-most concept in a subontology, *i.e.* `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, and `Format <http://edamontology.org/format_1915>`_.  And (depending on context) `Identifier <http://edamontology.org/data_0842>`_.
 - *Tier* refers to a particular level in the hierarchy, excluding the subontology root, *e.g.* "Tier 1 data concepts" means everything immediately under `Data <http://edamontology.org/data_0006>`_.
-- *Top-level* refers to Tier 1 concepts.
+- *Top level* and *Top tier* refers to Tier 1 concepts.
 - *Child*, *Children of*, *Kids* *etc.* refers to concept(s) defined as an immediate specialisation of another (*i.e.* "is_a", or the OWL geek "subClass").  Conversely *Parent* means the opposite (a generalisation of a concept).
 - *Ancestor* means *Parent* or the parent's parent *etc.* Conversely *Descendant* means *Child* or the children's children *etc.*
 - *related to* means a concept in one subontology is formally defined as related (in various ways) to a concept in another, but excluding basic specialisation/generalisation relationships.
@@ -31,56 +31,61 @@ We use the following terms when talking about EDAM:
 
 For a technical definition of these things, see `todo <http://todo>`_.
 
-General considerations
-----------------------  
-1. EDAM concepts are of two types:
+Placeholders & concrete concepts
+--------------------------------
+EDAM concepts are of two types:
    
-- **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for concrete concepts (below). They're not intended to be used much, or at all, for annotation.
-- **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  With the exception of **Topic** subontology (which has no concreate concepts), *all* leaf nodes are concrete.
+- **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for *concrete concepts*. They're not intended to be used much, or at all, for annotation.
+- **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  *All* leaf nodes are concrete.
 
-The types are clarified for different EDAM subontologies (see sections below).
+These notion depend upon the subontology:
+
+- **Topic** concepts are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
   
-2. EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: there are special `deprecation guidelines <todo>`_ for this.
+- **Operation** concepts
+
+  - *Placeholder operations* currently include *all* concepts at Tier 1, *e.g.* `Analysis <http://edamontology.org/operation_2945>`_, `Prediction and recognition <http://edamontology.org/operation_2423>`_ *etc.*, and some second tier concepts *e.g.* `Sequence analysis <http://edamontology.org/operation_2403>`_.
+  - *Concrete operations* (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_ and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_) of these, appear in Tier 2 and below.  There
+
+- **Data** concepts
+
+  - *Placeholder data types* are basic types of data, either technical (*e.g.* `Score <http://edamontology.org/data_1772>`_) or biological (*e.g.* `Phylogenetic data <http://edamontology.org/data_2523>`_).  They mostly appear in Tier 1 (but not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
+  - *Concrete data types* *i.e.* for which a corresponding data format concept exists, and in some cases variants and sub-variants of these, appear in Tier 1 and below.
+
+- **Data->Identifier** concepts
+
    
+  - *Placeholder identifiers* include 
+
+    - *General identifier type* one of "Accession" (http://edamontology.org/data_2091) or "Name" (http://edamontology.org/data_2099)
+    - *Type placeholder* for types of identifier listed under "Identifier (typed)" (http://edamontology.org/data_0976), *e.g.* "Sequence accession (protein)", *i.e.* a concept descended from. These reflect the EDAM **Data* subontology  Also "Identifier (hybrid)" (http://edamontology.org/data_2109) where an identifier is re-used for data objects of fundamentally different types (typically served from a single database). These are purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"*, *"Name"*.
+    
+- **Format** concepts
+    
+  - *Concrete data formats* have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
+  - *Placeholder formats** include
+
+    - *General data formats* currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
+    - *Type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Binary format"*, *"Textual format"* and *"XML"*.
+
+
 .. note::
    The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.
 
+.. note::
+   Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the *Format (by typed of data)* (http://edamontology.org/format_2350) and *Identifier (by type of data)* (http://edamontology.org/data_0976) patterns. 
 
-   
-Topic
-^^^^^
+Terms and synonyms
+------------------
+EDAM uses the following types of synonym:
 
-The **Topic** subontology will only ever include a few hundred concepts in total, semantic richness is captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications. Hence EDAM **topics** are conceptually very broad categories with no clearly defined borders between each other (the notion of placeholder and concrete concepts doesn't apply).  This somewhat contrasts *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>`_.
+- **Exact** synonym  - bog-standard synonyms of the primary term
+- **Narrow** synonym - specialisms of the primary term
+- **Broad** synonym - generalisations of the primary term
 
-   
-Operation
-^^^^^^^^^
-The **Operation** subontology includes:
-
-- **Placeholder operations** currently include *all* concepts at the first tier, *e.g.* `Analysis <http://edamontology.org/operation_2945>`_, `Prediction and recognition <http://edamontology.org/operation_2423>`_ *etc.*, and some second tier concepts *e.g.* `Sequence analysis <http://edamontology.org/operation_2403>`_.
-- **Concrete operations** (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_ and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_) of these.
-
-Data
-^^^^
-The **Data** subontology includes:
-
-- **Placeholder data concepts** are basic types of data, either technical (*e.g.* `Score <http://edamontology.org/data_1772>`_) or biological (*e.g.* `Phylogenetic data <http://edamontology.org/data_2523>`_).  They mostly appear in the **first tier** (but not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
-- **Concrete types of data** *i.e.* for which a corresponding data format concept exists, and in some cases variants and sub-variants of these (all the leaf nodes are concrete).
-   
-Data->Identifier
-^^^^^^^^^^^^^^^^
-, the *"Identifier (typed)"* branch provides an additional axis over (the same set of) concepts under *"Accession"* and *"Name"*.
+All terms (primary and synonyms) are unique within a subontology, and (with a few exceptions) are unique *between* subontologies, too.  
 
 
-Format
-^^^^^^
-The EDAM **Format** subontology includes the following types of concept
-
-- **Concrete data formats** have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*.
-- **General data formats** currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
-- **Placeholder concepts** listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation (until developments in ontology browsers render this device uneccessary).  Placeholder concepts are explicitly annotated as such (see `todo <>`_).
-
-Most concepts are nested under *"Binary format"*, *"Textual format"* and *"XML"*. The *"Format (typed)"* branch arranges formats by type of data and provides an additional axis over (the same set of) concepts under *"Binary format"*, *"Textual format"* and *"XML"*.
 
    
 Rules of thumb for EDAM development 
@@ -88,39 +93,82 @@ Rules of thumb for EDAM development
 These rules of thumb are to guide the technical and scientific development of EDAM, to help ensure structural and conceptual simplicity and that EDAM is fit for purpose and will scale to annotate athe growing bio.tools.
 Before proposing or making any major changes, make sure you understand the `principles <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#principles>`_ on which EDAM is based.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_:
+.. note::
 
-- **"MUST"**, **"REQUIRED"** or **"SHALL"** mean that the guideline is an absolute requirement of the specification.
-- **"MUST NOT"** or **"SHALL NOT"** mean that the guideline is an absolute prohibition of the specification.
-- **"SHOULD"** or **"RECOMMENDED"** mean that there may exist valid reasons in particular circumstances to ignore a particular guideline, but the full implications must be understood and carefully weighed before doing so.
-- **"SHOULD NOT"** or the phrase **"NOT RECOMMENDED"** mean that there may exist valid reasons in particular circumstances when acting contrary to the geuideline is acceptable or even useful, but the full implications should be understood and the case carefully weighed before doing so.
-- **"MAY** or **"OPTIONAL"** mean that the guideline is truly optional; you can choose to follow it or not.
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_:
+
+   - **"MUST"**, **"REQUIRED"** or **"SHALL"** mean that the guideline is an absolute requirement of the specification.
+   - **"MUST NOT"** or **"SHALL NOT"** mean that the guideline is an absolute prohibition of the specification.
+   - **"SHOULD"** or **"RECOMMENDED"** mean that there may exist valid reasons in particular circumstances to ignore a particular guideline, but the full implications must be understood and carefully weighed before doing so.
+   - **"SHOULD NOT"** or the phrase **"NOT RECOMMENDED"** mean that there may exist valid reasons in particular circumstances when acting contrary to the geuideline is acceptable or even useful, but the full implications should be understood and the case carefully weighed before doing so.
+   - **"MAY** or **"OPTIONAL"** mean that the guideline is truly optional; you can choose to follow it or not.
 
 General
 ^^^^^^^
-1. Jargon and buzzwords *e.g.* "Big data", "NGS" *etc.* **SHOULD** be avoided, but if really prevalent and relevant, **MAY** be added via synonyms but **MUST NOT** be the primary term.
-2. Each subontology must not descend beyond a certain depth (see below).  Specifically, this means that each concept **MUST** have at least one path to root (*i.e.* `Topic <>`_, `Operation <>`_, `Data <>`_ or `Format <>`_ no deeper than indicated.   It's OK for a concept to have other paths to root that are deeper than this.
-   2.1 **Topics** 3 levels deep max. *i.e.* *Topic* (root) -> Topic -> Subtopic -> Subsubtopic (leaves)
-   2.2 **Operations** 6 levels deep max. 
-   2.3 **Data** 4 levels deep max. 
-   2.4 **Format** - 3 levels deep max. 
-3. When adding a concept that introduces a new level of depth, you **MUST** be sure it's realistic to also add and maintain, in due course, all relevant siblings (*i.e.* related concepts with the same parent).  This is to ensure EDAM coverage does not get patchy.
-4. You **SHOULD NOT** introduce any "single childs" (concepts without siblings) unless you already know of potential sublings (to add in due course), or think it's likely such sibling concepts will appear in the future: you **MUST** consider this before adding a single child.
-5. You **MUST NOT** add a concept if this implies that additional new concepts are needed (above point), but this extension in total would seriously overlap with an existing well-developed ontology that already serves this area better.  If in doubt you **MUST** discuss this with the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_.
+
+Concepts & Terms
+................
+Concepts:
+- **MUST NOT** overlap conceptually, to a significant extent, with each other. The exception is **Topic** ontology where most concepts are overlapping.
+
+The primary term and synonyms:
+- **MUST** be a short name or phrase in common use
+- **MUST** be unique within a sub-ontology
+- **SHOULD** be unique across all sub-ontologies (rare exceptions are allowed)
+
+The primary term:
+- **MUST** reflect the vernacular, *i.e.* the term that's most commonly used when referring to the concept; you **SHOULD** use google (number of hits) to help you choose, where necessary
+- **MUST** use Britsh spelling
+- **MUST** not include buzzwords and marketting-spiel *e.g.* "Big data", "NGS" *etc.* 
+
+Synonyms:  
+- **SHOULD** use Britsh spelling
+- **MAY** capture spelling variations, including American spellings, case and hyphenation variants *etc* (as exact synonyms)
+- **MAY** include buzzwords if really prevalent and relevant
+- **MUST NOT** overlap conceptually, to a significant extent, with an already existing concept; be especially mindful of ancestors and descendants of the concept for which a synonym is defined.
+
+Definitions and comments:
+- definition **MUST** be a concise and lucid description of the concept, without acronyms, and avoiding jargon.  Peripheral but important information **MAY** be added as a comment.
+- **SHOULD** use Britsh spelling
+
+When adding a new concept, in addition to above:
+- **MUST** specify all mandatory attributes and **SHOULD** specify all optional ones (see `todo <>`_)
+- **SHOULD** provide all common *exact synonyms* of the primary term
+- **MAY** provide any number of *narrow synonyms* (but be wary of conceptual overal with child concepts). The exception is **Format** subontology where **MUST NOT** include any narrow synonyms at all.
+- **SHOULD NOT** provide any *broad synonyms* unless these are really needed (but be wary of conceptual overal with parent concepts)
+
+  
+
+
+Hierarchy
+.........
+- each subontology must not descend beyond a certain depth (see below).  Specifically, this means that each concept **MUST** have at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   It's OK for a concept to have other paths to root that are deeper than this.
+  - **Topic:** 3 levels deep max. *i.e.* *Topic* (root) -> Topic -> Subtopic -> Subsubtopic (leaves)
+  - **Operation:** 6 levels deep max. 
+  - **Data:** 4 levels deep max. 
+  - **Format:** 3 levels deep max. 
+
+When adding a new concept
+- if the addition introduces a new level of depth, you **MUST** be sure it's realistic to also add and maintain, in due course, all relevant siblings (*i.e.* related concepts with the same parent).  This is to ensure EDAM coverage does not get patchy.
+- **SHOULD NOT** introduce any "single childs" (concepts without siblings) unless you already know of potential sublings (to add in due course), or think it's likely such sibling concepts will appear in the future
+
+  
+- you **MUST NOT** add a concept if additional new concepts are also needed (above point) and this extension in total, would seriously overlap with an existing, well-developed ontology that already serves the area better.  If in doubt you **MUST** discuss this with the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_.
+- **SHOULD NOT** define multiple parents of a concept unless there is a very unambivalent case. This rule is even stronger for **Topics** (where most overlap with each other).
 6. If you add a concept which you expect to remain a leaf node, *i.e.* EDAM will not include finer-grained concepts, then - if other well-developed ontologies exist that serve this conceptual niche - you **SHOULD** annotate this junction (see `todo <>`_).
-7. Concept labels **MUST** be unique within a sub-ontology and **SHOULD** be unique across all of EDAM (rare exceptions are allowed).
-8. With the exception of **topics**, you **MUST NOT** add a concept with significant conceptual overlap to an existing concept, which you means you **MUST** check carefully, especially the siblings of the new concept.
-9. **SHOULD NOT** define multiple parents of a concept unless there is a very unambivalent case. This rule is even stronger for **Topics** (where most overlap with each other). 
 
-.. note::
-   The 3-level depth of **Format** depth is achieved:
+Deprecations
+............
+EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: there are special `deprecation guidelines <todo>`_ for this.
 
-   *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format (leaves)
 
-   See `to-do <>`_ below.
+
 
 Topic
 ^^^^^
+.. note::
+   EDAM **Topic** concepts are conceptually very broad.  There will only ever include a few hundred concepts in total, semantic richness is captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications.  In contrast see *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>`_.
+    
 1. **SHOULD** have a corresponding term in `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_ and **MUST** provide a link (*via* **seeAlso** annotation) to the relevant Wikipedia page, if one exists.  Exceptions are OK, but if a Wikipedia page does not exist, one **MUST** consider carefully whether the concept is too fine-grained.
 2. **MUST** respect the scope, specifically:
    
@@ -129,40 +177,72 @@ Topic
    2.3 **SHOULD NOT** include anything that is more tangible than a very general topic, *e.g.* specific cell types, diseases, biological processes, environment types *etc*.  Such fine-grained concepts belong in their own ontology, but **MAY** be captured, where desirable, as synonyms in EDAM.  Rare exceptions are allowed where a term really is in extremely prevalent usage (pragmatism rules!)
    
 3. **MUST NOT** conflate terms in a concept label where these terms exist as independent topics already, *e.g.* *Disease pathways* is disallowed because there are already concepts for *Disease* (synonym of *Pathology*) and *Pathways* (synonym of *Molecular interactions, pathways and networks*).  Instead, if such conflations are required, they **MAY** be added as synonyms of one concept or the other.
-4. **MUST NOT** define multiple parents of the term, with the exception of the strongest cases only, where it would be incongruous not to do so *e.g.* *Biochemistry* is a child of both *Biology* and *Chemistry*.
+4. **MUST NOT** define multiple parents of the concept, with the exception of the strongest cases only, where it would be incongruous not to do so *e.g.* *Biochemistry* is a child of both *Biology* and *Chemistry*.
+
+
+   x. Links to Wikipedia are desirable everywhere there is a relevant page, but especially for EDAM **Topics**, where one or more pages may be linked to, depending on the primary term and synonyms. In a future refactoring, we may distinguish these cases.    
+
+
    
 Operation
 ^^^^^^^^^
+.. note::
+   Concrete **Operation** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *essential functions* of current bioinformatics software tools.  Note *essential*: the Operation subontology will not descend to a level of conceptual granularity that is impractical from a maintenance or usage perspective.
+   
 1. Concepts **MUST** conceptually be clearly distinct from other (non-placeholder) Operations, and this **MUST** be reflected in the label and definition of the concept.
 2. Concepts **SHOULD** should never be more fine-grained than is useful for practical search purposes, and **SHOULD NOT** include fine-grained specialisations of a basic function, individiaul algorithms etc. (a few exceptions are allowed for very highly prevalent concepts)
+3. The definition **MUST** state *what* is done but not *how*.
+   4. Pick the single, most relevant operation. In some (exceptional) cases, a broad operation type (top-level operation) *e.g.* "Comparison", "Calculation" *etc.* (see http://edamontology.org/operation_0004) may also be specified.
    
 Data
 ^^^^
+.. note::
+   Concreate **Data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatsics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation** will maintain a level of conceptual granularity that is remain maintable and usable.
+   
 1. Placholder concepts **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>``.
 2. **SHOULD NOT** contain any chains of placeholder concepts, *i.e.* placholders are normally allowed (with a few rare exceptions) in the first tier.
+3. **MUST NOT** define multiple parents of the concept.
+   
    
 Data->Identifier
 ^^^^^^^^^^^^^^^^
-1. A new identifier (or it's ancestor) **MUST** be annotated (via *is_identifier_of*) to indicate the type of data that is identified but you **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept. 
-
+.. note::
+   Concrete **Identifier** concepts are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance snytax.
+   
+1. A new identifier (or it's ancestor) **MUST** be annotated (via *is_identifier_of*) to indicate the type of data that is identified but you **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept.
+2. Definition **MUST** state what type of data and/or name of database the identifier is used for.
+3. Identifier concepts normally have two parents: 1) either "Accession" (http://edamontology.org/data_2091) or "Name" (http://edamontology.org/data_2099) and 2) indicating the type of identifier *e.g.* "Sequence accession (protein)", *i.e.* a concept descended from "Identifier (typed)" (http://edamontology.org/data_0976).  In exceptional cases (where an identifier is re-used for data objects of fundamentally different types, typically served from a single database) the parent of "Identifier (hybrid)" (http://edamontology.org/data_2109) may also be given.
+4. **SHOULD** include a link to relevant documentation for the identifier.
+5. **MUST** specify the EDAM Data concept(s) for the type(s) of data identified by the identifier.  If you are not sure, or if you can't find the Data concept you need, you can use free text *e.g.* "Protein sequence" instead of the URI.
+x.   A regular expression pattern, defining valid values of instances of that identifier **SHOULD** be defined.(``Regular expression``) : 
 
 Format
 ^^^^^^
+.. note::
+   Concrete **Format** concepts are very specific.  There will be as many as required to capture all of the data formats currently in use.  By *data format" we mean a syntax for which a rigorous, comprehensive description is provided, typically either an XML Schema (XSD) or comprehensive textual specification.
+   
 1. Leaf nodes **MUST** be concrete data formats, see `to-do <>`_ and `to-do <>`_).
 2. Concrete data formats **MUST** descend from *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* or *YAML*, but you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Textual format*, but the kids of *FASTA-like (text)* format are not.
 3. Concrete data formats **MUST** descended from `Format (by type of data) <http://edamontology.org/format_2350>`_ (or it's kids), but again, you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Sequence record format* -> *FASTA-like*, but the kids of *FASTA-like (text)* format are not.
 4. **MUST NOT** add new placeholder concepts (kids of `Format (by type of data) <http://edamontology.org/format_2350>`_) unless there is a corresponding concrete data format descending from it.
-5. Concepts which are not concrete data formats **MUST** be annotated with ``<usageGuideline>Not recommended for annotation in bio.tools.</usageGuideline>`` - this annotation type will soon be refactored (to be made more specific).
 6. Where file extensions are in common use, all of these **SHOULD** be annotated and you **MUST** preserve the common capitalisation and **MUST NOT** include period ('.') in the annotation, *e.g.* "txt" not ".txt".
 7. A new format (or it's ancestor) **MUST** be annotated (via *is_format_of*) to indicate the type of data that is formatted but you **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept. 
 8. **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available, seee `todo <>`_.
 9. **MUST** annotate the specification or documentation of concrete data formats (see `todo <>`_)
-
-
+10. The definition **SHOULD** describe the type of data the format is used for.
+11. **MUST NOT** include any narrow synonyms; if you think specialisations are needed then these can be covered by adding new concepts.
+2. Definition **MUST** mention state what type of data the format is used for.
+   
    *   Formats are generally only listed if they are in common use, for example by public databases or multiple tools.
 *   Concept statements may include a reference (typically a URL) to the format specification proper.
    
    
+.. note::
+   The 3-level depth of **Format** depth is achieved:
+
+   *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format (leaves)
+
+   See `to-do <>`_ below.
     
 
 

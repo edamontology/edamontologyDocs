@@ -25,49 +25,64 @@ General guidelines
 Adding concepts
 ^^^^^^^^^^^^^^^
 
-When adding new terms, you **MUST** specify the following (attributes are in parenthesis):
+Mandatory attributes
+....................
+When adding new concepts, you **MUST** specify the following (attributes are in parenthesis):
 
-1. Correct concept URI, i.e. in the right namespace and with the latest ID
-2. Preferred term (``rdfs:label``)
-3. Definition (``oboInOwl:hasDefinition``) 
-4. Parent concept (``rdfs:subClassOf``)
-5. Current dev version into ``created_in`` : type a value e.g.  ``1.5``
-6. The 'edam' subset (``oboInOwl:inSubset``): in Protege, pick (don't type!) the value of ``edam``
-7. The branch subset (``oboInOwl:inSubset``): pick one of ``topic``, ``data``, ``format`` or ``operation``
-8. Any specialised subset (pick as above, only if required)
+Attribute     | OWL attribute              | Note
+------------- | -------------------------- | ----
+Concept URI   | ``rdf:about``              | In the right namespace and with the latest numerical ID.
+Primary term  | ``rdfs:label``             | See `todo <>`_.
+Definition    | ``oboInOwl:hasDefinition`` | See `todo <>`_.
+Parent(s)     | ``rdfs:subClassOf``        | See `todo <>`_.
+Version       | ``created_in``             | Current EDAM dev version, *e.g.* ``1.21``.
+'edam' subset | ``oboInOwl:inSubset``      | Always ``edam``.
+Branch subset | ``oboInOwl:inSubset``      | One of ``topic``, ``data``, ``format`` or ``operation``.
+Type subset   | ``oboInOwl:inSubset``      | One of ``concrete`` or ``placeholder``.
+Next ID       | ``<next_id>``              | Increment the current count by 1.
 
-Additionally, you **MUST** increment the next ID ontology attribute (``next_id``) in the header.
+For **Format** additions you **MUST** also specify:
 
-Note that :
-
-- The **preferred label** should be a short name or phrase in common use.
-- Consider providing common **synonyms** of the term:
-
-   - Exact synonym (``oboInOwl:hasExactSynonym``) - bog-standard synyonsm
-   - Narrow synonym (``oboInOwl:hasNarrowSynonym``) - specialisms of the term
-   - Broad synonym (``oboInOwl:hasBroadSynonym``) - generalisations of the term
-
-NB: Use Britsh spelling and do **not** include American spellings or case variants as synonyms.
-
-- The **definition** should be a concise and lucid description of the concept, without acronyms, and avoiding jargon.
-- Peripheral but important information can go in the **comment** (``rdfs:comment``).
-
-In addition, for **Format** concepts, please specify:
-
-1. The Data concept which the format applies to : define this relation in Protege using the pattern 'Format is_format_of some Data'
-2. The URL of the format documentation, if available (``Documentation`` attribute) : in Protege, type a URL using the Protege IRI editor.  
-
-In addition, for **Identifier** concepts, specify:
-
-1. The Data concept which the identifier applies to : define this relation in Protege using the pattern 'Identifier is_identifier_of some Data'  
-2. The regular expression defining valid values of that identifier (``Regular expression``) : type the regex into the Protege 'Constant" editor 
-
-In addition, for **Topic** concepts, specify:
-
-1. The corresponding Wikipedia page that exact matches the term (``Documentation`` attribute) : in Protege, type a URL using the IRI editor.  This method will change when we eventually link via Wikidata.
+Attribute     | OWL attribute              | Note
+------------- | -------------------------- | ----
+Type of data  | ``<is_format_of>``         | See `todo <>`_.
+Specification | ``<documentation>``        | URL of format specification.  See `todo <>`_.
 
 
+For **Identifier** additions you **MUST** also specify:
+Attribute     | OWL attribute              | Note
+------------- | -------------------------- | ----
+Type of data  | ``<is_identifier_of>``     | See `todo <>`_.
 
+  
+
+Optional attributes
+...................
+
+Attribute      | OWL attribute                | Note
+-------------- | ---------------------------- | ----
+Exact synonym  | ``oboInOwl:hasExactSynonym`` | See `todo <>`_.
+Narrow synonym | ``oboInOwl:hasNarrowSynonym``| See `todo <>`_.
+Broad synonym  | ``oboInOwl:hasBroadSynonym`` | See `todo <>`_.
+Comment        | ``rdfs:comment``             | See `todo <>`_.
+Wikipedia      | ``<documentation>``          | URL of Wikipedia page.  See `todo <>`_.
+
+   
+For **Format** additions you **SHOULD** also specify:
+
+Attribute     | OWL attribute              | Note
+------------- | -------------------------- | ----
+Type of data  | ``<is_format_of>``         | Applicable **Data** concept. See `todo <>`_.
+
+
+
+For **Identifier** additions you **SHOULD** also specify:
+
+Attribute     | OWL attribute   | Note
+------------- | --------------- | ----
+Regexp        | ``<regex>``     | Regular expression pattern for identifier instances. See `todo <>`_.
+
+   
 
 Deprecating concepts
 ^^^^^^^^^^^^^^^^^^^^ 
@@ -83,8 +98,26 @@ When deprecating concepts, you **MUST** specify the following:
 8. Remove all other class annotations (subsets, comments, synonyms etc.) and axioms (including parent concepts): comments and synonyms should be preserved as appropriate in the old parents or replacements of the deprecated concept.
 8. **Importantly** remember to refactor all references (e.g. ``SubClassOf``) to this concept from other concepts.  You can see all such references in Protege in the "Class Usage"; each reference will need updating in turn: in case of very many such references, this can be easier to do globally in a text editor rather than Protege.
 
+
+Use of Protege
+^^^^^^^^^^^^^^
+`Protege <https://protege.stanford.edu/>`_ is a nice OWL Editor, but has it's quirks, so it's recommended you first get a crash course from the `EDAM Developers <>`_ before using it.  A commercial alternative is `TopBraid Composer <https://www.topquadrant.com/tools/ide-topbraid-composer-maestro-edition/>`_.
+
+Editing
+.......
+
+
+.. important::
+   When using Protege
+   - URLs should be entered using the Protege IRI editor.
+   - General text is entered using the Protege 'Constant" editor.
+   - Subsets (``oboInOwl:inSubset`` annotation): you must pick (don't type!) an appropriate value.
+
+   Don't mix this up, as it makes a mess of the RDF/XML!
+
+
 Ensuring logical consistency
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+............................
 Before committing changes, to ensure logical consistency of EDAM, please do the following within Protege:
 
 1. Click *Reasoner->Hermit*
@@ -96,10 +129,13 @@ If nothing (no classes) are shown under the *nothing* branch, then all is well. 
 
 Common problems include:
 
-- classes assigned as a ``subClass`` of some deprecated term
-- end-point of relations are in the wrong branch, e.g. `class has_topic some operation`.  These can easily occur if you use the *Class expression editor* in Protege to define such axioms: this is NOT EDAM namespace aware, and in cases where a concept with the same preferred label exists in both classes, can easily pick the wrong one.
+- classes assigned as a ``subClass`` of some deprecated concept
+- end-point of relations are in the wrong branch, *e.g.* `class has_topic some operation`.  These can easily occur if you use the *Class expression editor* in Protege to define such axioms: this is **NOT** EDAM namespace-aware, and in cases where a concept with the same primary label exists in both classes, can easily pick the wrong one.
 
-The problems are easily fixed within Protege: ask on the mailing list if you're not sure how.  Finally, do not be tempted to click *Reasoner->Synchronise reasoner* between changes: it tends to hang Protege.  Instead, use *Reasoner->Stop reasoner* than *Reasoner->Start reasoner*.
+The problems are easily fixed within Protege: ask on the `mailing list <>`_ if you're not sure how.
+
+.. caution::
+   Do not be tempted to click *Reasoner->Synchronise reasoner* between changes: it tends to hang Protege.  Instead, use *Reasoner->Stop reasoner* than *Reasoner->Start reasoner*.
 
 
 

@@ -57,7 +57,7 @@ If it turns out you need a lot of new concepts, we can find a more efficient way
 
 
 Suggestions form
-----------------
+^^^^^^^^^^^^^^^^
 If you're unwilling to get a GitHub account, then simple requests for one or a few changes can be made using this form:
 
 http://tinyurl.com/EDAMChangeRequest 
