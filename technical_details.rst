@@ -108,8 +108,8 @@ Rules
 ^^^^^
 Rules define how concepts are related.
 
-Rules by concept type
-.....................
+Rules by concept
+................
 **Topic**
 
 *   **Topic** *is_a* **Topic**  (specialisation of a topic)
@@ -135,8 +135,8 @@ Rules by concept type
 
 *   **Identifier** *is_identifier_of* **Data** (identifier of a data type)
 
-Rules by relation type
-......................
+Rules by relation
+.................
 *is_a*
 
 *   **Topic** *is_a* **Topic**
@@ -175,21 +175,21 @@ EDAM concepts are defined internally as one of two types:
 
 These notion depend upon the subontology (see below).
 
-.. important::
+.. note::
    EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
   
 Placholder concepts
 ^^^^^^^^^^^^^^^^^^^
 - **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
 
-- all Tier 1 and some Tier 2 operations are placholders.
+- all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders.
     
 - **Data placeholders** are basic types of data:
 
   - technical types, *e.g.* *Score*
   - broad biological types *e.g.* *Phylogenetic data*
 
-- they mostly appear in Tier 1 (not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
+- they mostly appear in Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_), rarely in Tier 2, and never below that.  Note, not all Tier 1 **Data** concepts are placeholders.
 
 - **Identifier placeholders** include: 
 
@@ -204,7 +204,7 @@ Placholder concepts
 
 
 .. note::
-   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Binary format"*, *"Textual format"* and *"XML"* (**Format**).  Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the *Format (by typed of data)* (http://edamontology.org/format_2350) and *Identifier (by type of data)* (http://edamontology.org/data_0976) patterns. 
+   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Binary format"*, *"Textual format"* and *"XML"* (**Format**).  Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the `Format (by typed of data) <http://edamontology.org/format_2350>`_ and `Identifier (by type of data)<http://edamontology.org/data_0976>`_ patterns. 
 
 	
 Concrete concepts
