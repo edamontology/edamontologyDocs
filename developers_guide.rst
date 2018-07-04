@@ -19,8 +19,8 @@ General guidelines
 
 1. As much as you can, try to make atomic changes and commit them independently. this improves greatly traceability in the long term
 2. Make trivial modifications using a text editor if possible, rather than Protege, because the actual modification is not hidden in haystack of Protege reformattings
-3. **Immediately** add a description of your modifications in the changelog to facilitate tracking.
-4. Check and double-check your changes: errors are hard to track and fix later
+3. Include an informative message when you commit a change and (ideally) add a description of your modifications in the changelog.
+4. Check and double-check your changes: errors can be hard to track and fix later
 
 Adding concepts
 ^^^^^^^^^^^^^^^
@@ -28,6 +28,16 @@ Adding concepts
 Mandatory attributes
 ....................
 When adding new concepts, you **MUST** specify the following (attributes are in parenthesis):
+
+.. csv-table::
+   :header: "Maturity", "Description"
+   :widths: 25, 100
+
+   "doi", "Digital Object Identifier of the software assigned (typically) by the software developer or service provider."
+   "rrid", "Research Resource Identifier as used by the NIH-supported Resource Identification Portal (https://scicrunch.org/resources)."
+   "cpe", "Common Platform Enumeration (CPE) identifier as listed in the CPE dictionary (https://cpe.mitre.org/dictionary/)."
+   "biotoolsCURIE", "bio.tools CURIE (secondary identifier)."
+   
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"

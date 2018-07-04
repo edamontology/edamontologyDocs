@@ -59,7 +59,8 @@ Concepts & Terms
 *Concepts:*
 
 - **MUST NOT** overlap conceptually, to a significant extent, with each other. The exception is **Topic** ontology where most concepts are overlapping.
-
+- **MUST** be annotated as one of "placeholder" or "concrete" (see `Concept types <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>`_).
+  
 *Primary term and synonyms:*
 
 - **MUST** be a short name or phrase in common use
@@ -96,7 +97,9 @@ Concepts & Terms
 
 Hierarchy
 .........
-- each subontology must not descend beyond a certain depth (see below).  Specifically, this means that each concept **MUST** have at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   It's OK for a concept to have other paths to root that are deeper than this.
+- the subontology hierarchies have maximum depth (see `below), or have a chains of concepts (related via *is_a*) longer than a certain maximum.  In practice, 
+
+  .  Specifically, this means that each concept **MUST** have at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   It's OK for a concept to have other paths to root that are deeper than this.
   
   - **Topic:** 3 levels deep max. *i.e.* *Topic* (root) -> Subtopic -> Subsubtopic (leaves)
   - **Operation:** 6 levels deep max. 

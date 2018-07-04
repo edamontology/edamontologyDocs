@@ -213,7 +213,6 @@ Concrete concepts
 
   - have specific input(s) and/or output(s) (**Operation** *has_input* | *has_output* **Data** relation)
   - include low-level (specific) operations (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_) and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_)
-  - maximum of 3 concrete operations in a chain
 
 - **Concrete data types**
 
@@ -235,8 +234,27 @@ Concrete concepts
 .. note::
    The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.  The addition of *has_input* and *has_output* relations is also a work in progress.
 
+Hierarchy depth
+---------------
+Each subontology does not descend beyond a certain maximum depth (see below).  Specifically, this means that each concept has at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   Note, concepts may have other paths to root that are deeper than this.  There are also limitations on the number of concrete concepts that can be chained (via *is_a* relation) together.
+  
+- **Topic:**
 
+  - 3 levels deep max. *i.e.* *Topic* (root) -> Subtopic -> Subsubtopic (leaves)
 
+- **Operation:**
+
+  - 6 levels deep max.
+  - chain of 3 concrete operations max.
+
+- **Data:**
+  - 4 levels deep max.
+  - chain of 2 concrete data types max.
+    
+- **Format:**
+  - 3 levels deep max.
+
+    
 
 Terms and synonyms
 ------------------
