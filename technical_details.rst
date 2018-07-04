@@ -203,7 +203,8 @@ Placholder concepts
 
 
 .. note::
-   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Binary format"*, *"Textual format"* and *"XML"* (**Format**).  Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the `Format (by typed of data) <http://edamontology.org/format_2350>`_ and `Identifier (by type of data)<http://edamontology.org/data_0976>`_ patterns. 
+   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Binary format"*, *"Textual format"* and *"XML"* (**Format**).
+   Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the `Format (by typed of data) <http://edamontology.org/format_2350>`_ and `Identifier (by type of data) <http://edamontology.org/data_0976>`_ patterns. 
 
 	
 Concrete concepts
