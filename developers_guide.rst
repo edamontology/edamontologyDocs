@@ -28,7 +28,7 @@ Adding concepts
 Mandatory attributes
 ....................
 When adding new concepts, you **MUST** specify the following (attributes are in parenthesis)
-
+tmp
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
