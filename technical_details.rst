@@ -181,6 +181,7 @@ These notions depend upon the subontology (see below).
 Placholder concepts
 ^^^^^^^^^^^^^^^^^^^
 - **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
+  
   - all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders.
     
 - **Data placeholders** are basic types of data:
@@ -192,7 +193,7 @@ Placholder concepts
 - **Identifier placeholders** include: 
 
   - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
-  - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* "Sequence accession (protein)". These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
+  - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
   - `Identifier (hybrid) <http://edamontology.org/data_2109>`_.  A concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database).
 
 - **Format placeholders** include:
