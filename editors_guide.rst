@@ -56,7 +56,7 @@ General
 
 Concepts & Terms
 ................
-Concepts:
+*Concepts:*
 
 - **MUST NOT** overlap conceptually, to a significant extent, with each other. The exception is **Topic** ontology where most concepts are overlapping.
 
@@ -74,10 +74,10 @@ Concepts:
 
 *Synonyms:*
 
+- **MUST NOT** overlap conceptually, to a significant extent, with an already existing concept; be especially mindful of ancestors and descendants of the concept for which a synonym is defined.
 - **SHOULD** use Britsh spelling
 - **MAY** capture spelling variations, including American spellings, case and hyphenation variants *etc* (as exact synonyms)
 - **MAY** include buzzwords if really prevalent and relevant
-- **MUST NOT** overlap conceptually, to a significant extent, with an already existing concept; be especially mindful of ancestors and descendants of the concept for which a synonym is defined.
 
 *Definitions and comments:*
 
@@ -86,7 +86,7 @@ Concepts:
 
 *When adding a new concept, in addition to above:*
 
-- **MUST** specify all mandatory attributes and **SHOULD** specify all optional ones (see `todo <>`_)
+- **MUST** specify all mandatory attributes and **SHOULD** specify all optional ones (see `Adding concepts <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#adding-concepts>`_)
 - **SHOULD** provide all common *exact synonyms* of the primary term
 - **MAY** provide any number of *narrow synonyms* (but be wary of conceptual overal with child concepts). The exception is **Format** subontology where **MUST NOT** include any narrow synonyms at all.
 - **SHOULD NOT** provide any *broad synonyms* unless these are really needed (but be wary of conceptual overal with parent concepts)

@@ -29,58 +29,66 @@ Mandatory attributes
 ....................
 When adding new concepts, you **MUST** specify the following (attributes are in parenthesis):
 
-Attribute     | OWL attribute              | Note
-------------- | -------------------------- | ----
-Concept URI   | ``rdf:about``              | In the right namespace and with the latest numerical ID.
-Primary term  | ``rdfs:label``             | See `todo <>`_.
-Definition    | ``oboInOwl:hasDefinition`` | See `todo <>`_.
-Parent(s)     | ``rdfs:subClassOf``        | See `todo <>`_.
-Version       | ``created_in``             | Current EDAM dev version, *e.g.* ``1.21``.
-'edam' subset | ``oboInOwl:inSubset``      | Always ``edam``.
-Branch subset | ``oboInOwl:inSubset``      | One of ``topic``, ``data``, ``format`` or ``operation``.
-Type subset   | ``oboInOwl:inSubset``      | One of ``concrete`` or ``placeholder``.
-Next ID       | ``<next_id>``              | Increment the current count by 1.
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+   
+
+"Concept URI"   , "``rdf:about``"             , "In the right namespace and with the latest numerical ID."
+"Primary term"  , "``rdfs:label``"            , "See `todo <>`_."
+"Definition"    , "``oboInOwl:hasDefinition``", "See `todo <>`_."
+"Parent(s")     , "``rdfs:subClassOf``"       , "See `todo <>`_."
+"Version"       , "``created_in``"            , "Current EDAM dev version, *e.g.* ``1.21``."
+"'edam' subset" , "``oboInOwl:inSubset``"     , "Always ``edam``."
+"Branch subset" , "``oboInOwl:inSubset``"     , "One of ``topic``, ``data``, ``format`` or ``operation``."
+"Type subset"   , "``oboInOwl:inSubset``"     , "One of ``concrete`` or ``placeholder``."
+"Next ID"       , "``<next_id>``"             , "Increment the current count by 1."
 
 For **Format** additions you **MUST** also specify:
 
-Attribute     | OWL attribute              | Note
-------------- | -------------------------- | ----
-Type of data  | ``<is_format_of>``         | See `todo <>`_.
-Specification | ``<documentation>``        | URL of format specification.  See `todo <>`_.
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+"Type of data"  , "``<is_format_of>``"        , "See `todo <>`_."
+"Specification" , "``<documentation>``"       , "URL of format specification.  See `todo <>`_."
 
 
 For **Identifier** additions you **MUST** also specify:
-Attribute     | OWL attribute              | Note
-------------- | -------------------------- | ----
-Type of data  | ``<is_identifier_of>``     | See `todo <>`_.
+
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+"Type of data"  , "``<is_identifier_of>``"    , "See `todo <>`_."
 
   
 
 Optional attributes
 ...................
 
-Attribute      | OWL attribute                | Note
--------------- | ---------------------------- | ----
-Exact synonym  | ``oboInOwl:hasExactSynonym`` | See `todo <>`_.
-Narrow synonym | ``oboInOwl:hasNarrowSynonym``| See `todo <>`_.
-Broad synonym  | ``oboInOwl:hasBroadSynonym`` | See `todo <>`_.
-Comment        | ``rdfs:comment``             | See `todo <>`_.
-Wikipedia      | ``<documentation>``          | URL of Wikipedia page.  See `todo <>`_.
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+"Exact synonym"  , "``oboInOwl:hasExactSynonym``", "See `todo <>`_."
+"Narrow synonym" , "``oboInOwl:hasNarrowSynonym``, "See `todo <>`_."
+"Broad synonym"  , "``oboInOwl:hasBroadSynonym``", "See `todo <>`_."
+"Comment"        , "``rdfs:comment``"            , "See `todo <>`_."
+"Wikipedia"      , "``<documentation>``"         , "URL of Wikipedia page.  See `todo <>`_."
 
    
 For **Format** additions you **SHOULD** also specify:
 
-Attribute     | OWL attribute              | Note
-------------- | -------------------------- | ----
-Type of data  | ``<is_format_of>``         | Applicable **Data** concept. See `todo <>`_.
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+	    
+"Type of data"  , "``<is_format_of>``"        , "Applicable **Data** concept. See `todo <>`_."
 
 
 
 For **Identifier** additions you **SHOULD** also specify:
 
-Attribute     | OWL attribute   | Note
-------------- | --------------- | ----
-Regexp        | ``<regex>``     | Regular expression pattern for identifier instances. See `todo <>`_.
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+"Regexp"        , "``<regex>``"    , "Regular expression pattern for identifier instances. See `todo <>`_."
 
    
 
