@@ -167,7 +167,7 @@ Rules by relation type
 
 
 Concept types
-^^^^^^^^^^^^^
+-------------
 EDAM concepts are defined internally as one of two types:
    
 - **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for *concrete concepts*. They're not intended to be used much, or at all, for annotation.
@@ -179,7 +179,7 @@ These notion depend upon the subontology (see below).
    EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
   
 Placholder concepts
-...................
+^^^^^^^^^^^^^^^^^^^
 - **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
 
 - all Tier 1 and some Tier 2 operations are placholders.
@@ -208,7 +208,7 @@ Placholder concepts
 
 	
 Concrete concepts
-.................
+^^^^^^^^^^^^^^^^^
 
 - **Concrete operations** have a specific input and/or output
   - have at least one **Operation** *has_input* | *has_output* **Data** relation (see `todo <>`_ and `todo <>`_)
