@@ -97,14 +97,18 @@ Concepts & Terms
 
 Hierarchy
 .........
-- the subontology hierarchies have maximum depth (see `below), or have a chains of concepts (related via *is_a*) longer than a certain maximum.  In practice, 
+- the subontology hierarchies have maximum depth (see `todo <>`_).  In practice you **MUST** ensure:
 
-  .  Specifically, this means that each concept **MUST** have at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   It's OK for a concept to have other paths to root that are deeper than this.
-  
-  - **Topic:** 3 levels deep max. *i.e.* *Topic* (root) -> Subtopic -> Subsubtopic (leaves)
-  - **Operation:** 6 levels deep max. 
-  - **Data:** 4 levels deep max. 
-  - **Format:** 3 levels deep max. 
+- **Topic:**
+  - 3 levels deep max. *i.e.* *Topic* (root) -> Subtopic -> Subsubtopic (leaves)
+
+- **Operation:**
+  - chain of 3 concrete operations max.
+    
+- **Data:** 4 levels deep max.
+  - chain of 2 concrete data types max.
+    
+- **Format:** 3 levels deep max. 
 
 When adding a new concept
 

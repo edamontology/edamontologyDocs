@@ -199,7 +199,7 @@ Placholder concepts
 - **Format placeholders** include:
 
   - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_.  All concrete formats are a child of one of these.
-  - *data type placeholders* under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*
+  - *data type placeholders* under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  All concrete formats are a child of one of these.
 
 
 .. note::
@@ -217,44 +217,53 @@ Concrete concepts
 - **Concrete data types**
 
   - have a specific serialisation format (**Format** *is_format_of* **Data** relation)
-  - maximum of 2 concrete data types in a chain
+
 
 - **Concrete identifers**
 
   - have a corresponding data type (**Identifier** *is_identifier_of* **Data** relation)
   - normally have a regular expression pattern defining valid syntax of identifier instances (``<regex>`` attribute)
-  - no maximum chain (it depends on extant identifiers)
       
 - **Concrete data formats**
 
   - have a formal, public syntax specification (``<specification>`` attribute)
   - in some cases, as practical necessity, there are format variants and sub-variants, *e.g.* *EMBL-like (XML)* and *FASTA-like (text)*
-  - no maximum chain (it depends on extant formats)
 
 .. note::
    The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.  The addition of *has_input* and *has_output* relations is also a work in progress.
 
 Hierarchy depth
 ---------------
-Each subontology does not descend beyond a certain maximum depth (see below).  Specifically, this means that each concept has at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   Note, concepts may have other paths to root that are deeper than this.  There are also limitations on the number of concrete concepts that can be chained (via *is_a* relation) together.
-  
-- **Topic:**
+There are limitations on the number of placeholders, and concrete concepts, that are chained (via *is_a* relation) together. In practice, this results in a maximum depth of each subontology.
 
-  - 3 levels deep max. *i.e.* *Topic* (root) -> Subtopic -> Subsubtopic (leaves)
+- **Topic:**
+  - each concept must have a path to root not exceeding 4 levels, *e.g.* `Topic <http://edamontology.org/topic_0003>`_ -> *"Computational biology*" -> *"Molecular genetics"* -> *"Gene structure"* -> *"Mobile genetic elements*"
 
 - **Operation:**
 
+  - maximum chain of 3 placholders 
+  - maximum chain of 3 concrete operations
   - 6 levels deep max.
-  - chain of 3 concrete operations max.
 
 - **Data:**
-  - 4 levels deep max.
-  - chain of 2 concrete data types max.
-    
-- **Format:**
-  - 3 levels deep max.
 
+  - maximum chain of 2 placeholders
+  - maximum chain of 2 concrete data types
+  - 4 levels deep max.
     
+- **Identifier:**
+
+  - maximum chain of 4 placholders, *e.g.* `Identifier (by type of data) <http://edamontology.org/data_0976>`_ -> *"Sequence identifier"* -> *"Sequence accession"* -> *"Sequence accession (protein)"* 
+  - maximum chain of 2 concrete identifiers
+  - 6 levels deep max.
+    
+  - no maximum depth or chains (it depends on extant identifiers)
+  
+- **Format:**
+
+  - maximum chain of 4 placholders, *e.g.* `Format (by type of data) <http://edamontology.org/format_2350>`_ -> *"Sequence record format"* -> *"FASTA-like"* -> *"FASTA-like (text)"*
+  - maximum chain of 2 concrete formats
+  - 6 levels deep max.    
 
 Terms and synonyms
 ------------------
