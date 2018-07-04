@@ -27,18 +27,17 @@ OBO format is no longer supported.
 
 Scope
 -----
-EDAM includes 4 main sub-ontologies or 'branches' of concepts:
+EDAM includes 5 main sub-ontologies or 'branches' of concepts:
 
-- **Data** - *“Information, represented in an information artefact (data record) that is 'understandable' by dedicated computational tools that can use the data as input or produce it as output.”*
-- **Format** - *“A defined way or layout of representing and structuring data in a computer file, blob, string, message, or elsewhere.”*
-- **Operation** - *“A function that processes a set of inputs and results in a set of outputs, or associates arguments (inputs) with values (outputs).”*
 - **Topic** - *“A category denoting a rather broad domain or field of interest, of study, application, work, data, or technology. Topics have no clearly defined borders between each other.”*
-
+- **Operation** - *“A function that processes a set of inputs and results in a set of outputs, or associates arguments (inputs) with values (outputs).”*
+- **Data** - *“Information, represented in an information artefact (data record) that is 'understandable' by dedicated computational tools that can use the data as input or produce it as output.”*
 - **Data->Identifier** - *“A text token, number or something else which identifies an entity, but which may not be persistent (stable) or unique (the same identifier may identify multiple things).”*
+- **Format** - *“A defined way or layout of representing and structuring data in a computer file, blob, string, message, or elsewhere.”*
 
 .. image:: http://edamontology.org/EDAMconcepts.png 
 
-As a general rule, the **Data**, **Format** and **Operation** branches include concepts strictly in the domain of informatics in the Life Sciences; primarily bioinformatics (broadly) and computational biology concepts useful for annotating software tools.  Concepts purely concerning biology, computer science *etc.* are not included. The **Topic** branch, in contrast, includes broader interdisciplinary concepts from the biological and biomedical domains.
+As a general rule, the **Operation**, **Data**, **Format** and branches include concepts strictly in the domain of informatics in the Life Sciences; primarily bioinformatics (broadly) and computational biology concepts useful for annotating software tools.  Concepts purely concerning biology, computer science *etc.* are not included. The **Topic** branch, in contrast, includes broader interdisciplinary concepts from the biological and biomedical domains.
 
 
 Architecture

@@ -4,6 +4,8 @@ Technical details
 .. note::
   An outline of the technical implementation of EDAM is below.  EDAM makes light use of `OWL <https://www.w3.org/OWL/>`_ logic/modelling and focuses on providing quality information for a basic set of *concepts*, with *relations* between these concepts and a very simple set of *rules* governing the conceptual relationships.  Concepts have unique IDs and persistent URLs which resolve to a Web page providing all the information for that concept.
 
+
+  
 Concepts
 --------
 
@@ -53,8 +55,12 @@ Formats are formally related in EDAM to **Data** concepts (see `is_format_of <ht
 
 Relations
 ---------
+
+Relation types
+^^^^^^^^^^^^^^
+
 is_a
-^^^^
+....
 Defines a concept as a specialisation of another concept. If A *is_a* B, then A is a specialisation (child) of B, and B is a generalisation (parent) of A.
 
 The *is_a* relation is transitive: if A *is_a* B and B *is_a* C then A *is_a* C.
@@ -64,47 +70,46 @@ All relations are transitive over *is_a*: *e.g.* if A *has_input* B and B *is_a*
 *e.g.* *"Pairwise sequence alignment"* *is_a* *"Sequence alignment"*
 
 has_input
-^^^^^^^^^
+.........
 Defines an **Operation** concept as reading (inputting) a **Data** concept.
 
 *e.g.* *"Sequence analysis"* *has_input* *"Sequence"*
 
 has_output
-^^^^^^^^^
+.........
 
 Defines an **Operation** concept as writing (outputting) a **Data** concept.
 
 *e.g.* *"Sequence alignment"* *has_output* *"Sequence alignment"*
 
 has_topic
-^^^^^^^^^
+.........
 
 Defines a **Data** or **Operation** concept as being within the scope of a **Topic** concept.
 
 *e.g.* *"Peptide identification"* *has_topic* *"Proteomics"*
 
 is_identifier_of
-^^^^^^^^^^^^^^^^
+................
 
 Defines that an **Identifier** concept identifies a **Data** concept.
 
 *e.g.* *"Sequence accession"* *is_identifier_of* *"Sequence"*
 
 is_format_of
-^^^^^^^^^^^^
+............
 
 Defines that a **Format** concept is the format of a **Data** concept.
 
 *e.g.* *"Sequence record format"* *is_format_of* *"Sequence record"*
 
 
-
 Rules
------
+^^^^^
 Rules define how concepts are related.
 
 Rules by concept type
-^^^^^^^^^^^^^^^^^^^^^
+.....................
 **Topic**
 
 *   **Topic** *is_a* **Topic**  (specialisation of a topic)
@@ -131,7 +136,7 @@ Rules by concept type
 *   **Identifier** *is_identifier_of* **Data** (identifier of a data type)
 
 Rules by relation type
-^^^^^^^^^^^^^^^^^^^^^^
+......................
 *is_a*
 
 *   **Topic** *is_a* **Topic**
@@ -161,6 +166,89 @@ Rules by relation type
 *   **Format** *is_format_of* **Data**
 
 
+Concept types
+^^^^^^^^^^^^^
+EDAM concepts are defined internally as one of two types:
+   
+- **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for *concrete concepts*. They're not intended to be used much, or at all, for annotation.
+- **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  *All* leaf nodes are concrete.
+
+These notion depend upon the subontology (see below).
+
+.. important::
+   EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
+  
+Placholder concepts
+...................
+- **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
+
+- all Tier 1 and some Tier 2 operations are placholders.
+    
+- **Data placeholders** are basic types of data:
+
+  - technical types, *e.g.* *Score*
+  - broad biological types *e.g.* *Phylogenetic data*
+
+- they mostly appear in Tier 1 (not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
+
+- **Identifier placeholders** include: 
+
+    - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
+    - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* "Sequence accession (protein)". These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
+    - `Identifier (hybrid) <http://edamontology.org/data_2109>`_.  A concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database).
+
+- **Format placeholders** include:
+
+    - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_. All concrete formats are a child of one of these (see `to-do <>`_).
+    - *data type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  
+
+
+.. note::
+   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Binary format"*, *"Textual format"* and *"XML"* (**Format**).  Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the *Format (by typed of data)* (http://edamontology.org/format_2350) and *Identifier (by type of data)* (http://edamontology.org/data_0976) patterns. 
+
+	
+Concrete concepts
+.................
+
+- **Concrete operations** have a specific input and/or output
+  - have at least one **Operation** *has_input* | *has_output* **Data** relation (see `todo <>`_ and `todo <>`_)
+  - include low-level (specific) operations (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_) and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_)
+  - maximum of 3 concrete operations in a chain (see `todo <>`_).
+
+- **Concrete data types** have a specific serialisation format
+  - have one **Format** *is_format_of* **Data** relation (see `todo <>`_ and `todo <>`_)
+  - maximum of 2 concrete data types in a chain (see `todo <>`_)
+
+- **Concrete identifers** have a corresponding data type
+  - have one **Identifier** *is_identifier_of* **Data** relation (see `todo <>`_ and `todo <>`_)
+  - normally have a regular expression pattern defining valid syntax of identifier instances (see `todo <>`_)
+  - no maximum chain (it depends on extant identifiers)
+      
+- **Concrete data formats** have a formal, public syntax specification
+  - have one ``<specification>`` annotation linking to the format specification (see `todo <>`_)
+  - in some cases, as practical necessity, there are format variants and sub-variants, *e.g.* *EMBL-like (XML)* and *FASTA-like (text)*
+  - no maximum chain (it depends on extant formats)
+
+.. note::
+   The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.  The addition of *has_input* and *has_output* relations is also a work in progress.
+
+
+
+
+Terms and synonyms
+------------------
+EDAM uses the following types of synonym:
+
+- **Exact** synonym  - a standard synonym (same meaning) of the primary term
+- **Narrow** synonym - specialisms of the primary term
+- **Broad** synonym - generalisations of the primary term
+
+All terms (primary and synonyms) are unique within a subontology, and (with a few exceptions) are unique *between* subontologies, too.  
+
+
+
+
+    
 Identifiers & persistent URLs
 -----------------------------
 Each EDAM concept has an alphanumerical identifier that uniquely identifies that concept. The general form is:
