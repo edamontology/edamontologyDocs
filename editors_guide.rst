@@ -42,45 +42,67 @@ EDAM concepts are of two types:
 - **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for *concrete concepts*. They're not intended to be used much, or at all, for annotation.
 - **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  *All* leaf nodes are concrete.
 
-These notion depend upon the subontology:
+These notion depend upon the subontology (see below).
 
-- **Topic**
-
-  - EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
+.. important::
+   EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
   
-- **Operation**
+Placholder concepts
+...................
+- **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
 
-  - *Placeholders* include *all* concepts at Tier 1, *e.g.* `Analysis <http://edamontology.org/operation_2945>`_, `Prediction and recognition <http://edamontology.org/operation_2423>`_ *etc.*, and some Tier 2 concepts *e.g.* `Sequence analysis <http://edamontology.org/operation_2403>`_.
-  - *Concrete operations* (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_) and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_), appear in Tier 2 and below.  <<< max chain depth >>>
-
-- **Data**
-
-  - *Placeholders* are basic types of data, either technical (*e.g.* `Score <http://edamontology.org/data_1772>`_) or biological (*e.g.* `Phylogenetic data <http://edamontology.org/data_2523>`_).  They mostly appear in Tier 1 (but not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
-  - *Concrete data types* have a corresponding EDAM **Format** concept, and in some cases variants and sub-variants of these, appear in Tier 1 and below.   <<< max chain depth >>>
-
-- *Identifier**
-   
-  - *Placeholders* include 
-
-    - *General identifier type* one of "Accession" (http://edamontology.org/data_2091) or "Name" (http://edamontology.org/data_2099)
-    - *Type placeholder* for types of identifier listed under "Identifier (typed)" (http://edamontology.org/data_0976), *e.g.* "Sequence accession (protein)", *i.e.* a concept descended from. These reflect the EDAM **Data* subontology  Also "Identifier (hybrid)" (http://edamontology.org/data_2109) where an identifier is re-used for data objects of fundamentally different types (typically served from a single database). These are purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"*, *"Name"*.
-
-  - *Concrete identifers* ... <<< max chain depth >>>
-      
-- **Format** concepts
+- all Tier 1 and some Tier 2 operations are placholders.
     
-  - *Placeholder formats** include
+- **Data placeholders** are basic types of data:
 
-    - *General data formats* currently *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* and *YAML*. All concrete formats are a child of one of these (see `to-do <>`_).
-    - *Type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  These reflect the EDAM **Data* subontology and are purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Binary format"*, *"Textual format"* and *"XML"*.
- 
-  - *Concrete data formats* have a clear and public specification or documentation of the format. In some cases there are variants and sub-variants of these (all the leaf nodes are concrete).  In rare cases, for convenience, this includes broad placeholder concepts like *EMBL-like (XML)* and *FASTA-like (text)*. <<< max chain depth >>>
+  - technical types, *e.g.* *Score*
+  - broad biological types *e.g.* *Phylogenetic data*
+
+- they mostly appear in Tier 1 (not all Tier 1 **Data** concepts are placeholders), rarely in Tier 2, and never below that.
+
+- **Identifier placeholders** include: 
+
+    - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
+    - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* "Sequence accession (protein)". These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
+    - `Identifier (hybrid) <http://edamontology.org/data_2109>`_.  A concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database).
+
+- **Format placeholders** include:
+
+    - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_. All concrete formats are a child of one of these (see `to-do <>`_).
+    - *data type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  
+
 
 .. note::
-   The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.
+   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Binary format"*, *"Textual format"* and *"XML"* (**Format**).  Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the *Format (by typed of data)* (http://edamontology.org/format_2350) and *Identifier (by type of data)* (http://edamontology.org/data_0976) patterns. 
+
+	
+Concrete concepts
+.................
+
+- **Concrete operations** have a specific input and/or output (**Operation** *has_input* | *has_output* **Data**, see `todo <>`_ and `todo <>`_)
+
+  - include low-level (specific) operations (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_) and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_)
+  - maximum of 3 concrete operations in a chain (see `todo <>`_)
+
+- **Concrete data types** have a specific serialisation format (**Format** *is_format_of* **Data**, see `todo <>`_ and `todo <>`_)
+
+  - in some cases variants and sub-variants of these, appear in Tier 1 and below.
+  - maximum of 2 concrete data types in a chain (see `todo <>`_)
+
+- **Concrete identifers** have a corresponding data type (**Identifier** *is_identifier_of* **Data**, see `todo <>`_ and `todo <>`_) and normally a regular expression pattern defining valid syntax of identifier instances (see `todo <>`_)
+  
+  - no maximum chain (it depends on extant identifiers)
+      
+- **Concrete data formats** have a public specification of the format (see `todo <>`_)
+
+  - in some cases, as practical necessity, there are variants and sub-variants of these, *e.g.* *EMBL-like (XML)* and *FASTA-like (text)*
+  - no maximum chain (it depends on extant formats)
 
 .. note::
-   Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the *Format (by typed of data)* (http://edamontology.org/format_2350) and *Identifier (by type of data)* (http://edamontology.org/data_0976) patterns. 
+   The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.  The addition of *has_input* and *has_output* relations is also a work in progress.
+
+
+
 
 Terms and synonyms
 ------------------
@@ -184,7 +206,7 @@ Topic
 .. note::
    EDAM **Topic** concepts are conceptually very broad.  There will only ever include a few hundred concepts in total, semantic richness is captured through synonyms (which are unlimited in number). This ensures sustainability and practical applications.  In contrast see *e.g.* `MeSH <https://www.nlm.nih.gov/bsd/disted/meshtutorial/introduction/>`_.
     
-- **SHOULD** have a corresponding term in `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_ and **MUST** provide a link (*via* **seeAlso** annotation) to the relevant Wikipedia page, if one exists.  Exceptions are OK, but if a Wikipedia page does not exist, one **MUST** consider carefully whether the concept is too fine-grained.
+- Topics usually have a corresponding page in `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_ and a link to this **MUST** be provided, if one exists.  Exceptions are OK, but if a Wikipedia page does not exist, one **MUST** consider carefully whether the concept is too fine-grained.
 - **MUST** respect the scope, specifically:
    
    - **MUST NOT** include fine-grained operations or types of data.  As a rare exception, very high-level operations *e.g.* *Sequence analysis* **MAY** be included.
