@@ -198,7 +198,7 @@ Placholder concepts
 
 - **Format placeholders** include:
 
-  - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_: all concrete formats are a child of one of these (see `to-do <>`_)
+  - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_: all concrete formats are a child of one of these
   - *data type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*
 
 
