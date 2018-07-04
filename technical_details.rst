@@ -184,9 +184,9 @@ Placholder concepts
   
   - all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders.
     
-- **Data placeholders** are basic types of data:
+- **Data placeholders** include:
 
-  - technical types, *e.g.* *Score*
+  - basic technical types, *e.g.* *Score*
   - broad biological types *e.g.* *Phylogenetic data*
   - they mostly appear in Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_), rarely in Tier 2, and never below that.  Note, not all Tier 1 **Data** concepts are placeholders.
 
