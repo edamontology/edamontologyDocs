@@ -2,17 +2,17 @@ Getting involved
 ================
 
 .. important::
-   EDAM is a community project: everyone is made to feel welcome and encouraged to get involved.  The EDAM core developers only have so much capacity, so we rely on your enthusiasm, contributions and patience - please help us build a better EDAM!
+   EDAM is a community project: everyone is made to feel welcome and encouraged to get involved.  The EDAM core developers have a limited capacity - we rely on your enthusiasm, contributions, and patience. Please help us build a better EDAM!
 
 
 
 Mailing lists
 -------------
-To find the most efficient way to contribute to EDAM, to get help using EDAM for annotation and in software implementations, and for general discussions, mail:
+To find the most efficient way to contribute to EDAM, to get help using EDAM for annotation and in software implementations, and for general discussions, e-mail:
 
 edam@elixir-dk.org
 
-We'll make every effort to be responsive, given our limited resources, and will work with you to find the most efficient way to proceed, depending on your requirements, expertise and bandwidth.  
+We'll make every effort to be responsive given our limited resources. We will work with you to find the most efficient way to proceed depending on your requirements, expertise, and bandwidth.
 
 To post or receive mail from the list above, subscribe here:
 
@@ -47,7 +47,7 @@ When requesting new concepts, the bare-bones required information (common to all
 - term (the most common term used to refer to the concept)
 - short description (a couple of sentences)
   
-It will speed up things a lot if you can provide as much information as possible, but especially:
+More information will speed up the process, especially by including:
 
 - URL of suggested parent
 - exact synonyms (other commonly-used terms, acronyms *etc.* by which the concept is referred to)
