@@ -193,7 +193,7 @@ Placholder concepts
 - **Identifier placeholders** include: 
 
   - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
-  - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
+  - *data type placeholders* under `Identifier (by type of data) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
   - `Identifier (hybrid) <http://edamontology.org/data_2109>`_: a concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database)
 
 - **Format placeholders** include:
@@ -203,7 +203,7 @@ Placholder concepts
 
 
 .. note::
-   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Textual format"*, *"Binary format"*, *etc.* (**Format**). Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the `Format (by typed of data) <http://edamontology.org/format_2350>`_ and `Identifier (by type of data) <http://edamontology.org/data_0976>`_ patterns. 
+   The *data type placeholders* used in the **Identifier** and **Format** subontologies reflect the EDAM **Data** subontology.  They serve purely to aid navigation, by providing an additional axis over (the same set of) concepts under *"Accesion"* and *"Name"* (**Identifier**) or *"Textual format"*, *"Binary format"*, *etc.* (**Format**). Once ontology browsers better support rendering of conceptual relationships, it may no longer be necessary to support in EDAM the `Format (by type of data) <http://edamontology.org/format_2350>`_ and `Identifier (by type of data) <http://edamontology.org/data_0976>`_ patterns. 
 
 	
 Concrete concepts
@@ -237,41 +237,41 @@ Hierarchy depth
 There are limitations on the number of placeholders, and concrete concepts, that are chained (via *is_a* relation) together. In practice, this results in a maximum depth of each subontology.
 
 - **Topic:**
+  
   - each concept must have a path to root not exceeding 4 levels, *e.g.* `Topic <http://edamontology.org/topic_0003>`_ -> *"Computational biology*" -> *"Molecular genetics"* -> *"Gene structure"* -> *"Mobile genetic elements*"
-
+  - 5 levels deep max. (in exceptional circumstances, an alternative path to root may exist, but never deeper than 5 levels)
+    
 - **Operation:**
 
   - maximum chain of 3 placholders 
   - maximum chain of 3 concrete operations
-  - 6 levels deep max.
+  - thus 6 levels deep max.
 
 - **Data:**
 
   - maximum chain of 2 placeholders
   - maximum chain of 2 concrete data types
-  - 4 levels deep max.
+  - thus 4 levels deep max.
     
 - **Identifier:**
 
   - maximum chain of 4 placholders, *e.g.* `Identifier (by type of data) <http://edamontology.org/data_0976>`_ -> *"Sequence identifier"* -> *"Sequence accession"* -> *"Sequence accession (protein)"* 
   - maximum chain of 2 concrete identifiers
-  - 6 levels deep max.
-    
-  - no maximum depth or chains (it depends on extant identifiers)
+  - thus 6 levels deep max.
   
 - **Format:**
 
   - maximum chain of 4 placholders, *e.g.* `Format (by type of data) <http://edamontology.org/format_2350>`_ -> *"Sequence record format"* -> *"FASTA-like"* -> *"FASTA-like (text)"*
   - maximum chain of 2 concrete formats
-  - 6 levels deep max.    
+  - thus 6 levels deep max.    
 
 Terms and synonyms
 ------------------
-EDAM uses the following types of synonym:
+EDAM uses:
 
 - **Exact** synonym  - a standard synonym (same meaning) of the primary term
 - **Narrow** synonym - specialisms of the primary term
-- **Broad** synonym - generalisations of the primary term
+- **Broad** synonym - generalisations of the primary term (used in exceptional cases only)
 
 All terms (primary and synonyms) are unique within a subontology, and (with a few exceptions) are unique *between* subontologies, too.  
 
