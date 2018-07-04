@@ -30,8 +30,8 @@ Mandatory attributes
 When adding new concepts, you **MUST** specify the following (attributes are in parenthesis)
 
 .. csv-table::
-   :header: "Maturity", "Description"
-   :widths: 25, 100
+   :header: "Maturity", "Description", ""
+   :widths: 25, 100, 50
 
    "Concept URI", "``rdf:about`` ", "In the right namespace and with the latest numerical ID."
    "doi", "Digital Object Identifier of the software assigned (typically) by the software developer or service provider.", ""
