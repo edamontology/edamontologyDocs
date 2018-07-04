@@ -27,7 +27,7 @@ Adding concepts
 
 Mandatory attributes
 ....................
-When adding new concepts, you **MUST** specify the following (attributes are in parenthesis):
+When adding new concepts, you **MUST** specify the following (attributes are in parenthesis)
 
 
 .. csv-table::
