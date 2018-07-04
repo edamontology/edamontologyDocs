@@ -210,21 +210,21 @@ Concrete concepts
 ^^^^^^^^^^^^^^^^^
 
 - **Concrete operations** have a specific input and/or output
-  - have at least one **Operation** *has_input* | *has_output* **Data** relation (see `todo <>`_ and `todo <>`_)
+  - have at least one **Operation** *has_input* | *has_output* **Data** relation 
   - include low-level (specific) operations (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_) and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_)
-  - maximum of 3 concrete operations in a chain (see `todo <>`_).
+  - maximum of 3 concrete operations in a chain
 
 - **Concrete data types** have a specific serialisation format
-  - have one **Format** *is_format_of* **Data** relation (see `todo <>`_ and `todo <>`_)
-  - maximum of 2 concrete data types in a chain (see `todo <>`_)
+  - have one **Format** *is_format_of* **Data** relation
+  - maximum of 2 concrete data types in a chain
 
 - **Concrete identifers** have a corresponding data type
-  - have one **Identifier** *is_identifier_of* **Data** relation (see `todo <>`_ and `todo <>`_)
-  - normally have a regular expression pattern defining valid syntax of identifier instances (see `todo <>`_)
+  - have one **Identifier** *is_identifier_of* **Data** relation
+  - normally have a regular expression pattern defining valid syntax of identifier instances
   - no maximum chain (it depends on extant identifiers)
       
 - **Concrete data formats** have a formal, public syntax specification
-  - have one ``<specification>`` annotation linking to the format specification (see `todo <>`_)
+  - have one ``<specification>`` annotation linking to the format specification
   - in some cases, as practical necessity, there are format variants and sub-variants, *e.g.* *EMBL-like (XML)* and *FASTA-like (text)*
   - no maximum chain (it depends on extant formats)
 
