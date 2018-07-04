@@ -29,6 +29,21 @@ Mandatory attributes
 ....................
 When adding new concepts, you **MUST** specify the following (attributes are in parenthesis)
 
+
+.. csv-table::
+   :header: "Maturity", "Description", ""
+   :widths: 25, 100, 50
+
+   "Concept URI","``rdf:about`` ","In the right namespace and with the latest numerical ID."
+   "Primary term", "``rdfs:label`` ","See `todo <>`_."
+   "Definition","``oboInOwl:hasDefinition`` ","See `todo <>`_."
+   "Parent(s"),"``rdfs:subClassOf`` ","See `todo <>`_."
+   "Version","``created_in`` ","Current EDAM dev version, *e.g.* ``1.21``."
+   "'edam' subset","``oboInOwl:inSubset`` ","Always ``edam``."
+   "Branch subset","``oboInOwl:inSubset`` ","One of ``topic``, ``data``, ``format`` or ``operation``."
+   "Type subset","``oboInOwl:inSubset`` ","One of ``concrete`` or ``placeholder``."
+   "Next ID","``<next_id>`` ","Increment the current count by 1."
+   
 .. csv-table::
    :header: "Maturity", "Description", ""
    :widths: 25, 100, 50
