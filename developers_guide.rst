@@ -34,10 +34,14 @@ When adding new concepts, you **MUST** specify the following (attributes are in 
    :widths: 25, 100, 50
 
    "Concept URI", "``rdf:about`` ", "In the right namespace and with the latest numerical ID."
-   "doi", "Digital Object Identifier of the software assigned (typically) by the software developer or service provider.", ""
-   "rrid", "Research Resource Identifier as used by the NIH-supported Resource Identification Portal (https://scicrunch.org/resources).", ""
-   "cpe", "Common Platform Enumeration (CPE) identifier as listed in the CPE dictionary (https://cpe.mitre.org/dictionary/).", ""
-   "biotoolsCURIE", "bio.tools CURIE (secondary identifier).", ""
+   "Primary term"  , "``rdfs:label``"            , "See `todo <>`_."
+   "Definition"    , "``oboInOwl:hasDefinition``", "See `todo <>`_."
+   "Parent(s")     , "``rdfs:subClassOf``"       , "See `todo <>`_."
+   "Version"       , "``created_in``"            , "Current EDAM dev version, *e.g.* ``1.21``."
+   "'edam' subset" , "``oboInOwl:inSubset``"     , "Always ``edam``."
+   "Branch subset" , "``oboInOwl:inSubset``"     , "One of ``topic``, ``data``, ``format`` or ``operation``."
+   "Type subset"   , "``oboInOwl:inSubset``"     , "One of ``concrete`` or ``placeholder``."
+   "Next ID"       , "``<next_id>``"             , "Increment the current count by 1."
 
 
    
