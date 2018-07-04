@@ -192,14 +192,14 @@ Placholder concepts
 
 - **Identifier placeholders** include: 
 
-  - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these
-  - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these
+  - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
+  - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
   - `Identifier (hybrid) <http://edamontology.org/data_2109>`_: a concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database)
 
 - **Format placeholders** include:
 
-  - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_: all concrete formats are a child of one of these
-  - *data type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*
+  - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_.  All concrete formats are a child of one of these.
+  - *data type placeholders* under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*
 
 
 .. note::
@@ -210,26 +210,26 @@ Placholder concepts
 Concrete concepts
 ^^^^^^^^^^^^^^^^^
 
-- **Concrete operations** have a specific input and/or output
-  
-  - have at least one **Operation** *has_input* | *has_output* **Data** relation 
+- **Concrete operations**
+
+  - have specific input(s) and/or output(s) (**Operation** *has_input* | *has_output* **Data** relation)
   - include low-level (specific) operations (*e.g.* `Protein feature detection <http://edamontology.org/operation_3092>`_) and in some cases variants (*e.g.* `Protein binding site prediction <http://edamontology.org/operation_2575>`_) and sub-variants (*e.g.* `Protein-nucleic acid binding prediction <http://edamontology.org/operation_0420>`_)
   - maximum of 3 concrete operations in a chain
 
-- **Concrete data types** have a specific serialisation format
-  
-  - have one **Format** *is_format_of* **Data** relation
+- **Concrete data types**
+
+  - have a specific serialisation format (**Format** *is_format_of* **Data** relation)
   - maximum of 2 concrete data types in a chain
 
-- **Concrete identifers** have a corresponding data type
-  
-  - have one **Identifier** *is_identifier_of* **Data** relation
-  - normally have a regular expression pattern defining valid syntax of identifier instances
+- **Concrete identifers**
+
+  - have a corresponding data type (**Identifier** *is_identifier_of* **Data** relation)
+  - normally have a regular expression pattern defining valid syntax of identifier instances (``<regex>`` attribute)
   - no maximum chain (it depends on extant identifiers)
       
-- **Concrete data formats** have a formal, public syntax specification
-  
-  - have one ``<specification>`` annotation linking to the format specification
+- **Concrete data formats**
+
+  - have a formal, public syntax specification (``<specification>`` attribute)
   - in some cases, as practical necessity, there are format variants and sub-variants, *e.g.* *EMBL-like (XML)* and *FASTA-like (text)*
   - no maximum chain (it depends on extant formats)
 
