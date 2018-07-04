@@ -27,7 +27,7 @@ Adding concepts
 
 Mandatory attributes
 ....................
-When adding new concepts, you **MUST** specify the following (attributes are in parenthesis)
+When adding new concepts, you **MUST** specify the following:
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
@@ -38,7 +38,8 @@ When adding new concepts, you **MUST** specify the following (attributes are in 
    "Definition", "``oboInOwl:hasDefinition``", "See `todo <>`_."
    "Parent(s)", "``rdfs:subClassOf``", "See `todo <>`_."
    "Version", "``created_in``", "Current EDAM dev version, *e.g.* ``1.21``."
-   "'edam' subset", "``oboInOwl:inSubset``", "Always ``edam``."
+   "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``, see `todo <>_`."
+   "EDAM subset", "``oboInOwl:inSubset``", "Always ``edam``."
    "Branch subset", "``oboInOwl:inSubset``", "One of ``topic``, ``data``, ``format`` or ``operation``."
    "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``."
    "Next ID", "``<next_id>``", "Increment the current count by 1."
@@ -65,6 +66,7 @@ For **Identifier** additions you **MUST** also specify:
 
 Optional attributes
 ...................
+When adding new concepts, you **SHOULD** specify the following:
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
@@ -95,8 +97,35 @@ For **Identifier** additions you **SHOULD** also specify:
 
 
 
+Hierarchy
+.........
+- **Topic:**
+  
+  - **MUST** have a path to root of 4 levels deep maximum
+  - **MUST NOT** have a path to root exceeding 5 levels deep
+    
+- **Operation:**
 
-   
+  - **MUST NOT** chain more than 3 placeholders 
+  - **MUST NOT** chain more than 3 concrete operations
+
+- **Data:**
+
+  - **MUST NOT** chain more than 2 placeholders 
+  - **MUST NOT** chain more then 2 concrete data concepts
+  - thus 4 levels deep max.
+    
+- **Identifier:**
+
+  - **MUST NOT** chain more than 4 placeholders 
+  - **MUST NOT** chain more than 2 concrete identifiers
+  
+- **Format:**
+
+  - **MUST NOT** chain more than 4 placeholders 
+  - **MUST NOT** chain more than 2 concrete identifiers
+
+If you add a concept which you expect to remain a leaf node, *i.e.* EDAM will not include finer-grained concepts, then - if other well-developed ontologies exist that serve this conceptual niche - you **SHOULD** annotate this junction (see `todo <>`_).   
 
 Deprecating concepts
 ^^^^^^^^^^^^^^^^^^^^ 
@@ -105,16 +134,17 @@ When deprecating concepts, you **MUST** specify the following:
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
 
-   "EDAM version", "``obsolete_since``", "Current version *e.g.* 1.21"
-   "Subset", "``oboInOwl:inSubset``", Set this to ``obsolete`` (pick the value)"
+   "EDAM version", "``obsolete_since``", "Current version *e.g.* `1.21`"
+   "Subset", "``oboInOwl:inSubset``", "Set this to ``obsolete`` (pick the value)"
    "Deprecation flag", "``owl:deprecated``", "Type the value of ``true``"
    "Replacement concept", "``oboInOwl:replacedBy``", "The alternative 'replacement' concept to firmly use. Pick one."
    "Replacement concept", "``oboInOwl:consider``", "Replacement concept when less certain.  Pick one."
    "Old parent", "``oldParent``", "Specify the URI(s) of the erstwhile parent(s) of the now-deprecated concept (using one or more attributes as needed)."
    "Comment", "``deprecation_comment``", "Optional comment as to why the concept is deprecated."
-   "New parent", "``rdfs:subClassOf``", "Set the parent concept to be ``ObsoleteClass``."
+   "New parent", "``rdfs:subClassOf``", "Set the parent concept to be ``ObsoleteClass``"
 
 Also:
+
 1. **MUST** remove all other class annotations (subsets, comments, synonyms *etc.*) and axioms (including parent concepts)
 2. **MUST** refactor all references (*e.g.* ``SubClassOf``) to the concept being deprectated from other concepts (you can see these using Protege)
 3. **SHOULD** preserve comments and synonyms, as new annotations either in the old parent(s), or the replacement(s) of the deprecated concept, as appropriate.
@@ -173,8 +203,8 @@ Modifying GitHub main repo.
 
 1. Get the "editing token" 
 
-   - Contact edam-dev@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
-   - Say briefly what you are doing, why, and about how long it will take
+   - contact edam-dev@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
+   - say briefly what you are doing, why, and about how long it will take
 
 2. Update your local repo with the latest files from the GitHub master:
 
@@ -186,10 +216,10 @@ Modifying GitHub main repo.
 
 3. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
    
-   - Check your changes and that the OWL file looks good in Protege
-   - Ensure the ``next_id`` attribute is updated
-   - Ensure that ``oboOther:date`` is updated to the current GMT/BST before the commit
-   - Add the edited file to the commit
+   - check your changes and that the OWL file looks good in Protege
+   - ensure the ``next_id`` attribute is updated
+   - ensure that ``oboOther:date`` is updated to the current GMT/BST before the commit
+   - add the edited file to the commit
    
       ``git add <filepath>``
    - Commit your local changes, including a concise but complete summary of the major changes:
@@ -202,13 +232,13 @@ Modifying GitHub main repo.
 
 5. Release the editing token for the other developers:
 
-   - Contact edam-dev@elixir-dk.org and release the "editing token" .
-   - Summarise what you actually did and why.
+   - contact edam-dev@elixir-dk.org and release the "editing token"
+   - summarise what you actually did and why
 
 .. important::    
    Please provide a **meaningful report** on changes so that we can easily generate the ChangeLog upon next release
 
-   - in the Git commit message, including the GitHub issue number of any issues addressed (use ``fix #xxx`` syntax, see https://help.github.com/articles/closing-issues-via-commit-messages)
+   - in the Git commit message, including the GitHub issue number of any issues addressed (use ``fix #xxx`` syntax, see `GitHub docs <https://help.github.com/articles/closing-issues-via-commit-messages>`_)
    - directly in the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_
 
 
@@ -246,16 +276,15 @@ Before creating a new release, please make sure you have the approval of leader 
    - make sure to update ``oboOther:date`` in this file
    - copy the file ``EDAM_dev.owl`` to ``releases/EDAM_n+1.owl``
 
-    ``cp EDAM\_dev.owl releases/EDAM_n+1.owl``
-    ``git add releases/EDAM\_n+1.owl``
+     - ``cp EDAM\_dev.owl releases/EDAM_n+1.owl``
+     - ``git add releases/EDAM\_n+1.owl``
 
    - modify the ``doap:version`` property to **n+1** in ``releases/EDAM_n+1.owl`` and to **n+2_dev** in ``EDAM_dev.owl``
    
-   - commit and push your changes
+3. commit and push your changes
 
-    ``git commit -a``
-
-    ``git push origin``
+    - ``git commit -a`` (or "Commit to master" in the desktop client)
+    - ``git push origin`` (or "Synch" in the desktop client)
 
 4. update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
 5. update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.

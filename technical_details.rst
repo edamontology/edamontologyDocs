@@ -243,7 +243,7 @@ There are limitations on the number of placeholders, and concrete concepts, that
     
 - **Operation:**
 
-  - maximum chain of 3 placholders 
+  - maximum chain of 3 placeholders 
   - maximum chain of 3 concrete operations
   - thus 6 levels deep max.
 
@@ -276,7 +276,9 @@ EDAM uses:
 All terms (primary and synonyms) are unique within a subontology, and (with a few exceptions) are unique *between* subontologies, too.  
 
 
-
+Subsets
+-------
+<todo>
 
     
 Identifiers & persistent URLs
