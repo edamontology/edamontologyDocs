@@ -294,7 +294,8 @@ where ``<namespace>`` refers to an EDAM subontology, one of:
 
 and ``<4-digit-ID>`` uses numbers from 0 to 9.  Note this number is unique across all subontologies.
 
-The IDs are used in URLs that resolve to information about the concept, *e.g.*:  
+The IDs are used in URLs that resolve to information about the concept, *e.g.*:
+
 * ``topic_0121``
 * http://edamontology.org/topic_0121
 
