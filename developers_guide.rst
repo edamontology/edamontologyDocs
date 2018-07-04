@@ -33,7 +33,7 @@ When adding new concepts, you **MUST** specify the following (attributes are in 
    :header: "Maturity", "Description"
    :widths: 25, 100
 
-   "Concept URI"   , "``rdf:about`` "            , "In the right namespace and with the latest numerical ID."
+   "Concept URI", "``rdf:about`` ", "In the right namespace and with the latest numerical ID."
    "doi", "Digital Object Identifier of the software assigned (typically) by the software developer or service provider.", ""
    "rrid", "Research Resource Identifier as used by the NIH-supported Resource Identification Portal (https://scicrunch.org/resources).", ""
    "cpe", "Common Platform Enumeration (CPE) identifier as listed in the CPE dictionary (https://cpe.mitre.org/dictionary/).", ""
