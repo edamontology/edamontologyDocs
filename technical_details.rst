@@ -168,12 +168,12 @@ Rules by relation
 
 Concept types
 -------------
-EDAM concepts are defined internally as one of two types:
+EDAM concepts are defined internally (via ``<oboInOwl:inSubset>``) as one of two types:
    
 - **Placeholder concepts** are high-level (conceptually broad), and used primarily to structure EDAM, providing placeholders for *concrete concepts*. They're not intended to be used much, or at all, for annotation.
 - **Concrete concepts** are lower-level (conceptually more narrow) and are intended for annotation.  *All* leaf nodes are concrete.
 
-These notion depend upon the subontology (see below).
+These notions depend upon the subontology (see below).
 
 .. note::
    EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
@@ -181,15 +181,13 @@ These notion depend upon the subontology (see below).
 Placholder concepts
 ^^^^^^^^^^^^^^^^^^^
 - **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
-
   - all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders.
     
 - **Data placeholders** are basic types of data:
 
   - technical types, *e.g.* *Score*
   - broad biological types *e.g.* *Phylogenetic data*
-
-- they mostly appear in Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_), rarely in Tier 2, and never below that.  Note, not all Tier 1 **Data** concepts are placeholders.
+  - they mostly appear in Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_), rarely in Tier 2, and never below that.  Note, not all Tier 1 **Data** concepts are placeholders.
 
 - **Identifier placeholders** include: 
 
