@@ -182,7 +182,7 @@ Placholder concepts
 ^^^^^^^^^^^^^^^^^^^
 - **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
 
-- all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders.
+  - all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders.
     
 - **Data placeholders** are basic types of data:
 
@@ -193,14 +193,14 @@ Placholder concepts
 
 - **Identifier placeholders** include: 
 
-    - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
-    - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* "Sequence accession (protein)". These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
-    - `Identifier (hybrid) <http://edamontology.org/data_2109>`_.  A concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database).
+  - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
+  - *data type placeholders* under `Identifier (typed) <http://edamontology.org/data_0976>`_ *e.g.* "Sequence accession (protein)". These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
+  - `Identifier (hybrid) <http://edamontology.org/data_2109>`_.  A concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database).
 
 - **Format placeholders** include:
 
-    - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_. All concrete formats are a child of one of these (see `to-do <>`_).
-    - *data type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  
+  - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_. All concrete formats are a child of one of these (see `to-do <>`_).
+  - *data type placeholders* for types of data listed under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  
 
 
 .. note::
