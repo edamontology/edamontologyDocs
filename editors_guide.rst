@@ -88,7 +88,7 @@ Concepts & Terms
 
 - **MUST** specify all mandatory attributes and **SHOULD** specify all optional ones (see `Adding concepts <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#adding-concepts>`_)
 - **SHOULD** provide all common *exact synonyms* of the primary term
-- **MAY** provide any number of *narrow synonyms* (but be wary of conceptual overal with child concepts). The exception is **Format** subontology where **MUST NOT** include any narrow synonyms at all.
+- **MAY** provide any number of *narrow synonyms* (but be wary of conceptual overal with child concepts). The exception is **Format** subontology which **MUST NOT** include any narrow synonyms at all.
 - **SHOULD NOT** provide any *broad synonyms* unless these are really needed (but be wary of conceptual overal with parent concepts)
 
   
@@ -98,7 +98,7 @@ Hierarchy
 .........
 - each subontology must not descend beyond a certain depth (see below).  Specifically, this means that each concept **MUST** have at least one path to root (*i.e.* to `Topic <http://edamontology.org/topic_0003>`_, `Operation <http://edamontology.org/operation_0004>`_, `Data <http://edamontology.org/data_0006>`_, or `Format <http://edamontology.org/format_1915>`_) no deeper than indicated.   It's OK for a concept to have other paths to root that are deeper than this.
   
-  - **Topic:** 3 levels deep max. *i.e.* *Topic* (root) -> Topic -> Subtopic -> Subsubtopic (leaves)
+  - **Topic:** 3 levels deep max. *i.e.* *Topic* (root) -> Subtopic -> Subsubtopic (leaves)
   - **Operation:** 6 levels deep max. 
   - **Data:** 4 levels deep max. 
   - **Format:** 3 levels deep max. 

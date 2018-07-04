@@ -31,8 +31,8 @@ When adding new concepts, you **MUST** specify the following (attributes are in 
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
+   :widths: 20, 40, 60
    
-
 "Concept URI"   , "``rdf:about``"             , "In the right namespace and with the latest numerical ID."
 "Primary term"  , "``rdfs:label``"            , "See `todo <>`_."
 "Definition"    , "``oboInOwl:hasDefinition``", "See `todo <>`_."
@@ -47,7 +47,8 @@ For **Format** additions you **MUST** also specify:
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
-
+   :widths: 20, 40, 60
+	    
 "Type of data"  , "``<is_format_of>``"        , "See `todo <>`_."
 "Specification" , "``<documentation>``"       , "URL of format specification.  See `todo <>`_."
 
@@ -56,7 +57,8 @@ For **Identifier** additions you **MUST** also specify:
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
-
+   :widths: 20, 40, 60
+	    
 "Type of data"  , "``<is_identifier_of>``"    , "See `todo <>`_."
 
   
@@ -66,7 +68,8 @@ Optional attributes
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
-
+   :widths: 20, 40, 60
+	    
 "Exact synonym"  , "``oboInOwl:hasExactSynonym``", "See `todo <>`_."
 "Narrow synonym" , "``oboInOwl:hasNarrowSynonym``, "See `todo <>`_."
 "Broad synonym"  , "``oboInOwl:hasBroadSynonym``", "See `todo <>`_."
