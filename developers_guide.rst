@@ -102,17 +102,28 @@ Deprecating concepts
 ^^^^^^^^^^^^^^^^^^^^ 
 When deprecating concepts, you **MUST** specify the following:
 
-1. Current dev version into ``obsolete_since``.
-2. The 'obsolete' subset (``oboInOwl:inSubset``): pick ``obsolete``.
-3. The ``deprecated`` attribute (``owl:deprecated``): type the value of ``true``.
-4. The alternative 'replacement' term to firmly use (``oboInOwl:replacedBy``), or to consider when less certain (``oboInOwl:consider``): pick a concept.
-5. The ``oldParent`` attribute : specify the URI of the erstwhile parent of the now-deprecated concept.  If the concept had more than one parent, you should specify more than one ``oldParent`` attribute.
-6. Optionally, specify a comment as to why the concept was deprecated in the ``deprecation_comment`` attribute.
-7. Set the parent concept (``rdfs:subClassOf``) to the ``ObsoleteClass``. 
-8. Remove all other class annotations (subsets, comments, synonyms etc.) and axioms (including parent concepts): comments and synonyms should be preserved as appropriate in the old parents or replacements of the deprecated concept.
-8. **Importantly** remember to refactor all references (e.g. ``SubClassOf``) to this concept from other concepts.  You can see all such references in Protege in the "Class Usage"; each reference will need updating in turn: in case of very many such references, this can be easier to do globally in a text editor rather than Protege.
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+   "EDAM version", "``obsolete_since``", "Current version *e.g.* 1.21"
+   "Subset", "``oboInOwl:inSubset``", Set this to ``obsolete`` (pick the value)"
+   "Deprecation flag", "``owl:deprecated``", "Type the value of ``true``"
+   "Replacement concept", "``oboInOwl:replacedBy``", "The alternative 'replacement' concept to firmly use. Pick one."
+   "Replacement concept", "``oboInOwl:consider``", "Replacement concept when less certain.  Pick one."
+   "Old parent", "``oldParent``", "Specify the URI(s) of the erstwhile parent(s) of the now-deprecated concept (using one or more attributes as needed)."
+   "Comment", "``deprecation_comment``", "Optional comment as to why the concept is deprecated."
+   "New parent", "``rdfs:subClassOf``", "Set the parent concept to be ``ObsoleteClass``."
+
+Also:
+1. **MUST** remove all other class annotations (subsets, comments, synonyms *etc.*) and axioms (including parent concepts)
+2. **MUST** refactor all references (*e.g.* ``SubClassOf``) to the concept being deprectated from other concepts (you can see these using Protege)
+3. **SHOULD** preserve comments and synonyms, as new annotations either in the old parent(s), or the replacement(s) of the deprecated concept, as appropriate.
 
 
+.. note::
+   You can see all references to a concept in Protege in the "Class Usage" window; each reference will need updating in turn: in case of very many such references, this can be easier to do globally in a text editor rather than Protege.
+
+   
 Use of Protege
 ^^^^^^^^^^^^^^
 `Protege <https://protege.stanford.edu/>`_ is a nice OWL Editor, but has it's quirks, so it's recommended you first get a crash course from the `EDAM Developers <>`_ before using it.  A commercial alternative is `TopBraid Composer <https://www.topquadrant.com/tools/ide-topbraid-composer-maestro-edition/>`_.
@@ -120,9 +131,9 @@ Use of Protege
 Editing
 .......
 
-
 .. important::
-   When using Protege
+   When editing EDAM using Protege:
+   
    - URLs should be entered using the Protege IRI editor.
    - General text is entered using the Protege 'Constant" editor.
    - Subsets (``oboInOwl:inSubset`` annotation): you must pick (don't type!) an appropriate value.
@@ -163,7 +174,7 @@ Modifying GitHub main repo.
 1. Get the "editing token" 
 
    - Contact edam-dev@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
-   - Say what you are doing, why, and about how long it will take
+   - Say briefly what you are doing, why, and about how long it will take
 
 2. Update your local repo with the latest files from the GitHub master:
 
@@ -174,6 +185,7 @@ Modifying GitHub main repo.
     ``git clone https://github.com/edamontology/edamontology.git`` (or "Clone" from the Desktop client)
 
 3. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
+   
    - Check your changes and that the OWL file looks good in Protege
    - Ensure the ``next_id`` attribute is updated
    - Ensure that ``oboOther:date`` is updated to the current GMT/BST before the commit
@@ -188,20 +200,25 @@ Modifying GitHub main repo.
 
     ``git push origin``
 
-**Please provide a meaningful reporting on changes so that we can easily generate the ChangeLog upon next releas**
-
-   - in the Git commit message, including the GitHub issue number of any issues addressed (use ``fix #xxx`` syntax see https://help.github.com/articles/closing-issues-via-commit-messages.
-   - directly in the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_
-   
-     
-
 5. Release the editing token for the other developers:
 
    - Contact edam-dev@elixir-dk.org and release the "editing token" .
    - Summarise what you actually did and why.
 
+.. important::    
+   Please provide a **meaningful report** on changes so that we can easily generate the ChangeLog upon next release
+
+   - in the Git commit message, including the GitHub issue number of any issues addressed (use ``fix #xxx`` syntax, see https://help.github.com/articles/closing-issues-via-commit-messages)
+   - directly in the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_
+
+
+     
 Creating a new official EDAM release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+EDAM release schedule
+.....................
+
 From January 2016, EDAM tries to follow a bi-monthly release cycle to this schedule:
 
 1.  First Wed of every month
@@ -213,12 +230,17 @@ From January 2016, EDAM tries to follow a bi-monthly release cycle to this sched
 4.  Last Fri of every month
    -  Announcee the release, incuding summary of changes.
 
-Before creating a new release, please make sure you have the approval of leader of EDAM-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See section below on creating the ChangeLog files.  Once you're clear to go, do the following:
+.. note::
+   Releases have been quarterly but bi-monthly, even monthly remains the aspiration.  Please help out move faster by `getting involved <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html>`_.
+      
+Process
+.......
+Before creating a new release, please make sure you have the approval of leader of EDAM-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See `Editing the ChangeLog <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#editing-the-changelog>`_ below.  Once you're clear to go, do the following:
 
-1. Update your local version of the repository:
+1. update your local version of the repository:
 
-    ``git pull``
-2. Assuming you are releasing version n+1, n being the current version:
+    ``git pull`` (or "Synch" in desktop client)
+2. assuming you are releasing version n+1, n being the current version:
 
    - you initially have ``EDAM_dev.owl`` in the repository
    - make sure to update ``oboOther:date`` in this file
@@ -235,15 +257,15 @@ Before creating a new release, please make sure you have the approval of leader 
 
     ``git push origin``
 
-4. Update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
-5. Update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.
-6. Create the release on GitHub (use the `_draft a new release_ <https://github.com/edamontology/edamontology/releases/new>`_ button of the `_releases_ <https://github.com/edamontology/edamontology/releases>`_ tab).
-7. Update http://edamontology.org.
-8. Submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
-9. Close GitHub issues labelled *done - staged for release*.
-10. Confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
-11. Announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
-12. Help apps that implement EDAM to update to the new version.
+4. update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
+5. update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.
+6. create the release on GitHub (use the `_draft a new release_ <https://github.com/edamontology/edamontology/releases/new>`_ button of the `_releases_ <https://github.com/edamontology/edamontology/releases>`_ tab).
+7. update http://edamontology.org.
+8. submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
+9. close GitHub issues labelled *done - staged for release*.
+10. confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
+11. announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
+12. help applications that implement EDAM to update to the new version.
 
 
 Editing the ChangeLog
@@ -268,9 +290,11 @@ Some hacking of bubastis output is needed to identify (at least):
 Continuous Integration
 ----------------------
 Every modification on the ontology pushed to GitHub triggers an automated test in Travis CI. It checks:
+
 - a few rules using the `edamxpathvalidator tool <https://github.com/edamontology/edamxpathvalidator>`_.
 - the consistency of the ontology by running the Hermit reasoner automatically.
-The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee that it there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
+
+  The Travis-CI website shows you the current status `here <https://travis-ci.org/edamontology/edamontology>`_. The fact that the continuous integration task succeeds does not guarantee there are no remaining bugs, but a failure means that you must take action to correct the problem, either fix it, fix the ``edamxpathvalidator`` program, or ask the mailing list if you're unsure.
 
 Modifications in a GitHub fork
 ------------------------------
