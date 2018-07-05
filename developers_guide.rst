@@ -52,7 +52,8 @@ For **Format** additions you **MUST** also specify:
 	    
    "Type of data", "``<is_format_of>``", "See `todo <>`_."
    "Specification", "``<documentation>``", "URL of format specification.  See `todo <>`_."
-
+   "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `todo <>`_."
+   "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `todo <>`_."
 
 For **Identifier** additions you **MUST** also specify:
 
@@ -61,9 +62,10 @@ For **Identifier** additions you **MUST** also specify:
    :widths: 20, 40, 60
 	    
    "Type of data", "``<is_identifier_of>``", "See `todo <>`_."
+   "Basic type", "``rdfs:subClassOf``", "One of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  See `todo <>`_."
+   "Type of data", "``rdfs:subClassOf``", "Some child of `Identifier (hybrid) <http://edamontology.org/data_2109>`_. See `todo <>`_."
 
-  
-
+   
 Optional attributes
 ...................
 When adding new concepts, you **SHOULD** specify the following:
@@ -78,15 +80,21 @@ When adding new concepts, you **SHOULD** specify the following:
    "Comment", "``rdfs:comment``", "See `todo <>`_."
    "Wikipedia", "``<documentation>``", "URL of Wikipedia page.  See `todo <>`_."
 
-   
+
+For **Operation** additions you **MAY** also specify:
+
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+   "Top-level operation", "``rdfs:subClassOf``", "One of the Tier 1 operations (see `todo <>`_) *unless* this already subsumed adequately by the parent."
+
 For **Format** additions you **SHOULD** also specify:
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
-	    
-   "Type of data", "``<is_format_of>``", "Applicable **Data** concept. See `todo <>`_."
 
-
+   "Documentation", "``<documentation>``", "URL of documentation about the format.  See `todo <>`_."
+   "Publication", "``<documentation>``", "DOI of publication about the format."   
 
 For **Identifier** additions you **SHOULD** also specify:
 
@@ -94,11 +102,19 @@ For **Identifier** additions you **SHOULD** also specify:
    :header: "Attribute", "OWL attribute", "Note"
 
    "Regexp", "``<regex>``", "Regular expression pattern for identifier instances. See `todo <>`_."
+   "Documentation", "``<documentation>``", "URL of documentation about the identifier.  See `todo <>`_."
+
 
 
 
 Hierarchy
 .........
+The following rules maintain the integrity of the conceptual hierarchy and ensure a consistent level of conceptual granularity.
+
+- **All subontologies**
+
+  - leaf nodes **MUST** be concrete concepts (see `to-do <>`_ and `to-do <>`_)
+
 - **Topic:**
   
   - **MUST** have a path to root of 4 levels deep maximum
@@ -106,26 +122,47 @@ Hierarchy
     
 - **Operation:**
 
+  - **MUST** ensure placeholders appear in Tiers 1 and 2 (usually) and 3 (rarely - in exceptional cases) only
   - **MUST NOT** chain more than 3 placeholders 
   - **MUST NOT** chain more than 3 concrete operations
-
+  
 - **Data:**
 
   - **MUST NOT** chain more than 2 placeholders 
   - **MUST NOT** chain more then 2 concrete data concepts
-  - thus 4 levels deep max.
-    
+  - **MUST** ensure placeholders occur in Tier 1 (usually) and 2 (rarely) only
+
+  
 - **Identifier:**
 
   - **MUST NOT** chain more than 4 placeholders 
   - **MUST NOT** chain more than 2 concrete identifiers
-  
+  - **MUST** be related (via *is_identifier_of*) to a **Data** concept, but **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept.   
+  - **MUST** descend (via ``subClassOf`` relations) concrete identifiers from:
+
+    - `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_ 
+    - `Identifier (typed) <http://edamontology.org/data_0976>`_ (or its kids)
+
+    but **MUST NOT** duplicate these annotations if already stated on an ancestor concept.
+    
+    and 2) indicating the type of identifier *e.g.* "Sequence accession (protein)", *i.e.* a concept descended from 
+  - where a concrete identifier is re-used for data objects of fundamentally different types (typically served from a single database) **MUST**  descend (via ``subClassOf`` relations) from:
+
+   - "Identifier (hybrid)" (http://edamontology.org/data_2109) may also be given.
+    
 - **Format:**
 
   - **MUST NOT** chain more than 4 placeholders 
   - **MUST NOT** chain more than 2 concrete identifiers
+  - **MUST** be related (via *is_format_of*) to a **Format** concept, but **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept.
+  - **MUST** descend (via ``subClassOf``) concrete formats from *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* or *YAML*, but you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Textual format*, but the kids of *FASTA-like (text)* format are not.
+  - **MUST** descend (via ``subClassOf``) concrete formats from `Format (by type of data) <http://edamontology.org/format_2350>`_ (or it's kids), but again, you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Sequence record format* -> *FASTA-like*, but the kids of *FASTA-like (text)* format are not.
+  - **MUST NOT** add new placeholder concepts (kids of `Format (by type of data) <http://edamontology.org/format_2350>`_) unless there is a corresponding concrete data format descending from it.
+  
+If you add a concept which you expect to remain a leaf node, *i.e.* EDAM will not include finer-grained concepts, then - if other well-developed ontologies exist that serve this conceptual niche - you **SHOULD** annotate this junction (see `todo <>`_).
 
-If you add a concept which you expect to remain a leaf node, *i.e.* EDAM will not include finer-grained concepts, then - if other well-developed ontologies exist that serve this conceptual niche - you **SHOULD** annotate this junction (see `todo <>`_).   
+
+
 
 Deprecating concepts
 ^^^^^^^^^^^^^^^^^^^^ 

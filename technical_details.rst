@@ -192,14 +192,14 @@ Placholder concepts
 
 - **Identifier placeholders** include: 
 
-  - *basic identifier type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
-  - *data type placeholders* under `Identifier (by type of data) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
+  - *basic type* one of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  All concrete identifiers are a child of one of these.
+  - *type of data* under `Identifier (by type of data) <http://edamontology.org/data_0976>`_ *e.g.* *"Sequence accession (protein)"*. These mirror the **Data** subontology.  All concrete identifiers are a child of one of these.
   - `Identifier (hybrid) <http://edamontology.org/data_2109>`_: a concrete identifier is a child of this if it's re-used for data objects of fundamentally different types (typically served from a single database)
 
 - **Format placeholders** include:
 
-  - *general data formats* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_.  All concrete formats are a child of one of these.
-  - *data type placeholders* under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  All concrete formats are a child of one of these.
+  - *basic type* currently `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, `XML <http://edamontology.org/format_2332>`_, `HTML <http://edamontology.org/format_2331>`_, `JSON <http://edamontology.org/format_3464>`_, `RDF format <http://edamontology.org/format_2376>`_ and `YAML <http://edamontology.org/format_3750>`_.  All concrete formats are a child of one of these.
+  - *type of data* under `Format (by type of data) <http://edamontology.org/format_2350>`_ *e.g.* *Alignment format*, *Image format* *etc.*.  All concrete formats are a child of one of these.
 
 
 .. note::
