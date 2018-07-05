@@ -58,9 +58,6 @@ These rules of thumb are to guide the technical and scientific development of ED
    
    For further information see `todo <>`_.
 
-- **MUST** be annotated as one of 
-
-
      
 General
 ^^^^^^^
@@ -101,6 +98,7 @@ Concepts & Terms
 - **MUST** reflect the primary term.
 
 *Comments:*
+
 - **MAY** include peripheral but important information not captured by the definition.
 - **MAY** reflect narrow and broad synonyms of the primary term.
   
@@ -111,16 +109,19 @@ Concepts & Terms
 - **SHOULD NOT** provide any *broad synonyms* unless these are really needed (but be wary of conceptual overal with parent concepts)
 
 
+
 .. note::
-   EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: there are special `deprecation guidelines <todo>`_ for this.
+   EDAM must always evolve, which means additions, edits, and occasionally *deprecations*: marking-up concepts as not recommended for use: the EDAM developers follow special `deprecation guidelines <todo>`_ for this.
 
 Hierarchy
 .........
 
 .. important::
    EDAM has the notion of *placeholder* and *concrete* concepts (see `todo <>`_):
+   
    - *placeholders* are intended primarily to organise the EDAM tree
    - *concrete* concepts are intended primarily for annotation purposes.
+
    There are rules for how many *placeholders* and *concrete* concepts can be chained togther (via *is_a*) relationships, and thus, the maximum depths of the subontology hierarchies (see `todo <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#hierarchy-depth>`_).
    In practice, as an Editor, you should be aware of the general structure of EDAM and the conceptual granularity in each subontology.  If in doubt, mail the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_ for advice.
 
@@ -145,7 +146,7 @@ Topic
 - Respect the `scope <todo>`_, specifically:
    
    - **MUST NOT** include fine-grained operations or types of data.  As a rare exception, very high-level operations *e.g.* *Sequence analysis* **MAY** be included.
-   - **MUST NOT** include any concept tied to a concrete project or product.
+   - **MUST NOT** include any topic tied to a concrete project or product.
    - **SHOULD NOT** include anything that is more tangible than a very general topic, *e.g.* specific cell types, diseases, biological processes, environment types *etc*.  Such fine-grained concepts belong in their own ontology, but **MAY** be captured, where desirable, as synonyms in EDAM.  Rare exceptions are allowed where a term really is in extremely prevalent usage (pragmatism rules!)
 
 - **MUST NOT** define multiple parents of a topic, with the exception of the strongest cases only, where it would be incongruous not to do so *e.g.* *Biochemistry* is a child of both *Biology* and *Chemistry*.
@@ -160,52 +161,60 @@ Operation
 .. note::
    Concrete **operations** (see `todo <>`_) range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *essential functions* of current bioinformatics software tools.  Note *essential*: the Operation subontology will not descend to a level of conceptual granularity that is impractical from a maintenance or usage perspective.
    
-- **MUST** state *what* is done but not *how* in the definition
-- **SHOULD** should never be more fine-grained than is useful for practical search purposes, and **SHOULD NOT** include fine-grained specialisations of a basic function, individiaul algorithms *etc.* (a few exceptions are allowed for very highly prevalent concepts)
+- **MUST** state in the definition *what* is done by the operation but not *how* 
+- **SHOULD** never be more fine-grained than is useful for practical search purposes
+- **SHOULD NOT** include fine-grained specialisations of a basic function, individiaul algorithms *etc.* (a few exceptions are allowed for very highly prevalent concepts)
    
 Data
 ....
 .. note::
-   Concrete **Data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatsics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation**, will maintain a level of conceptual granularity that is maintable and usable.
+   Concrete **Data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatsics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation**, will maintain a level of conceptual granularity that is maintable and usable.  **Data** concepts are formally related to **Identifier** and **Format** concepts:
+   - **Identifier** *is_identifier_of* **Data**
+   - **Format** *is_format_of* **Data**
 
+- **MUST** have a corresponding concept in the **Format** subontology, *i.e.* the serialisation format(s) of the data.  New formats can be added, if needed.
+- **MUST** have a corresponding concept in the **Identifier** subontology, *i.e.* identifier(s) of the data, if these exist.  New identifiers can be added, if needed.
+- **MUST** include in the definition a very basic description of the data, usualy in biological terms.
    
 Data->Identifier
 ................
 .. note::
-   Concrete **Identifier** concepts are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance snytax.
+   Concrete **Identifier** concepts are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance snytax.  Identifier and data concepts are formally related:
    
-- **MUST** indicate (via *is_identifier_of*) the type of data that is identified
-  
-- **MUST** include in the definition what type of data and/or name of database the identifier is used for.
-- **SHOULD** include a link to relevant documentation for the identifier.
+   - **Identifier** *is_identifier_of* **Data**
 
-- **MUST** specify the EDAM **Data** concept(s) for the type(s) of data identified by the identifier.  
+   Concrete formats appear in Tier 3 and below:
+
+   - *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format ...
+     
+- **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that is identified.  New data concepts can be added, if needed.   
+- **MUST** include in the definition what type of data and/or name of database the identifier is used for.
+- **SHOULD** include a link to relevant documentation for the identifier, if available
 - **SHOULD** specify a regular expression pattern, defining valid values of instances of that identifier
 
 Format
 ......
 
 .. note::
-   Concrete **Format** concepts are very specific.  There will be as many as required to capture all of the data formats currently in use.  By *data format" we mean a syntax for which a rigorous, comprehensive description is provided, typically either an XML Schema (XSD) or comprehensive textual specification.
+   Concrete **Format** concepts are very specific.  There will be as many as required to capture all of the data formats currently in use.  By *data format" we mean a syntax for which a rigorous, comprehensive description is provided, typically either an XML Schema (XSD) or comprehensive textual specification.  Format and data concepts are formally related:
    
-- **MUST** specify the EDAM Data concept(s) that the format applies to.
+   - **Format** *is_format_of* **Data**
 
-
-- Where file extensions are in common use, all of these **SHOULD** be annotated and you **MUST** preserve the common capitalisation and **MUST NOT** include period ('.') in the annotation, *e.g.* "txt" not ".txt".
-
-- **MUST** only include a format if it's in common use, for example by public databases or multiple tools and **MUST NOT** include formats which are specific to single tools only  
-- **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available, seee `todo <>`_.
-
-- **MUST** specify a link to the formal specification (*e.g.* an XML Schema (XSD) or rigorous documentation) of the format syntax
+- **MUST** only include a format if it's in common use, for example by public databases or multiple tools
+- **MUST NOT** include formats which are specific to single tools only
 - **MUST NOT** include formats for which a formal specification does not exist
+- **MUST** specify a link to the formal specification (*e.g.* an XML Schema (XSD) or rigorous documentation) of the format syntax
+- **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  New data concepts can be added, if needed.
 - **MUST** mention in the definition the type of data the format is used for.
 - **MUST NOT** include any narrow synonyms; if you think specialisations are needed then these can be covered by adding new concepts.
+- **SHOULD** annotate file extensions where in common use; these **MUST** preserve the common capitalisation and **MUST NOT** include period ('.'), *e.g.* "txt" not ".txt".
+- **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available
+
+
    
    
 .. note::
-   Concrete formats appear in Tier 3 and below
 
-   *Format* (root) -> (*Textual format* | *Binary format* | *XML* | *HTML* | *JSON* | *RDF format* | *YAML*) -> Format ...
 
     
 
