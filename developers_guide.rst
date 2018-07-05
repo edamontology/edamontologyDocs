@@ -45,11 +45,11 @@ When adding new concepts, you **MUST** specify the following:
    :widths: 20, 40, 60
    
    "Concept URI", "``rdf:about``", "In the right namespace and with the latest numerical ID."
-   "Primary term", "``rdfs:label``", "See `todo <>`_."
-   "Definition", "``oboInOwl:hasDefinition``", "See `todo <>`_."
-   "Parent(s)", "``rdfs:subClassOf``", "See `todo <>`_."
+   "Primary term", "``rdfs:label``", "See `Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#concepts-terms>`_."
+   "Definition", "``oboInOwl:hasDefinition``", "See `Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#concepts-terms>`_."
+   "Parent(s)", "``rdfs:subClassOf``", Immediate parent(s) of the concept (normally one only)."
    "Version", "``created_in``", "Current EDAM dev version, *e.g.* ``1.21``."
-   "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``, see `todo <>_`."
+   "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``, see `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>_`."
    "EDAM subset", "``oboInOwl:inSubset``", "Always ``edam``."
    "Branch subset", "``oboInOwl:inSubset``", "One of ``topic``, ``data``, ``format`` or ``operation``."
    "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``."
@@ -61,10 +61,10 @@ For **Format** additions you **MUST** also specify:
    :header: "Attribute", "OWL attribute", "Note"
    :widths: 20, 40, 60
 	    
-   "Type of data", "``<is_format_of>``", "See `todo <>`_."
+   "Type of data", "``<is_format_of>``", "URI of EDAM Data concept."
    "Specification", "``<documentation>``", "URL of format specification.  See `todo <>`_."
-   "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `todo <>`_."
-   "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `todo <>`_."
+   "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
+   "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
 
 For **Identifier** additions you **MUST** also specify:
 
@@ -72,9 +72,9 @@ For **Identifier** additions you **MUST** also specify:
    :header: "Attribute", "OWL attribute", "Note"
    :widths: 20, 40, 60
 	    
-   "Type of data", "``<is_identifier_of>``", "See `todo <>`_."
-   "Basic type", "``rdfs:subClassOf``", "One of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  See `todo <>`_."
-   "Type of data", "``rdfs:subClassOf``", "Some child of `Identifier (hybrid) <http://edamontology.org/data_2109>`_. See `todo <>`_."
+   "Type of data", "``<is_identifier_of>``", "URI of EDAM Data concept."
+   "Basic type", "``rdfs:subClassOf``", "One of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
+   "Type of data", "``rdfs:subClassOf``", "Some child of `Identifier (hybrid) <http://edamontology.org/data_2109>`_. See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
 
    
 Optional attributes
@@ -85,11 +85,11 @@ When adding new concepts, you **SHOULD** specify the following:
    :header: "Attribute", "OWL attribute", "Note"
    :widths: 20, 40, 60
 	    
-   "Exact synonym", "``oboInOwl:hasExactSynonym``", "See `todo <>`_."
-   "Narrow synonym", "``oboInOwl:hasNarrowSynonym``", "See `todo <>`_."
-   "Broad synonym", "``oboInOwl:hasBroadSynonym``", "See `todo <>`_."
-   "Comment", "``rdfs:comment``", "See `todo <>`_."
-   "Wikipedia", "``<documentation>``", "URL of Wikipedia page.  See `todo <>`_."
+   "Exact synonym", "``oboInOwl:hasExactSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
+   "Narrow synonym", "``oboInOwl:hasNarrowSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
+   "Broad synonym", "``oboInOwl:hasBroadSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
+   "Comment", "``rdfs:comment``", "See `Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#concepts-terms>`_."
+   "Wikipedia", "``<documentation>``", "URL of Wikipedia page."
 
 
 For **Operation** additions you **MAY** also specify:
@@ -104,7 +104,7 @@ For **Format** additions you **SHOULD** also specify:
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
 
-   "Documentation", "``<documentation>``", "URL of documentation about the format.  See `todo <>`_."
+   "Documentation", "``<documentation>``", "URL of documentation about the format."
    "Publication", "``<documentation>``", "DOI of publication about the format."   
 
 For **Identifier** additions you **SHOULD** also specify:
@@ -112,8 +112,8 @@ For **Identifier** additions you **SHOULD** also specify:
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
 
-   "Regexp", "``<regex>``", "Regular expression pattern for identifier instances. See `todo <>`_."
-   "Documentation", "``<documentation>``", "URL of documentation about the identifier.  See `todo <>`_."
+   "Regexp", "``<regex>``", "Regular expression pattern for identifier instances."
+   "Documentation", "``<documentation>``", "URL of documentation about the identifier."
 
 
 
@@ -124,7 +124,7 @@ The following rules maintain the integrity of the conceptual hierarchy and ensur
 
 - **All subontologies**
 
-  - leaf nodes **MUST** be concrete concepts (see `to-do <>`_ and `to-do <>`_)
+  - leaf nodes **MUST** be concrete concepts (see `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>`_)
 
 - **Topic:**
   
@@ -149,17 +149,16 @@ The following rules maintain the integrity of the conceptual hierarchy and ensur
   - **MUST NOT** chain more than 4 placeholders 
   - **MUST NOT** chain more than 2 concrete identifiers
   - **MUST** be related (via *is_identifier_of*) to a **Data** concept, but **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept.   
-  - **MUST** descend (via ``subClassOf`` relations) concrete identifiers from:
+  - concrete identifiers **MUST** descend (via ``subClassOf`` relations) from:
 
-    - `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_ 
+    - `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_  *and*
     - `Identifier (typed) <http://edamontology.org/data_0976>`_ (or its kids)
 
     but **MUST NOT** duplicate these annotations if already stated on an ancestor concept.
-    
-    and 2) indicating the type of identifier *e.g.* "Sequence accession (protein)", *i.e.* a concept descended from 
-  - where a concrete identifier is re-used for data objects of fundamentally different types (typically served from a single database) **MUST**  descend (via ``subClassOf`` relations) from:
 
-   - "Identifier (hybrid)" (http://edamontology.org/data_2109) may also be given.
+    Additionally, concrete identifier re-used for data objects of fundamentally different types (typically served from a single database) **MUST** descend from:
+
+    - "Identifier (hybrid)" (http://edamontology.org/data_2109) may also be given.
     
 - **Format:**
 
