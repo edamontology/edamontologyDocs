@@ -2,7 +2,7 @@ Users Guide
 ===========
 
 .. important::
-   EDAM has many `applicatons <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#applications>`_.  If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#id12>`_ for this purpose.  A few more general, and more specific guidelines are below.
+   EDAM has many `applicatons <http://edamontologydocs.readthedocs.io/en/latest/what_is_edam.html#applications>`_.  If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#edamannotations>`_ for this purpose.  A few more general, and more specific guidelines are below.
 
 You can email the `EDAM mailing list <mailto:edam@elixir-dk.org>`_ for help (after first `subscribing <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_).
 
@@ -19,7 +19,7 @@ Which EDAM sub-ontology to use?
 5.  *"Identifier"* (as a special type of *"Data"*) for annotation of identifiers (names and accessions) of data or other entities
 
 
-EDAM thus provides different semantic 'axes' for annotation. For example, `annotation of a software tool <http://biotools.readthedocs.io/en/latest/curators_guide.html#id7>`_ might include:
+EDAM thus provides different semantic 'axes' for annotation. For example, `annotation of a software tool <http://biotools.readthedocs.io/en/latest/curators_guide.html#toolfunctions>`_ might include:
 
 *   *Topic* - general scientific domain the software serves, *e.g.* *"Structural biology"*
 *   *Operation* - the precise function of the tool, *e.g.* *"Homology modelling"*
@@ -45,7 +45,7 @@ Specific use-cases
 
 Annotation of software tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#id12>`_ for this purpose.
+If using EDAM to annotate software, we strongly recommend you read the `bio.tools Curators Guidelines <http://biotools.readthedocs.io/en/latest/curators_guide.html>`_ which includes `detailed information <http://biotools.readthedocs.io/en/latest/curators_guide.html#edamannotations>`_ for this purpose.
 
 
 Annotation of Web APIs
