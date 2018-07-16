@@ -18,7 +18,7 @@ EDAM Editors
 * Stanislav Geidl (MU, CZ) - Chemoinformatics 
 * Wouter Touw (CMBI, NL) -  Protein structure
 
-EDAM Steering Group
+EDAM Advisory Group
 -------------------
 * Alfonso Valencia (ELIXIR ES)
 * Anna-Lena Lamprecht (University of Potsdam, DE)

@@ -3,7 +3,7 @@ Governance
 
 EDAM follows a model with four tiers of governance:
 
-1. **EDAM Steering Group** advises the EDAM Developers on how best to uphold the EDAM principles and achieve its current aims.  It includes (and is open to) representatives of institutes and projects that are adopting EDAM or committing significant resources to it's development.  Steering Group `members <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-steering-group>`_ have five primary responsibilities:
+1. **EDAM Advisory Group** advises the EDAM Developers on how best to uphold the EDAM principles and achieve its current aims.  It includes (and is open to) representatives of institutes and projects that are adopting EDAM or committing significant resources to it's development.  Advisory Group `members <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-advisory-group>`_ have five primary responsibilities:
 
   * Help to set priorities in consultation with the Developers
   * Verify whether stated aims are coherent and wise
@@ -11,9 +11,9 @@ EDAM follows a model with four tiers of governance:
   * Help arrange funding for EDAM
   * Advocate EDAM
    
-  The EDAM Developers will respect advice of the Steering Group and give progress reports by email.  The Steering Group will be reconstituted (by the Developers) as and when required to ensure membership reflects current activity and interest. 
+  The EDAM Developers will respect advice of the Advisory Group and give progress reports by email.  The Advisory Group will be reconstituted (by the Developers) as and when required to ensure membership reflects current activity and interest. 
 
-2. **EDAM Developers** are typically funded to develop EDAM.  The group is quasi-democratic with a leader (currently Jon Ison) having the final say where necessary (it seldom is).  The leader ensures the Steering Group, and all developers, editors and contributors, are listened to, respected and informed. The leader may be temporarily appointed from the developers as necessary, *e.g.* during holidays.  `Developers <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-developers>`_ must have the intent and some capacity to develop EDAM in the long-term. They have 3 primary responsibilities: 
+2. **EDAM Developers** are typically funded to develop EDAM.  The group is quasi-democratic with a leader (currently Jon Ison) having the final say where necessary (it seldom is).  The leader ensures the Advisory Group, and all developers, editors and contributors, are listened to, respected and informed. The leader may be temporarily appointed from the developers as necessary, *e.g.* during holidays.  `Developers <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-developers>`_ must have the intent and some capacity to develop EDAM in the long-term. They have 3 primary responsibilities: 
 
   * Agree aims and general good practice to uphold the EDAM principles
   * Oversee and approve developments and routine maintenance
