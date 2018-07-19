@@ -9,14 +9,8 @@ EDAM Developers
 
 EDAM Editors
 ------------
-* David Sehnal (MU, CZ) - General bioinformatics
-* Dmitry Repchevsky (BSC, ES) - ES tools & services
-* Ivan Mičetić (University of Padova, IT) - Protein structure
-* Kristian Davidsen (DTU, DK) - Sequencing
-* Laura Emery (EMBL-EBI, UK) - EBI tools and training
-* Lukáš Pravda (MU, CZ) - Structural bioinformatics
-* Stanislav Geidl (MU, CZ) - Chemoinformatics 
-* Wouter Touw (CMBI, NL) -  Protein structure
+Official EDAM Editors are now part of the `Thematic Editors <http://biotools.readthedocs.io/en/latest/editors_guide.html>`_ group serving both EDAM and <bio.tools <https://bio.tools>`_.
+
 
 EDAM Advisory Group
 -------------------
@@ -57,6 +51,14 @@ Thanks to the many people who have contributed - if you're not listed below, ple
 * Jiří Vondrášek (IOCB AS, CZ)
 * Gert Vriend (CMBI, NL)
 * Trish Whetzel (University of California, USA)
+* David Sehnal (MU, CZ)
+* Dmitry Repchevsky (BSC, ES)
+* Ivan Mičetić (University of Padova, IT)
+* Kristian Davidsen (DTU, DK)
+* Laura Emery (EMBL-EBI, UK)
+* Lukáš Pravda (MU, CZ)
+* Stanislav Geidl (MU, CZ)
+* Wouter Touw (CMBI, NL)
 
 Recent workshops (2014 - )
 --------------------------

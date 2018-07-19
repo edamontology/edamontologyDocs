@@ -26,7 +26,7 @@ EDAM follows a model with four tiers of governance:
   * Contribute to EDAM as bandwidth permits
 
 .. note::
-   The ELIXIR Tools Platform is working to support Thematic Editors to oversee coverage and quality of bio.tools and EDAM in specific thematic areas. The editorships will enable expanding accurate high-standard software annotations in bio.tools to most scientific topics in life science.  Please see the emerging `Editors Guide <>`_.  In due course, we expect to consolidate the named `EDAM Editors <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-editors>`_ and `Thematic Editors <http://biotools.readthedocs.io/en/latest/editors_guide.html#current-thematic-editors>`_ into a single group.
+   The ELIXIR Tools Platform is working to support Thematic Editors to oversee coverage and quality of bio.tools and EDAM in specific thematic areas. The editorships will enable expanding accurate high-standard software annotations in bio.tools to most scientific topics in life science.  Please see the `EDAM Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html>`_ (instructions for EDAM Editors) and `bio.tools Editors Guide <http://biotools.readthedocs.io/en/latest/editors_guide.html>`_ (for a description of the Thematic Editor idea).
     
 4. **Other contributors** do not have GitHub commit rights but can still make comments, contribute suggestions for new terms and other changes.  New `contributors <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#id1>`_ are strongly encouraged.
 
