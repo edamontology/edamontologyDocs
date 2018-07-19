@@ -9,7 +9,7 @@ EDAM Developers
 
 EDAM Editors
 ------------
-Official EDAM Editors are now part of the `Thematic Editors <http://biotools.readthedocs.io/en/latest/editors_guide.html>`_ group serving both EDAM and <bio.tools <https://bio.tools>`_.
+Official EDAM Editors are now part of the `Thematic Editors <http://biotools.readthedocs.io/en/latest/editors_guide.html>`_ group serving both EDAM and `bio.tools <https://bio.tools>`_.
 
 
 EDAM Advisory Group
