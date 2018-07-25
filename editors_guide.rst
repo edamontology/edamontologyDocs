@@ -122,7 +122,7 @@ Hierarchy
    - *placeholders* are conceptually very broad, and are intended primarily to organise the EDAM tree
    - *concrete* concepts conceptually more narrow, and are intended primarily for annotation purposes
 
-   There are rules for how many *placeholders* and *concrete* concepts can be chained togther (via *is_a*) relationships, and thus, the maximum depths of the subontology hierarchies (see `Developers Guide <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#hierarchy>`_).
+   There are rules for how many *placeholders* and *concrete* concepts can be chained together (via *is_a*) relationships, and thus, the maximum depths of the subontology hierarchies (see `Developers Guide <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#hierarchy>`_).
 
    In practice, as an Editor, you should be aware of the general structure of EDAM and the conceptual granularity in each subontology.  If in doubt, mail the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_ for advice.
 
@@ -130,7 +130,7 @@ Hierarchy
 When adding a new concept:
 
 - **MUST** be sure - if an addition introduces a new level of depth - that it's realistic to also add and maintain (in due course) all relevant siblings, *i.e.* related concepts with the same parent.  This is to ensure EDAM coverage does not get patchy.
-- **SHOULD NOT** introduce any "single childs" (concepts without siblings) unless you already know of potential sublings (to add in due course), or think it's likely such sibling concepts will appear in the future
+- **SHOULD NOT** introduce any "single childs" (concepts without siblings) unless you already know of potential siblings (to add in due course), or think it's likely such sibling concepts will appear in the future
 - **SHOULD NOT** add (or imply the addition, as per above) multiple concepts if this would mean a big overlap with an existing, well-developed ontology.  If in doubt, discuss this first with the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_.
 - **SHOULD NOT** define multiple parents of a concept (except where indicated `below <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#subontology-specific>`_) unless there is a very unambivalent case. This rule is even stronger for **Topics** (many topics overlap with each other, but as a rule you must pick one parent only)
 
