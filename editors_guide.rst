@@ -175,7 +175,7 @@ Operation
 Data
 ....
 .. note::
-   EDAM **data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatsics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation**, will maintain a level of conceptual granularity that is maintable and usable.
+   EDAM **data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation**, will maintain a level of conceptual granularity that is maintainable and usable.
 
    **Data** concepts are formally related to **Identifier** and **Format** concepts:
    
@@ -189,7 +189,7 @@ Data
 Data->Identifier
 ................
 .. note::
-   EDAM **identifiers** are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance snytax.
+   EDAM **identifiers** are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance syntax.
 
    Identifier and data concepts are formally related:
    
