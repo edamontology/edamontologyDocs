@@ -167,7 +167,7 @@ Operation
    - **Operation** *has_input* **Data**
    - **Operation** *has_output* **Data**
 
-- **MUST** never be more fine-grained than is useful for practical search purposes.  This excludes fine-grained specialisations of a basic function, individiaul algorithms *etc.* (a few exceptions are allowed for very highly prevalent concepts).  If in doubt, speak to the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_)
+- **MUST** never be more fine-grained than is useful for practical search purposes.  This excludes fine-grained specialisations of a basic function, individual algorithms *etc.* (a few exceptions are allowed for very highly prevalent concepts).  If in doubt, speak to the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_)
 - **MUST** state in the definition *what* is done by the operation but not *how* 
 - **SHOULD** provide a link to `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_ if a relevant page exists.  
 - **SHOULD** have concepts in the **Data** subontology corresponding to the typical inputs/outputs of the operation (these can be added, if needed).
