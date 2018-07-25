@@ -78,19 +78,19 @@ Concepts & Terms
 *Primary term:*
 
 - **MUST** reflect the vernacular, *i.e.* the term that's most commonly used when referring to the concept; you **SHOULD** use google (number of hits) to help you choose, where necessary
-- **MUST** use Britsh spelling
+- **MUST** use British spelling
 - **MUST** not include buzzwords and marketting-spiel *e.g.* "Big data", "NGS" *etc.* 
 
 *Synonyms:*
 
 - **MUST NOT** overlap conceptually, to a significant extent, with an already existing concept; be especially mindful of ancestors and descendants of the concept for which a synonym is defined.
-- **SHOULD** use Britsh spelling
+- **SHOULD** use British spelling
 - **MAY** capture spelling variations, including American spellings, case and hyphenation variants *etc* (as exact synonyms)
 - **MAY** include buzzwords if really prevalent and relevant
 
 *Definitions and comments:*
 
-- **SHOULD** use Britsh spelling
+- **SHOULD** use British spelling
 
 *Definitions:*
 
