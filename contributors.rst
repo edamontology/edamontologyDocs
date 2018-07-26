@@ -42,7 +42,7 @@ EDAM Advisory Group
       "`EBI (tools) <https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", ""
       "`EBI (training) <https://www.ebi.ac.uk/training>`_", "Training resources from EMBL-EBI", ""
       "`IFB tools <https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", ""
-      "`TeSS <https://tess.elixir-europe.org/>`_", "", ""
+      "`TeSS <https://tess.elixir-europe.org/>`_", "ELIXIR's training portal; browse and discover life sciences training resources.", ""
       "`OMTD <https://openminted.github.io/>`_", "OpenMinted open, service-oriented Infrastructure for Text and Data Mining (TDM) of scientific and scholarly content.", ""
       "`DSEO <https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", ""
       "`Identifiers.org <http://identifiers.org/>`_", "Resolving system for referencing of data for the scientific community.", ""
