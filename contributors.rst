@@ -30,22 +30,23 @@ EDAM Advisory Group
 .. note::
    We hope soon to expand the Advisory Group to include representatives of all the projects and groups which are using, or seriously considering using EDAM, including (non-exhaustive list):
 
-   .. csv-table::
-   :header: "Project", "Description", "Representative"
-   :widths: 20, 40, 40
+.. csv-table::
+:header: "Project", "Description", "Representative"
+:widths: 20, 40, 40
    
-   "`Galaxy <https://usegalaxy.org/>`_", "Open source, web-based platform for data intensive biomedical research.", ""
-   "`Debian Med<>`_", "", "Debian flavour well fit for medical practice and biomedical research."
-   "`BioContainers<http://biocontainers.pro/>`_", "Open source framework providing system-agnostic executable environments for bioinformatics software.", ""
-   "`OLS<https://www.ebi.ac.uk/ols/index>`_", "", "Repository for biomedical ontologies from the EMBL-EBI."
-   "`EBI (tools)<https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", ""
-   "`EBI (training)<https://www.ebi.ac.uk/training>`_", "Training resources from EMBL-EBI", ""
-   "`IFB tools<https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", ""
-   "`TeSS<https://tess.elixir-europe.org/>`_", "", ""
-   "`OMTD<https://openminted.github.io/>`_", "OpenMinted open, service-oriented Infrastructure for Text and Data Mining (TDM) of scientific and scholarly content.", ""
-   "`DSEO<https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", ""
-   "`Identifiers.org<http://identifiers.org/>`_", "Resolving system for referencing of data for the scientific community.", ""
-   "`Bioschema<http://bioschemas.org/>`_", "Fosters the use of schema.org within the life sciences.", ""
+"`bio.tools <https://bio.tools/>`_", "ELIXIR Tools and Data Services Registry.", ""
+"`Galaxy <https://usegalaxy.org/>`_", "Open source, web-based platform for data intensive biomedical research.", ""
+"`Debian Med<>`_", "", "Debian flavour well fit for medical practice and biomedical research."
+"`BioContainers<http://biocontainers.pro/>`_", "Open source framework providing system-agnostic executable environments for bioinformatics software.", ""
+"`OLS<https://www.ebi.ac.uk/ols/index>`_", "", "Repository for biomedical ontologies from the EMBL-EBI."
+"`EBI (tools)<https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", ""
+"`EBI (training)<https://www.ebi.ac.uk/training>`_", "Training resources from EMBL-EBI", ""
+"`IFB tools<https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", ""
+"`TeSS<https://tess.elixir-europe.org/>`_", "", ""
+"`OMTD<https://openminted.github.io/>`_", "OpenMinted open, service-oriented Infrastructure for Text and Data Mining (TDM) of scientific and scholarly content.", ""
+"`DSEO<https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", ""
+"`Identifiers.org<http://identifiers.org/>`_", "Resolving system for referencing of data for the scientific community.", ""
+"`Bioschema<http://bioschemas.org/>`_", "Fosters the use of schema.org within the life sciences.", ""
 
    
   
