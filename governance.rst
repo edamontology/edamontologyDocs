@@ -3,7 +3,7 @@ Governance
 
 EDAM follows a model with four tiers of governance:
 
-1. **EDAM Advisory Group** advises the EDAM Developers on how best to uphold the EDAM principles and achieve its current aims.  It includes (and is open to) representatives of institutes and projects that are adopting EDAM or committing significant resources to it's development.  Advisory Group `members <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-advisory-group>`_ have five primary responsibilities:
+1. **EDAM Advisory Group** advises the EDAM Developers on how best to uphold the EDAM principles and achieve its current aims.  It includes (and is open to) representatives of institutes and projects that are (or seriously considering) adopting EDAM or committing significant resources to it's development.  Advisory Group `members <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-advisory-group>`_ have five primary responsibilities:
 
   * Help to set priorities in consultation with the Developers
   * Verify whether stated aims are coherent and wise
@@ -11,7 +11,7 @@ EDAM follows a model with four tiers of governance:
   * Help arrange funding for EDAM
   * Advocate EDAM
    
-  The EDAM Developers will respect advice of the Advisory Group and give progress reports by email.  The Advisory Group will be reconstituted (by the Developers) as and when required to ensure membership reflects current activity and interest. 
+  The EDAM Developers will respect advice of the Advisory Group and give progress reports by email.  The Advisory Group will be reconstituted (by the Developers) as and when required to ensure membership reflects current activity and interest.
 
 2. **EDAM Developers** are typically funded to develop EDAM.  The group is quasi-democratic with a leader (currently Jon Ison) having the final say where necessary (it seldom is).  The leader ensures the Advisory Group, and all developers, editors and contributors, are listened to, respected and informed. The leader may be temporarily appointed from the developers as necessary, *e.g.* during holidays.  `Developers <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-developers>`_ must have the intent and some capacity to develop EDAM in the long-term. They have 3 primary responsibilities: 
 
@@ -31,4 +31,6 @@ EDAM follows a model with four tiers of governance:
 4. **Other contributors** do not have GitHub commit rights but can still make comments, contribute suggestions for new terms and other changes.  New `contributors <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#id1>`_ are strongly encouraged.
 
 We very much welcome new members of the team at all levels above.  Representatives of projects who plan to adopt EDAM are encouraged to join the EDAM Advisory Group.  For futher information please see the `documentation <http://edamontology.readthedocs.org/en/latest/getting involved.html>`_ or mail edam-dev@elixir-dk.org.
+
+
 
