@@ -78,19 +78,19 @@ Concepts & Terms
 *Primary term:*
 
 - **MUST** reflect the vernacular, *i.e.* the term that's most commonly used when referring to the concept; you **SHOULD** use google (number of hits) to help you choose, where necessary
-- **MUST** use Britsh spelling
+- **MUST** use British spelling
 - **MUST** not include buzzwords and marketting-spiel *e.g.* "Big data", "NGS" *etc.* 
 
 *Synonyms:*
 
 - **MUST NOT** overlap conceptually, to a significant extent, with an already existing concept; be especially mindful of ancestors and descendants of the concept for which a synonym is defined.
-- **SHOULD** use Britsh spelling
+- **SHOULD** use British spelling
 - **MAY** capture spelling variations, including American spellings, case and hyphenation variants *etc* (as exact synonyms)
 - **MAY** include buzzwords if really prevalent and relevant
 
 *Definitions and comments:*
 
-- **SHOULD** use Britsh spelling
+- **SHOULD** use British spelling
 
 *Definitions:*
 
@@ -122,7 +122,7 @@ Hierarchy
    - *placeholders* are conceptually very broad, and are intended primarily to organise the EDAM tree
    - *concrete* concepts conceptually more narrow, and are intended primarily for annotation purposes
 
-   There are rules for how many *placeholders* and *concrete* concepts can be chained togther (via *is_a*) relationships, and thus, the maximum depths of the subontology hierarchies (see `Developers Guide <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#hierarchy>`_).
+   There are rules for how many *placeholders* and *concrete* concepts can be chained together (via *is_a*) relationships, and thus, the maximum depths of the subontology hierarchies (see `Developers Guide <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#hierarchy>`_).
 
    In practice, as an Editor, you should be aware of the general structure of EDAM and the conceptual granularity in each subontology.  If in doubt, mail the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_ for advice.
 
@@ -130,7 +130,7 @@ Hierarchy
 When adding a new concept:
 
 - **MUST** be sure - if an addition introduces a new level of depth - that it's realistic to also add and maintain (in due course) all relevant siblings, *i.e.* related concepts with the same parent.  This is to ensure EDAM coverage does not get patchy.
-- **SHOULD NOT** introduce any "single childs" (concepts without siblings) unless you already know of potential sublings (to add in due course), or think it's likely such sibling concepts will appear in the future
+- **SHOULD NOT** introduce any "single childs" (concepts without siblings) unless you already know of potential siblings (to add in due course), or think it's likely such sibling concepts will appear in the future
 - **SHOULD NOT** add (or imply the addition, as per above) multiple concepts if this would mean a big overlap with an existing, well-developed ontology.  If in doubt, discuss this first with the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_.
 - **SHOULD NOT** define multiple parents of a concept (except where indicated `below <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#subontology-specific>`_) unless there is a very unambivalent case. This rule is even stronger for **Topics** (many topics overlap with each other, but as a rule you must pick one parent only)
 
@@ -167,7 +167,7 @@ Operation
    - **Operation** *has_input* **Data**
    - **Operation** *has_output* **Data**
 
-- **MUST** never be more fine-grained than is useful for practical search purposes.  This excludes fine-grained specialisations of a basic function, individiaul algorithms *etc.* (a few exceptions are allowed for very highly prevalent concepts).  If in doubt, speak to the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_)
+- **MUST** never be more fine-grained than is useful for practical search purposes.  This excludes fine-grained specialisations of a basic function, individual algorithms *etc.* (a few exceptions are allowed for very highly prevalent concepts).  If in doubt, speak to the `EDAM developers <mailto:edam-dev@elixir-dk.org>`_)
 - **MUST** state in the definition *what* is done by the operation but not *how* 
 - **SHOULD** provide a link to `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_ if a relevant page exists.  
 - **SHOULD** have concepts in the **Data** subontology corresponding to the typical inputs/outputs of the operation (these can be added, if needed).
@@ -175,7 +175,7 @@ Operation
 Data
 ....
 .. note::
-   EDAM **data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatsics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation**, will maintain a level of conceptual granularity that is maintable and usable.
+   EDAM **data** concepts range from conceptually quite broad to quite narrow.  There will be as many as required to capture the *basic types* of bioinformatics data.  The Data subontology does (and will) not reflect individual data structures, and like **Operation**, will maintain a level of conceptual granularity that is maintainable and usable.
 
    **Data** concepts are formally related to **Identifier** and **Format** concepts:
    
@@ -189,7 +189,7 @@ Data
 Data->Identifier
 ................
 .. note::
-   EDAM **identifiers** are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance snytax.
+   EDAM **identifiers** are very specific.  There will be as many as required to capture the unique types of identifiers in use.  Uniqueness means that a regular expression pattern can, in principle, meaningfully be created describing the identifier instance syntax.
 
    Identifier and data concepts are formally related:
    
