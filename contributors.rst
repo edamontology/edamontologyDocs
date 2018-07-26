@@ -41,7 +41,7 @@ EDAM Advisory Group
       "`OLS <https://www.ebi.ac.uk/ols/index>`_", "", "Repository for biomedical ontologies from the EMBL-EBI."
       "`EBI (tools) <https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", ""
       "`EBI (training) <https://www.ebi.ac.uk/training>`_", "Training resources from EMBL-EBI", ""
-      "`IFB tools<https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", ""
+      "`IFB tools <https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", ""
       "`TeSS <https://tess.elixir-europe.org/>`_", "", ""
       "`OMTD <https://openminted.github.io/>`_", "OpenMinted open, service-oriented Infrastructure for Text and Data Mining (TDM) of scientific and scholarly content.", ""
       "`DSEO <https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", ""
