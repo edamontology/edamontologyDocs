@@ -3,7 +3,7 @@ Governance
 
 EDAM follows a model with four tiers of governance:
 
-1. **EDAM Advisory Group** advises the EDAM Developers on how best to uphold the EDAM principles and achieve its current aims.  It includes (and is open to) representatives of institutes and projects that are (or seriously considering) adopting EDAM or committing significant resources to it's development.  Advisory Group `members <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-advisory-group>`_ have five primary responsibilities:
+1. **EDAM Advisory Group** advises the EDAM Developers on how best to uphold the EDAM principles and achieve its current aims.  It includes (and is open to) representatives of institutes and projects that are (or which are seriously considering) adopting EDAM or committing significant resources to it's development.  Advisory Group `members <http://edamontologydocs.readthedocs.io/en/latest/contributors.html#edam-advisory-group>`_ have five primary responsibilities:
 
   * Help to set priorities in consultation with the Developers
   * Verify whether stated aims are coherent and wise

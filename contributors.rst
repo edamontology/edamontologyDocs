@@ -31,7 +31,7 @@ EDAM Advisory Group
    We hope soon to expand the Advisory Group to include representatives of all the projects and groups which are using, or seriously considering using EDAM, including (non-exhaustive list):
 
    .. csv-table::
-   :header: "Project", "Descrition", "Representative"
+   :header: "Project", "Description", "Representative"
    :widths: 20, 40, 40
    
    "`Galaxy <https://usegalaxy.org/>`_", "Open source, web-based platform for data intensive biomedical research.", ""
