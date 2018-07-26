@@ -1,10 +1,7 @@
 Developers Guide
 ================
 
-.. caution::
-   **UNDER CONSTRUCTION**
-   This document is undergoing heavy edits right now ... you may want to come back in a few days!
-
+Welcome to the EDAM Developers Guide.  It contains best-practice guidelines for the technical processes of EDAM development;  modifying EDAM files on GitHub, creation of releases, deprecation of concepts *etc.*
    
 If you're not sure how to do something please ask edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 

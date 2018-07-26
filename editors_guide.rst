@@ -1,10 +1,7 @@
 Editors Guide
 =============
 
-.. caution::
-   **UNDER CONSTRUCTION**
-   This document is undergoing heavy edits right now ... you may want to come back in a few days!
-
+Welcome to the EDAM Editors Guide.  It contains general best-practice (technical and scientific) guidelines when modifying EDAM; adding or changing concepts, concept metadata, crosslinking, *etc.*
    
 If you're not sure how to do something please ask edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
