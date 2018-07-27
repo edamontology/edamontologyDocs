@@ -6,6 +6,8 @@ Welcome to the EDAM Editors Guide.  It contains general best-practice (technical
 If you're not sure how to do something please ask edam@elixir-dk.org.  You'll need to `subscribe <http://elixirmail.cbs.dtu.dk/mailman/listinfo/edam>`_ to the list first.
 
 
+
+
 General considerations
 ----------------------
 
