@@ -31,7 +31,7 @@ EDAM Advisory Group
    We hope soon to expand the Advisory Group to include representatives of all the projects and groups which are using, or seriously considering using EDAM, including (non-exhaustive list):
 
    .. csv-table::
-      :header: "Project", "Description", "Representative"
+      :header: "Project", "Description", "Possible representative"
       :widths: 20, 40, 40
    
       "`bio.tools <https://bio.tools/>`_", "ELIXIR Tools and Data Services Registry.", "Hans-Ioan Lenasescu?"
