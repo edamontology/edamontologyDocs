@@ -304,3 +304,25 @@ The IDs are used in URLs that resolve to information about the concept, *e.g.*:
 These identifiers (and the URLs) persist between versions: a given ID and URI are guaranteed to continue identifying the same concept. This does *not* imply that terms, definitions and other information remains constant, but the IDs *will* remain essentially true to the original concept.
 
 Occasionally, concepts become *deprecated* - designated as not being recommended for use.  Deprecated concepts also persist; they are removed and will maintain their ID and URI. EDAM developers adhere to rules on `deprecatation <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#deprecating-concepts>`_, *e.g.* a replacement concept, or suggested replacement is given for all deprecated concepts.  
+
+
+Color scheme
+-----------------------------
+In order to propose a coherent experience in environments using the EDAM Ontology, a color sheme have been chosen and it is recommended to use it.
+Images the color scheme can be found `here <https://raw.githubusercontent.com/edamontology/edamontology.org/c3d0e8f6b1c1bb21ffa132f5d21e643bbc62ab31/EDAMconcepts.png>`_ and `there <https://raw.githubusercontent.com/edamontology/edamontology/7314e7e00f7c0208d254147b655676fe63de65b8/EDAMrelations.png>`_.
+
++------------+-----------+-------------+
+| Branch     | Color     | Light color |
++============+===========+=============+
+| Data       | #a7544d   | #d6b1ae     |
++------------+-----------+-------------+
+| Identifier | #d6b1ae   | #e2cdcb     |
++------------+-----------+-------------+
+| Topic      | #5f903d   | #b4cca1     |
++------------+-----------+-------------+
+| Operation  | #556ca9   | #a3b0d1     |
++------------+-----------+-------------+
+| Format     | #e6834c   | #f2c4a9     |
++------------+-----------+-------------+
+| Deprecated | #999999   | #bbb        |
++------------+-----------+-------------+
