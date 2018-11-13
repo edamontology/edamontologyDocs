@@ -215,8 +215,15 @@ Format
 - **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  The exception is formats *e.g.* [TSV](http://edamontology.org/format_3475) and [RDF/XML](http://edamontology.org/format_3261) which are generic to any type of data.  New data concepts can be added, if needed.
 - **MUST** mention in the definition the type of data the format is used for.
 - **SHOULD NOT** include any narrow synonyms (specialisations are are normally handled by adding new sub-concepts).
-- **SHOULD** annotate file extensions where in common use; these **SHOULD** be given in lower case (unless a specific capitalisation is required) and **MUST NOT** include period ('.'), *e.g.* "txt" not ".txt".
-- **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available
+- **SHOULD** annotate the following metadata, if available:
+
+  - file extensions where in common use; these **SHOULD** be given in lower case (unless a specific capitalisation is required) and **MUST NOT** include period ('.'), *e.g.* "txt" not ".txt".
+  - `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available
+  - link to example of the format
+  - link(s) to relevant information standard(s)
+  - link(s) to ontologies used by this data format
+  - link(s) to organisation that formally governs the format
+  - citation of article about the format
 
 
 
