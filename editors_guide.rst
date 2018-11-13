@@ -211,11 +211,11 @@ Format
 
 - **MUST NOT** include formats which are specific to single tools only, unless heavily used (EDAM formats are generally in common use by public databases or multiple tools)
 - **MUST NOT** include formats for which a comprehensive description (formal specification, or documentation) does not exist
-- **MUST** include a link to the formal specification (*e.g.* an XML Schema (XSD) or rigorous documentation) of the format syntax
-- **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  New data concepts can be added, if needed.
+- **MUST** include a link to the formal specification (*e.g.* an XML Schema (XSD) or documentation) of the format syntax
+- **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  The exception is formats *e.g.* [TSV](http://edamontology.org/format_3475) and [RDF/XML](http://edamontology.org/format_3261) which are generic to any type of data.  New data concepts can be added, if needed.
 - **MUST** mention in the definition the type of data the format is used for.
-- **MUST NOT** include any narrow synonyms; if you think specialisations are needed then these can be covered by adding new concepts.
-- **SHOULD** annotate file extensions where in common use; these **MUST** preserve the common capitalisation and **MUST NOT** include period ('.'), *e.g.* "txt" not ".txt".
+- **SHOULD NOT** include any narrow synonyms (specialisations are are normally handled by adding new sub-concepts).
+- **SHOULD** annotate file extensions where in common use; these **SHOULD** be given in lower case (unless a specific capitalisation is required) and **MUST NOT** include period ('.'), *e.g.* "txt" not ".txt".
 - **SHOULD** annotate the `media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available
 
 
