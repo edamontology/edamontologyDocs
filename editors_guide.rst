@@ -212,7 +212,7 @@ Format
 - **MUST NOT** include formats which are specific to single tools only, unless heavily used (EDAM formats are generally in common use by public databases or multiple tools)
 - **MUST NOT** include formats for which a comprehensive description (formal specification, or documentation) does not exist
 - **MUST** include a link to the formal specification (*e.g.* an XML Schema (XSD) or documentation) of the format syntax
-- **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  The exception is formats *e.g.* [TSV](http://edamontology.org/format_3475) and [RDF/XML](http://edamontology.org/format_3261) which are generic to any type of data.  New data concepts can be added, if needed.
+- **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  The exception is formats *e.g.* `TSV <http://edamontology.org/format_3475>`_ and `RDF/XML <http://edamontology.org/format_3261>`_ which are generic to any type of data.  New data concepts can be added, if needed.
 - **MUST** mention in the definition the type of data the format is used for.
 - **SHOULD NOT** include any narrow synonyms (specialisations are are normally handled by adding new sub-concepts).
 - **SHOULD** annotate the following metadata, if available:
