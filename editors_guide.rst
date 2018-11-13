@@ -202,15 +202,14 @@ Data->Identifier
 Format
 ......
 
-.. note::
-   EDAM **formats** are very specific.  There will be as many as required to capture all of the data formats currently in use.  A format is only included if a rigorous, comprehensive description of the syntax is available, typically either an XML Schema (XSD) or comprehensive textual specification.
+.. scope::
+   EDAM **formats** are very specific.  There will be as many as required to capture all of the data formats currently in use.  A format is only included if a comprehensive description of the syntax is available, typically either an XML Schema (XSD) or comprehensive textual specification.
 
    Format and data concepts are formally related:
    
    - **Format** *is_format_of* **Data**
 
-- **MUST** only include a format if it's in common use, for example by public databases or multiple tools
-- **MUST NOT** include formats which are specific to single tools only
+- **MUST NOT** include formats which are specific to single tools only; EDAM formats are generally in common use, for example by public databases or multiple tools
 - **MUST NOT** include formats for which a formal specification does not exist
 - **MUST** include a link to the formal specification (*e.g.* an XML Schema (XSD) or rigorous documentation) of the format syntax
 - **MUST** have a corresponding concept in the **Data** subontology, *i.e.* the type of data that the format applies to.  New data concepts can be added, if needed.
