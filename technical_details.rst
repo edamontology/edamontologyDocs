@@ -178,11 +178,11 @@ These notions depend upon the subontology (see below).
 .. note::
    EDAM topics are conceptually very broad categories with no clearly defined borders between each other: the notion of placeholder and concrete concepts doesn't apply! 
   
-Placholder concepts
+Placeholder concepts
 ^^^^^^^^^^^^^^^^^^^
 - **Operation placeholders** include high-level (abstract) operations *e.g.* *Analysis*, *Prediction and recognition*, and sometimes variants *e.g.* *Sequence analysis*.
   
-  - all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placholders
+  - all Tier 1 (children of `Operation <http://edamontology.org/data_0004>`_) and some Tier 2 operations are placeholders
     
 - **Data placeholders** include:
 
@@ -230,7 +230,7 @@ Concrete concepts
   - in some cases, as practical necessity, there are format variants and sub-variants, *e.g.* *EMBL-like (XML)* and *FASTA-like (text)*
 
 .. note::
-   The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.  The addition of *has_input* and *has_output* relations is also a work in progress.
+   The notions of "placeholder", "concrete", "broad", "narrow" *etc.* are of course not hard and fast.  As a work in progress, all placeholders and concrete concepts will be formally annotated as such, this `under discussion <https://github.com/edamontology/edamontology/issues/265>`_.  The addition of *has_input* and *has_output* relations is also a work in progress.
 
 Hierarchy depth
 ---------------
@@ -255,13 +255,13 @@ There are limitations on the number of placeholders, and concrete concepts, that
     
 - **Identifier:**
 
-  - maximum chain of 4 placholders, *e.g.* `Identifier (by type of data) <http://edamontology.org/data_0976>`_ -> *"Sequence identifier"* -> *"Sequence accession"* -> *"Sequence accession (protein)"* 
+  - maximum chain of 4 placeholders, *e.g.* `Identifier (by type of data) <http://edamontology.org/data_0976>`_ -> *"Sequence identifier"* -> *"Sequence accession"* -> *"Sequence accession (protein)"* 
   - maximum chain of 2 concrete identifiers
   - thus 6 levels deep max.
   
 - **Format:**
 
-  - maximum chain of 4 placholders, *e.g.* `Format (by type of data) <http://edamontology.org/format_2350>`_ -> *"Sequence record format"* -> *"FASTA-like"* -> *"FASTA-like (text)"*
+  - maximum chain of 4 placeholders, *e.g.* `Format (by type of data) <http://edamontology.org/format_2350>`_ -> *"Sequence record format"* -> *"FASTA-like"* -> *"FASTA-like (text)"*
   - maximum chain of 2 concrete formats
   - thus 6 levels deep max.    
 
