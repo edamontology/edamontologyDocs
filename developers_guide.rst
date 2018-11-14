@@ -166,10 +166,9 @@ The following rules maintain the integrity of the conceptual hierarchy and ensur
     
 - **Format:**
 
-  - **MUST NOT** chain more than 4 placeholders 
-  - **MUST NOT** chain more than 2 concrete identifiers
-  - **MUST** be related (via *is_format_of*) to a **Format** concept, but **MUST NOT** duplicate this annotation if it's already stated on an ancestor concept.
-  - **MUST** descend (via ``subClassOf``) concrete formats from *Textual format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* or *YAML*, but you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Textual format*, but the kids of *FASTA-like (text)* format are not.
+  - **MUST NOT** chain more than 4 placeholders
+  - **MUST** be related (via *is_format_of*) to a **Data** concept, but **SHOULD NOT** duplicate this annotation if it's already stated on an ancestor concept.
+  - **MUST** descend (via ``subClassOf``) concrete formats from *Textual format*, *Tabular format*, *Binary format*, *XML*, *HTML*, *JSON*, *RDF format* or *YAML*, but you **MUST NOT** duplicate this ancestry in format variants. For example *FASTA-like (text)* is defined as a child of *Textual format*, but the kids of *FASTA-like (text)* format are not.
   - **MUST** descend (via ``subClassOf``) concrete formats from `Format (by type of data) <http://edamontology.org/format_2350>`_ (or it's kids), but again, you **MUST NOT** duplicate this ancestry in format variants.  For example *FASTA-like (text)* is defined as a child of *Sequence record format* -> *FASTA-like*, but the kids of *FASTA-like (text)* format are not.
   - **MUST NOT** add new placeholder concepts (kids of `Format (by type of data) <http://edamontology.org/format_2350>`_) unless there is a corresponding concrete data format descending from it.
   
@@ -275,7 +274,7 @@ Modifying GitHub main repo.
       ``git add <filepath>``
    - Commit your local changes, including a concise but complete summary of the major changes:
    
-      ``git commit -m ¡±commit message here¡±``
+      ``git commit -m Â¡Â±commit message hereÂ¡Â±``
 
 4. Push your changes to the GitHub master:
 
