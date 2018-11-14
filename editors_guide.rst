@@ -223,7 +223,7 @@ Format
   - link(s) to relevant information standard(s)
   - link(s) to ontologies used by this data format
   - link(s) to organisation that formally governs the format
-  - citation of article about the format
+  - citation of article about the format 
 
 
 

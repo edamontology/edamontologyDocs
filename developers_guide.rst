@@ -59,7 +59,7 @@ For **Format** additions you **MUST** also specify:
    :widths: 20, 40, 60
 	    
    "Type of data", "``<is_format_of>``", "URI of EDAM Data concept."
-   "Specification", "``<documentation>``", "URL of format specification.  See `todo <>`_."
+   "Specification", "``<documentation>``", "URL of formal (machine-readable) specification.  See `todo <>`_."
    "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
    "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
 
@@ -103,6 +103,13 @@ For **Format** additions you **SHOULD** also specify:
 
    "Documentation", "``<documentation>``", "URL of documentation about the format."
    "Publication", "``<documentation>``", "DOI of publication about the format."   
+   "File extension", "``<file_extension>``", "File extension (without period character), one extension / ``<file_extension>`` annotation."   
+   "Media type", "``<media_type>``", "`media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available."   
+   "Example", "``<example>``", "Link to example of the format, if available."
+   "Information standard", "``<information_standard>``", "Link to relevant information standard which the format supports."
+   "Information standard", "``<information_standard>``", "Link to relevant information standard which the format supports."
+   "Ontology used", "``<ontology_used>``", "Link to an ontology used by this format (one link per ``<ontology_used>`` annotation."
+   "Governing organisation", "``<organisation>``", "Link to an organisation that formally governs the format, one link link per ``<organisation>`` annotation."
 
 For **Identifier** additions you **SHOULD** also specify:
 
