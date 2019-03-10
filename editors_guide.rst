@@ -221,11 +221,15 @@ Format
   - Wikipedia link if exists (*e.g.* http://en.wikipedia.org/wiki/FASTA_format).
   - `Media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if standardised.
   - Link(s) to example(s) of the format.
-  - Link(s) (ideally DOI) to article about the format.
-  - Link(s) to supported information standard(s).
   - Link(s) to ontologies used in this data format.
+  - Link(s) (ideally DOI) to article about the format.
+  - Link to a public source-code repository where this format is developed.
+  - Link(s) to supported information standard(s).
   - Link(s) to organisation that formally governs the format, if exists.
 
-
+Properties:
+  - Standard: ***rdfs:label**, ***oboInOwl:hasDefinition**, rdfs:comment, ***oboInOwl:inSubset** = formats, ***edam:created_in**, oboInOwl:hasExactSynonym, rdfs:seeAlso (URL)
+  - Specific: ***_edam:documentation (URL)_**, _edam:example (URL)_, _edam:media_type (URL)_, _edam:file_extension (lower case without dot)_, _edam:citation (URL)_, _edam:repository (URL)_, _edam:ontology (URL)_, _edam:information_standard (URL)_, _edam:organisation (URL)_
+\* = mandatory
 
 
