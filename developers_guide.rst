@@ -59,7 +59,7 @@ For **Format** additions you **MUST** also specify:
    :widths: 20, 40, 60
 	    
    "Type of data", "``<is_format_of>``", "URI of EDAM Data concept."
-   "Specification", "``<documentation>``", "URL of formal (machine-readable) specification.  See `todo <>`_."
+   "Specification", "``<documentation>``", "URL of formal (machine-readable) specification.  See `Editors Guide <https://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#id12>`_."
    "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
    "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
 
@@ -94,7 +94,7 @@ For **Operation** additions you **MAY** also specify:
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
 
-   "Top-level operation", "``rdfs:subClassOf``", "One of the Tier 1 operations (see `todo <>`_) *unless* this already subsumed adequately by the parent."
+   "Top-level operation", "``rdfs:subClassOf``", "One of the Tier 1 operations (see `technical docs <https://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placeholder-concepts>`_) *unless* this already subsumed adequately by the parent."
 
 For **Format** additions you **SHOULD** also specify:
 
@@ -206,7 +206,7 @@ Also:
    
 Use of Protege
 ^^^^^^^^^^^^^^
-`Protege <https://protege.stanford.edu/>`_ is a nice OWL Editor, but has it's quirks, so it's recommended you first get a crash course from the `EDAM Developers <>`_ before using it.  A commercial alternative is `TopBraid Composer <https://www.topquadrant.com/tools/ide-topbraid-composer-maestro-edition/>`_.
+`Protege <https://protege.stanford.edu/>`_ is a nice OWL Editor, but has it's quirks, so it's recommended you first get a crash course from the `EDAM Developers <mailto:edam@elixir-dk.org>`_ before using it.  A commercial alternative is `TopBraid Composer <https://www.topquadrant.com/tools/ide-topbraid-composer-maestro-edition/>`_.
 
 Editing
 .......
@@ -237,7 +237,7 @@ Common problems include:
 - classes assigned as a ``subClass`` of some deprecated concept
 - end-point of relations are in the wrong branch, *e.g.* `class has_topic some operation`.  These can easily occur if you use the *Class expression editor* in Protege to define such axioms: this is **NOT** EDAM namespace-aware, and in cases where a concept with the same primary label exists in both classes, can easily pick the wrong one.
 
-The problems are easily fixed within Protege: ask on the `mailing list <>`_ if you're not sure how.
+The problems are easily fixed within Protege: ask on the `mailing list <mailto:edam@elixir-dk.org>`_ if you're not sure how.
 
 .. caution::
    Do not be tempted to click *Reasoner->Synchronise reasoner* between changes: it tends to hang Protege.  Instead, use *Reasoner->Stop reasoner* than *Reasoner->Start reasoner*.
