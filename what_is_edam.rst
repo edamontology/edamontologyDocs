@@ -10,7 +10,7 @@ You can browse EDAM here:
 
 - `NCBO BioPortal <http://bioportal.bioontology.org/ontologies/EDAM/>`_
 - `OLS <http://www.ebi.ac.uk/ols/ontologies/edam>`_
-- `EDAM browser <https://biosphere.france-bioinformatique.fr/edamontology/browser/>`_
+- `EDAM browser <https://ifb-elixirfr.github.io/edam-browser/>`_
 - `AberOWL Repository <http://aber-owl.net/ontology/EDAM>`_
 
 Download
