@@ -299,7 +299,7 @@ Creating a new official EDAM release
 EDAM release schedule
 .....................
 
-From January 2016, EDAM tries to follow a bi-monthly release cycle to this schedule:
+We aiim to follow a bi-monthly release cycle to this schedule:
 
 1.  First Wed of every month
    - EDAM team skype to discuss plans for this month.  Announcement (to edam-announcence) including short summary of plans, invitation for suggestions.
@@ -311,7 +311,7 @@ From January 2016, EDAM tries to follow a bi-monthly release cycle to this sched
    -  Announcee the release, incuding summary of changes.
 
 .. note::
-   Releases have been quarterly but bi-monthly, even monthly remains the aspiration.  Please help out move faster by `getting involved <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html>`_.
+   Releases have been mosty quarterly but more regular (bi-monthly or even monthly) remains the aspiration.  Please help out move faster by `getting involved <http://edamontologydocs.readthedocs.io/en/latest/getting_involved.html>`_.
       
 Process
 .......
