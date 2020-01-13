@@ -35,20 +35,24 @@ EDAM Advisory Group
       :widths: 20, 40, 40
    
       "`bio.tools <https://bio.tools/>`_", "ELIXIR Tools and Data Services Registry.", "Hans-Ioan Lenasescu?"
-      "`Galaxy <https://usegalaxy.org/>`_", "Open source, web-based platform for data intensive biomedical research.", "Björn Gruening? John Chilton?"
-      "`Debian Med <https://www.debian.org/devel/debian-med/>`_", "Debian flavour well fit for medical practice and biomedical research.", "Steffen Möller?"
+      "`BioConda <https://bioconda.github.io/>`_", "A channel for the conda package manager specializing in bioinformatics software.", "tbd"
       "`BioContainers <http://biocontainers.pro/>`_", "Open source framework providing system-agnostic executable environments for bioinformatics software.", "François Moreews?"
-      "`OLS <https://www.ebi.ac.uk/ols/index>`_", "Repository for biomedical ontologies from the EMBL-EBI.", "Simon Jupp"
-      "`EBI (tools) <https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", "Jonathon Hickford? Rodrigo Lopez?"
-      "`EBI (training) <https://www.ebi.ac.uk/training>`_", "Training resources from EMBL-EBI", "Laura Emery?"
-      "`IFB tools <https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", "Jacques Van Helden?"
-      "`TeSS <https://tess.elixir-europe.org/>`_", "ELIXIR's training portal; browse and discover life sciences training resources.", "Niall Beard?"
-      "`OMTD <https://openminted.github.io/>`_", "OpenMinted open, service-oriented Infrastructure for Text and Data Mining (TDM) of scientific and scholarly content.", ""
-      "`DSEO <https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", ""
-      "`Identifiers.org <http://identifiers.org/>`_", "Resolving system for referencing of data for the scientific community.", "Sarala Wimalaratne?"
       "`Bioschema <http://bioschemas.org/>`_", "Fosters the use of schema.org within the life sciences.", "Giuseppe Profiti?"
-
-   
+      "`BISE <https://biii.eu/>`_", "Bioimage Informatics Search Engine.", "tbd"      
+      "`CWL <https://www.commonwl.org/>`_", " Open standard for describing analysis workflows and tools in a way that makes them portable and scalable.", "Michael Crusoe"            
+      "`Debian Med <https://www.debian.org/devel/debian-med/>`_", "Debian flavour well fit for medical practice and biomedical research.", "Steffen Möller?"
+      "`DSEO <https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", ""
+      "`EMBL EBI (tools) <https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", "Jonathon Hickford? Rodrigo Lopez?"
+      "`EMBL EBI (training) <https://www.ebi.ac.uk/training>`_", "Training resources from EMBL-EBI", "Laura Emery?"
+      "`Galaxy <https://usegalaxy.org/>`_", "Open source, web-based platform for data intensive biomedical research.", "Björn Gruening? John Chilton?"
+      "`H3Africa <https://h3africa.org/>`_", "Consortium to empower African researchers in genomic sciences.", "tbd"
+      "`Identifiers.org <http://identifiers.org/>`_", "Resolving system for referencing of data for the scientific community.", "Sarala Wimalaratne?"
+      "`IFB tools <https://www.france-bioinformatique.fr/en/services/tools>`_", "Bioinformatics tools from the IFB.", "Jacques Van Helden?"
+      "`NEUBIAS.org <http://eubias.org/NEUBIAS/>`_", "Network of European bioimage analysts.", "tbd"
+      "`OLS <https://www.ebi.ac.uk/ols/index>`_", "Repository for biomedical ontologies from the EMBL-EBI.", "Simon Jupp"
+      "`OMTD <https://openminted.github.io/>`_", "OpenMinted open, service-oriented Infrastructure for Text and Data Mining (TDM) of scientific and scholarly content.", ""
+      "`TeSS <https://tess.elixir-europe.org/>`_", "ELIXIR's training portal; browse and discover life sciences training resources.", "Niall Beard?"
+  
   
   
 Contributors
