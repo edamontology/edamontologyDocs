@@ -6,7 +6,7 @@ EDAM is a simple ontology of well established, familiar concepts that are preval
 
 Browsing
 --------
-You can browse EDAM here:
+You can browse EDAM here: 
 
 - `NCBO BioPortal <http://bioportal.bioontology.org/ontologies/EDAM/>`_
 - `OLS <http://www.ebi.ac.uk/ols/ontologies/edam>`_
