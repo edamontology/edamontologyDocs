@@ -317,6 +317,10 @@ Process
 .......
 Before creating a new release, please make sure you have the approval of leader of EDAM-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See `Editing the ChangeLog <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#editing-the-changelog>`_ below.  Once you're clear to go, do the following:
 
+0. fix any known bugs in EDAM: at the very least, the EDAM build tests should pass as indicated by:
+
+   .. image:: assets/build_passing.png
+
 1. update your local version of the repository:
 
     ``git pull`` (or "Synch" in desktop client)
@@ -324,8 +328,9 @@ Before creating a new release, please make sure you have the approval of leader 
 
    - you initially have ``EDAM_dev.owl`` in the repository
    - make sure to update ``oboOther:date`` in this file
-   - copy the file ``EDAM_dev.owl`` to ``releases/EDAM_n+1.owl``
+   - copy the file ``EDAM_dev.owl`` to ``releases/EDAM.owl`` and ``releases/EDAM_n+1.owl``
 
+     - ``cp EDAM\_dev.owl releases/EDAM.owl``
      - ``cp EDAM\_dev.owl releases/EDAM_n+1.owl``
      - ``git add releases/EDAM\_n+1.owl``
 
@@ -339,6 +344,14 @@ Before creating a new release, please make sure you have the approval of leader 
 4. update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
 5. update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.
 6. create the release on GitHub (use the `_draft a new release_ <https://github.com/edamontology/edamontology/releases/new>`_ button of the `_releases_ <https://github.com/edamontology/edamontology/releases>`_ tab).
+
+   - from the main page of the EDAM repository, click ``Releases``.
+   - click ``Draft a new release``
+   - enter the version number *e.g.* ``1.24`` in the ``Tag version`` box
+   - enter a title *e.g.* ``EDAM 1.24 release``
+   - check the ``This is a pre-release`` box if applicable
+   - paste an excerpt from ``changelog.md`` into
+     
 7. update http://edamontology.org.
 8. submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
 9. close GitHub issues labelled *done - staged for release*.
