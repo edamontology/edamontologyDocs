@@ -202,6 +202,7 @@ Also:
 
 
 You **MAY** specify the following on concepts which are candidates for deprecation:
+
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
 
