@@ -1,4 +1,4 @@
-Developers Guide
+sDevelopers Guide
 ================
 
 Welcome to the EDAM Developers Guide.  It contains best-practice guidelines for the technical processes of EDAM development;  modifying EDAM files on GitHub, creation of releases, deprecation of concepts *etc.*
@@ -46,10 +46,9 @@ When adding new concepts, you **MUST** specify the following:
    "Definition", "``oboInOwl:hasDefinition``", "See `Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#concepts-terms>`_."
    "Parent(s)", "``rdfs:subClassOf``", Immediate parent(s) of the concept (normally one only)."
    "Version", "``created_in``", "Current EDAM dev version, *e.g.* ``1.21``."
-   "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``, see `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>_`."
+   "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``, see `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>`_."
    "EDAM subset", "``oboInOwl:inSubset``", "Always ``edam``."
    "Branch subset", "``oboInOwl:inSubset``", "One of ``topic``, ``data``, ``format`` or ``operation``."
-   "Type subset", "``oboInOwl:inSubset``", "One of ``concrete`` or ``placeholder``."
    "Next ID", "``<next_id>``", "Increment the current count by 1."
 
 For **Format** additions you **MUST** also specify:
@@ -83,11 +82,13 @@ When adding new concepts, you **SHOULD** specify the following:
    :widths: 20, 40, 60
 	    
    "Exact synonym", "``oboInOwl:hasExactSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
-   "Narrow synonym", "``oboInOwl:hasNarrowSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
-   "Broad synonym", "``oboInOwl:hasBroadSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
+   "Narrow synonym [1]", "``oboInOwl:hasNarrowSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_.  "
+   "Broad synonym [1]", "``oboInOwl:hasBroadSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
    "Comment", "``rdfs:comment``", "See `Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#concepts-terms>`_."
    "Wikipedia", "``<documentation>``", "URL of Wikipedia page."
+   "Usage guideline", "``<notRecommendedForAnnotation>``", "Set to ```true``` for placholder concepts."
 
+[1] narrowSynonym and broadSynonym **MUST NOT** be specified on EDAM Format concepts.    
 
 For **Operation** additions you **MAY** also specify:
 
@@ -124,11 +125,11 @@ For **Identifier** additions you **SHOULD** also specify:
 
 Hierarchy
 .........
-The following rules maintain the integrity of the conceptual hierarchy and ensure a consistent level of conceptual granularity.
+The following rules maintain the integrity of the conceptual hierarchy and ensure a consistent level of conceptual granularity.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>`_ for definition of *concrete* and *placeholder* concepts.
 
 - **All subontologies**
 
-  - leaf nodes **MUST** be concrete concepts (see `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#concept-types>`_)
+  - leaf nodes **MUST** be concrete concepts
 
 - **Topic:**
   
@@ -192,13 +193,20 @@ When deprecating concepts, you **MUST** specify the following:
    "Old parent", "``oldParent``", "Specify the URI(s) of the erstwhile parent(s) of the now-deprecated concept (using one or more attributes as needed)."
    "Comment", "``deprecation_comment``", "Optional comment as to why the concept is deprecated."
    "New parent", "``rdfs:subClassOf``", "Set the parent concept to be ``ObsoleteClass``"
-
+   
 Also:
 
 1. **MUST** remove all other class annotations (subsets, comments, synonyms *etc.*) and axioms (including parent concepts)
 2. **MUST** refactor all references (*e.g.* ``SubClassOf``) to the concept being deprectated from other concepts (you can see these using Protege)
 3. **SHOULD** preserve comments and synonyms, as new annotations either in the old parent(s), or the replacement(s) of the deprecated concept, as appropriate.
 
+
+You **MAY** specify the following on concepts which are candidates for deprecation:
+.. csv-table::
+   :header: "Attribute", "OWL attribute", "Note"
+
+   "Candidate for deprecation", "``is_deprecation_candidate``", "Set this to ``true``"
+   
 
 .. note::
    You can see all references to a concept in Protege in the "Class Usage" window; each reference will need updating in turn: in case of very many such references, this can be easier to do globally in a text editor rather than Protege.
