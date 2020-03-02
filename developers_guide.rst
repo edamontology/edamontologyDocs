@@ -59,8 +59,8 @@ For **Format** additions you **MUST** also specify:
 	    
    "Type of data", "``<is_format_of>``", "URI of EDAM Data concept."
    "Specification", "``<documentation>``", "URL of formal (machine-readable) specification.  See `Editors Guide <https://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#id12>`_."
-   "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
-   "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
+   "Basic type", "``rdfs:subClassOf``", "One of `Textual format <http://edamontology.org/format_2330>`_, `Binary format <http://edamontology.org/format_2333>`_, *etc.*.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placeholder-concepts>`_."
+   "Type of data", "``rdfs:subClassOf``", "Some child of `Format (by type of data) <http://edamontology.org/format_2350>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placeholder-concepts>`_."
 
 For **Identifier** additions you **MUST** also specify:
 
@@ -69,8 +69,8 @@ For **Identifier** additions you **MUST** also specify:
    :widths: 20, 40, 60
 	    
    "Type of data", "``<is_identifier_of>``", "URI of EDAM Data concept."
-   "Basic type", "``rdfs:subClassOf``", "One of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
-   "Type of data", "``rdfs:subClassOf``", "Some child of `Identifier (hybrid) <http://edamontology.org/data_2109>`_. See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placholder-concepts>`_."
+   "Basic type", "``rdfs:subClassOf``", "One of `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_.  See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placeholder-concepts>`_."
+   "Type of data", "``rdfs:subClassOf``", "Some child of `Identifier (hybrid) <http://edamontology.org/data_2109>`_. See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#placeholder-concepts>`_."
 
    
 Optional attributes
@@ -86,7 +86,7 @@ When adding new concepts, you **SHOULD** specify the following:
    "Broad synonym [1]", "``oboInOwl:hasBroadSynonym``", "See `Technical details <http://edamontologydocs.readthedocs.io/en/latest/technical_details.html#terms-and-synonyms>`_."
    "Comment", "``rdfs:comment``", "See `Editors Guide <http://edamontologydocs.readthedocs.io/en/latest/editors_guide.html#concepts-terms>`_."
    "Wikipedia", "``<documentation>``", "URL of Wikipedia page."
-   "Usage guideline", "``<notRecommendedForAnnotation>``", "Set to ```true``` for placholder concepts."
+   "Usage guideline", "``<notRecommendedForAnnotation>``", "Set to ```true``` for placeholder concepts."
 
 [1] narrowSynonym and broadSynonym **MUST NOT** be specified on EDAM Format concepts.    
 
@@ -158,7 +158,7 @@ The following rules maintain the integrity of the conceptual hierarchy and ensur
     - `Accession <http://edamontology.org/data_2091>`_ or `Name <http://edamontology.org/data_2099>`_  *and*
     - `Identifier (typed) <http://edamontology.org/data_0976>`_ (or its kids)
 
-    but **MUST NOT** duplicate these annotations if already stated on an ancestor concept.
+    but **MUST NOT** duplicate these relations if already stated on an ancestor concept.
 
     Additionally, concrete identifier re-used for data objects of fundamentally different types (typically served from a single database) **MUST** descend from:
 
