@@ -67,6 +67,8 @@ Concepts & Terms
 
 - **MUST** be conceptually clearly distinct from one another. The exception is **Topic** ontology where most concepts are overlapping.
 - **MUST** be genuine specialisms, wherever a concept is defined as the child of another.
+- **MUST** have a primary term (preferred label) and definition (see below)
+- **MAY** have a comment and one or more synonyms (see below)
 
 *Primary term and synonyms:*
 
@@ -226,10 +228,4 @@ Format
   - Link to a public source-code repository where this format is developed.
   - Link(s) to supported information standard(s).
   - Link(s) to organisation that formally governs the format, if exists.
-
-Properties:
-  - Standard: ***rdfs:label**, ***oboInOwl:hasDefinition**, rdfs:comment, ***oboInOwl:inSubset** = formats, ***edam:created_in**, oboInOwl:hasExactSynonym, rdfs:seeAlso (URL)
-  - Specific: ***_edam:documentation (URL)_**, _edam:example (URL)_, _edam:media_type (URL)_, _edam:file_extension (lower case without dot)_, _edam:citation (URL)_, _edam:repository (URL)_, _edam:ontology (URL)_, _edam:information_standard (URL)_, _edam:organisation (URL)_
-\* = mandatory
-
 
