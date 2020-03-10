@@ -49,6 +49,7 @@ EDAM Advisory Group
       "`IFB catalogue <https://www.france-bioinformatique.fr/en/services/>`_", "Bioinformatics resource catalogue from the IFB.", "Jacques Van Helden, Hervé Menager"
       "`PROPHETS workflow synthesis <http://ls5-www.cs.tu-dortmund.de/projects/prophets/index.php/>`_", "Workflow synthesis using EDAM.", "Anna-Lena Lamprecht"
       "`TeSS <https://tess.elixir-europe.org/>`_", "ELIXIR's training portal; browse and discover life sciences training resources.", "Niall Beard?"
+      "`The flora phenotype ontology (FLOPO) <http://flora-phenotype-ontology.github.io/>`_", "", "Robert Hoehndorf" 
   
   
   
