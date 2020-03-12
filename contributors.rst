@@ -37,7 +37,7 @@ EDAM Advisory Group
       "`bio.tools <https://bio.tools/>`_", "ELIXIR Tools and Data Services Registry.", "Hans-Ioan Lenasescu?"
       "`Bioschema <http://bioschemas.org/>`_", "Fosters the use of schema.org within the life sciences.", "Alasdair Gray?, Giuseppe Profiti?"
       "`BISE <https://biii.eu/>`_", "Bioimage Informatics Search Engine (uses EDAM-Bioimaging).", "Perrine Paul-Gilloteaux?"      
-      "`CWL <https://www.commonwl.org/>`_", " Open standard for describing analysis workflows and tools in a way that makes them portable and scalable.", "Michael Crusoe"          
+      "`CWL / CWLProv <https://www.commonwl.org/>`_", " Open standard for describing analysis workflows and tools in a way that makes them portable and scalable.", "Michael Crusoe"          
       "`Debian Med <https://www.debian.org/devel/debian-med/>`_", "Debian flavour well fit for medical practice and biomedical research.", "Steffen Möller?"
       "`DSEO <https://bioint.github.io/DSEO/methods.html>`_", "Data Science Education Ontology", "Lily Fierro"
       "`EMBL EBI (tools) <https://www.ebi.ac.uk/services>`_", "Tools and data resources from EMBL-EBI", "Jonathon Hickford? Rodrigo Lopez?"
@@ -51,6 +51,10 @@ EDAM Advisory Group
       "`TeSS <https://tess.elixir-europe.org/>`_", "ELIXIR's training portal; browse and discover life sciences training resources.", "Niall Beard?"
       "`The flora phenotype ontology (FLOPO) <http://flora-phenotype-ontology.github.io/>`_", "", "Robert Hoehndorf" 
       "`Pathogen-Host Interaction Database (PHI-base) <https://www.frontiersin.org/articles/10.3389/fpls.2016.00641/full>`_", "", "Robert Hoehndorf" 
+      "`Subject Resource Application Ontology <https://github.com/FAIRsharing/subject-ontology>`_", "", "Allyson Lister" 
+      "`Software ontology <https://bioportal.bioontology.org/ontologies/SWO>`_", "", "Allyson Lister" 
+      "`BIOLITMAP <https://doi.org/10.1093/bioinformatics/bty967>`_", "", "Bazaga, A" 
+      "`APE <https://doi.org/10.1093/bioinformatics/bty967>`_", "", "Anna-Lena Lamprecht" 
   
   
   
