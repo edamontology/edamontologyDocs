@@ -104,13 +104,15 @@ For **Format** additions you **SHOULD** also specify:
 
    "Documentation", "``<documentation>``", "URL of documentation about the format."
    "Publication", "``<documentation>``", "DOI of publication about the format."   
-   "File extension", "``<file_extension>``", "File extension (without period character), one extension / ``<file_extension>`` annotation."   
+   "File extension [1]", "``<file_extension>``", "File extension (without period character), one extension / ``<file_extension>`` annotation."   
    "Media type", "``<media_type>``", "`media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available."   
    "Example", "``<example>``", "Link to example of the format, if available."
    "Information standard", "``<information_standard>``", "Link to relevant information standard which the format supports."
    "Ontology used", "``<ontology_used>``", "Link to an ontology used by this format (one link per ``<ontology_used>`` annotation."
    "Governing organisation", "``<organisation>``", "Link to an organisation that formally governs the format, one link link per ``<organisation>`` annotation."
 
+[1] If a file extension is specified, then this **MUST** also be given as "exact synonyms" both with and without full stop (period) character, *e.g.* both ``.txt`` and ``txt``.
+   
 For **Identifier** additions you **SHOULD** also specify:
 
 .. csv-table::
