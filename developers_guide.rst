@@ -104,7 +104,7 @@ For **Format** additions you **SHOULD** also specify:
 
    "Documentation", "``<documentation>``", "URL of documentation about the format."
    "Publication", "``<documentation>``", "DOI of publication about the format."   
-   "File extension [1,2]", "``<file_extension>``", "File extension (without period character), one extension / ``<file_extension>`` annotation.  Must be in lowercase characters."   
+   "File extension [1,2]", "``<file_extension>``", "File extension without period character), one extension / ``<file_extension>`` annotation.  Must contain lowercase alphanumeric characters only."   
    "Media type", "``<media_type>``", "`media type <https://www.iana.org/assignments/media-types/media-types.xhtml>`_ (MIME type) if available."   
    "Example", "``<example>``", "Link to example of the format, if available."
    "Information standard", "``<information_standard>``", "Link to relevant information standard which the format supports."
@@ -112,7 +112,7 @@ For **Format** additions you **SHOULD** also specify:
    "Governing organisation", "``<organisation>``", "Link to an organisation that formally governs the format, one link link per ``<organisation>`` annotation."
 
 [1] File extension values **MUST** be in lowercase.   
-[2] If a file extension is specified, then this **MUST** also be given as "exact synonyms" both with and without full stop (period) character, *e.g.* both ``.txt`` and ``txt``.
+[2] If a file extension is specified, then this **MUST** also be given either as "exact synonyms" or as the concept "preferred label" (term).  Exact synonyms **MAY** include variants both with and without full stop (period) character, *e.g.* both ``.txt`` and ``txt``.
    
 For **Identifier** additions you **SHOULD** also specify:
 
@@ -182,7 +182,7 @@ If you add a concept which you expect to remain a leaf node, *i.e.* EDAM will no
 
 Deprecating concepts
 ^^^^^^^^^^^^^^^^^^^^ 
-When deprecating concepts, you **MUST** specify the following:
+When deprecating concepts, you **MUST** (unless otherwise stated) specify the following:
 
 .. csv-table::
    :header: "Attribute", "OWL attribute", "Note"
@@ -190,15 +190,18 @@ When deprecating concepts, you **MUST** specify the following:
    "EDAM version", "``obsolete_since``", "Current version *e.g.* `1.21`"
    "Subset", "``oboInOwl:inSubset``", "Set this to ``obsolete`` (pick the value)"
    "Deprecation flag", "``owl:deprecated``", "Type the value of ``true``"
-   "Replacement concept", "``oboInOwl:replacedBy``", "The alternative 'replacement' concept to firmly use. Pick one."
-   "Replacement concept", "``oboInOwl:consider``", "Replacement concept when less certain.  Pick one."
+   "Replacement concept [1]", "``oboInOwl:replacedBy``", "The alternative 'replacement' concept to firmly use. Pick one."
+   "Replacement concept [1]", "``oboInOwl:consider``", "Replacement concept when less certain.  Pick one."
    "Old parent", "``oldParent``", "Specify the URI(s) of the erstwhile parent(s) of the now-deprecated concept (using one or more attributes as needed)."
-   "Comment", "``deprecation_comment``", "Optional comment as to why the concept is deprecated."
+   "Comment [2]", "``deprecation_comment``", "Optional comment as to why the concept is deprecated."
    "New parent", "``rdfs:subClassOf``", "Set the parent concept to be ``ObsoleteClass``"
-   
+
+[1] One of ``replacedBy`` or ``consider`` **MUST** be specified.
+[2] ``deprecation_comment`` is **OPTIONAL**
+
 Also:
 
-1. **MUST** remove all other class annotations (subsets, comments, synonyms *etc.*) and axioms (including parent concepts)
+1. **MUST** remove all other class annotations (subsets, comments, synonyms *etc.*) and axioms (including parent concepts), apart from ``rdfs:definition`` (which **MUST** be preserved) and ``rdfs:comment`` (which **MAY** be preserved).
 2. **MUST** refactor all references (*e.g.* ``SubClassOf``) to the concept being deprectated from other concepts (you can see these using Protege)
 3. **SHOULD** preserve comments and synonyms, as new annotations either in the old parent(s), or the replacement(s) of the deprecated concept, as appropriate.
 
