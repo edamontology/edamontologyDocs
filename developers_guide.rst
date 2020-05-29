@@ -281,7 +281,13 @@ Modifying GitHub main repo.
 
     ``git clone https://github.com/edamontology/edamontology.git`` (or "Clone" from the Desktop client)
 
-3. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
+3. Configure Git hooks by running the following from your ``edamontology`` git directory
+   
+    ``git config core.hooksPath .githooks``
+
+    Git hooks are scripts defined in https://github.com/edamontology/edamontology/tree/master/.githooks.  They currently detect and prevent (at pre-commit stage) commits of EDAM_dev.owl which are not in RDF/XML format. 
+    
+4. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
    
    - check your changes and that the OWL file looks good in Protege
    - ensure the ``next_id`` attribute is updated
@@ -293,11 +299,11 @@ Modifying GitHub main repo.
    
       ``git commit -m ¡±commit message here¡±``
 
-4. Push your changes to the GitHub master:
+5. Push your changes to the GitHub master:
 
     ``git push origin``
 
-5. Release the editing token for the other developers:
+6. Release the editing token for the other developers:
 
    - contact edam-dev@elixir-dk.org and release the "editing token"
    - summarise what you actually did and why
