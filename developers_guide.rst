@@ -231,12 +231,11 @@ Editing
    - URLs should be entered using the Protege IRI editor.
    - General text is entered using the Protege 'Constant" editor.
    - Subsets (``oboInOwl:inSubset`` annotation): you must pick (don't type!) an appropriate value.
-   - use **File...Save as** and select "RDF/XML" format  
+   - be sure to use **File...Save as** and select "RDF/XML" format. 
 
-   Don't mix this up, as it makes a mess of the RDF/XML!
+   Don't deviate from the above advice.   The EDAM CI (and other) systems rely upon EDAM being saved in RDF/XML format, following the patterns specified. 
 
-.. important::
-   Be sure to use **File...Save as** and select "RDF/XML" format.  The EDAM CI (and other) systems rely upon EDAM being saved in this format.
+
    
 
 Ensuring logical consistency
