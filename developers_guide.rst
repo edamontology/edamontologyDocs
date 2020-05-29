@@ -285,7 +285,7 @@ Modifying GitHub main repo.
    
     ``git config core.hooksPath .githooks``
 
-    Git hooks are scripts defined in https://github.com/edamontology/edamontology/tree/master/.githooks.  They currently detect and prevent (at pre-commit stage) commits of EDAM_dev.owl which are not in RDF/XML format. 
+   Git hooks are scripts defined in https://github.com/edamontology/edamontology/tree/master/.githooks.  They currently detect and prevent (at pre-commit stage) commits of EDAM_dev.owl which are not in RDF/XML format. 
     
 4. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
    
