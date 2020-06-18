@@ -376,16 +376,17 @@ Before creating a new release, please make sure you have the approval of leader 
    - paste an excerpt from ``changelog.md`` into
      
 7. submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
-8. download the ``EDAM.csv`` file from BioPortal and copy this to https://github.com/edamontology/edamontology/tree/master/releases   
-9. close GitHub issues labelled *done - staged for release*.
-10. create the next milestone tag in GitHub, *e.g.* "1.25"
-11. review any GitHub issues tagged for the release milestone which we're not acted upon; remove the milestone and (if applicable) tag them with the next milestone tag
-12. confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
-13. let the developers of IFB EDAM browser know a new release is available by posting `here <https://github.com/IFB-ElixirFr/edam-browser/issues>`_     
-13. Update the content of https://github.com/edamontology/edamontology.org/blob/master/page.html (add a line linking to the download of the latest release)
-14. ensure http://edamontology.org is updated
-15. announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
-16. help applications that implement EDAM to update to the new version.
+8. download the ``EDAM.csv`` file from BioPortal and copy this to https://github.com/edamontology/edamontology/tree/master/releases
+9. create a tsv equivalent of ``EDAM.csv`` (*e.g.* by hacking in a text editor) and copy the resulting ``EDAM.tsv``file to https://github.com/edamontology/edamontology/tree/master/releases
+10. close GitHub issues labelled *done - staged for release*.
+11. create the next milestone tag in GitHub, *e.g.* "1.25"
+12. review any GitHub issues tagged for the release milestone which we're not acted upon; remove the milestone and (if applicable) tag them with the next milestone tag
+13. confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
+14. let the developers of IFB EDAM browser know a new release is available by posting `here <https://github.com/IFB-ElixirFr/edam-browser/issues>`_     
+15. Update the content of https://github.com/edamontology/edamontology.org/blob/master/page.html (add a line linking to the download of the latest release)
+16. ensure http://edamontology.org is updated
+17. announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
+18. help applications that implement EDAM to update to the new version.
 
 
 Editing the ChangeLog
