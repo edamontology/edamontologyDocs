@@ -37,7 +37,7 @@ If you have a GitHub account, you can make suggestions and requests by opening a
 - Click the "Get started" next to the type of request you want to make
 - Provide a title, and then follow instructions in the template, providing as much information as possible
 
-Each template includes detailed instructions, which you'll see when you create an issue, or you can read about them beforehand `here <https://github.com/edamontology/edamontology/tree/master/.github/ISSUE_TEMPLATE>`_.
+Each template includes detailed instructions, which you'll see when you create an issue, or you can read about them beforehand `here <https://github.com/edamontology/edamontology/tree/main/.github/ISSUE_TEMPLATE>`_.
 
 If you can't find the template you need, click "Open a regular issue" and provide concise information, but sufficiently detailed to be actionable.
 
