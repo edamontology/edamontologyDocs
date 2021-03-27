@@ -382,7 +382,7 @@ Before creating a new release, please make sure you have the approval of leader 
 11. create the next milestone tag in GitHub, *e.g.* "1.25"
 12. review any GitHub issues tagged for the release milestone which we're not acted upon; remove the milestone and (if applicable) tag them with the next milestone tag
 13. confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
-14. let the developers of IFB EDAM browser know a new release is available by posting `here <https://github.com/IFB-ElixirFr/edam-browser/issues>`_     
+14. let the developers of the EDAM browser know a new release is available by posting `here <https://github.com/edamontology/edam-browser/issues>`_     
 15. Update the content of https://github.com/edamontology/edamontology.org/blob/main/page.html (add a line linking to the download of the latest release)
 16. ensure http://edamontology.org is updated
 17. announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
