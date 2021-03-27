@@ -273,11 +273,11 @@ Modifying GitHub main repo.
    - contact edam-dev@elixir-dk.org and claim the "editing token" after first checking that it is not currently taken :)
    - say briefly what you are doing, why, and about how long it will take
 
-2. Update your local repo with the latest files from the GitHub master:
+2. Update your local repo with the latest files from the GitHub `main` branch:
 
     ``git pull`` (or "Synch" from the Desktop client)
    
-   If you've not already done so, you will first need to clone the master repo:
+   If you've not already done so, you will first need to clone the repo:
 
     ``git clone https://github.com/edamontology/edamontology.git`` (or "Clone" from the Desktop client)
 
@@ -285,7 +285,7 @@ Modifying GitHub main repo.
    
     ``git config core.hooksPath .githooks``
 
-   Git hooks are scripts defined in https://github.com/edamontology/edamontology/tree/master/.githooks.  They currently detect and prevent (at pre-commit stage) commits of EDAM_dev.owl which are not in RDF/XML format. 
+   Git hooks are scripts defined in https://github.com/edamontology/edamontology/tree/main/.githooks.  They currently detect and prevent (at pre-commit stage) commits of EDAM_dev.owl which are not in RDF/XML format. 
     
 4. Make and commit your local changes. You **must** be working with the "dev" version, ``EDAM_dev.owl``.
    
@@ -299,7 +299,7 @@ Modifying GitHub main repo.
    
       ``git commit -m ¡±commit message here¡±``
 
-5. Push your changes to the GitHub master:
+5. Push your changes to GitHub (`main` branch):
 
     ``git push origin``
 
@@ -312,7 +312,7 @@ Modifying GitHub main repo.
    Please provide a **meaningful report** on changes so that we can easily generate the ChangeLog upon next release
 
    - in the Git commit message, including the GitHub issue number of any issues addressed (use ``fix #xxx`` syntax, see `GitHub docs <https://help.github.com/articles/closing-issues-via-commit-messages>`_)
-   - directly in the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_
+   - directly in the `changelog.md <https://github.com/edamontology/edamontology/blob/main/changelog.md>`_
 
 
      
@@ -338,7 +338,7 @@ We aiim to follow a bi-monthly release cycle to this schedule:
       
 Process
 .......
-Before creating a new release, please make sure you have the approval of leader of EDAM-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See `Editing the ChangeLog <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#editing-the-changelog>`_ below.  Once you're clear to go, do the following:
+Before creating a new release, please make sure you have the approval of leader of EDAM-dev, and that the `changelog.md <https://github.com/edamontology/edamontology/blob/main/changelog.md>`_ and `changelog-detailed.md <https://github.com/edamontology/edamontology/blob/main/changelog-detailed.md>`_ files are up-to-date with the changes of the new release.  See `Editing the ChangeLog <http://edamontologydocs.readthedocs.io/en/latest/developers_guide.html#editing-the-changelog>`_ below.  Once you're clear to go, do the following:
 
 0. fix any known bugs in EDAM: at the very least, the EDAM build tests should pass as indicated by:
 
@@ -361,11 +361,11 @@ Before creating a new release, please make sure you have the approval of leader 
    
 3. commit and push your changes
 
-    - ``git commit -a`` (or "Commit to master" in the desktop client)
+    - ``git commit -a`` (or "Commit to main" in the desktop client)
     - ``git push origin`` (or "Synch" in the desktop client)
 
-4. update the `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
-5. update the `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ with a summary of the major changes.
+4. update the `detailed changelog <https://github.com/edamontology/edamontology/blob/main/changelog-detailed.md>`_ by running `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_ to compare the release against the previous version.
+5. update the `changelog <https://github.com/edamontology/edamontology/blob/mainchangelog.md>`_ with a summary of the major changes.
 6. create the release on GitHub (use the `_draft a new release_ <https://github.com/edamontology/edamontology/releases/new>`_ button of the `_releases_ <https://github.com/edamontology/edamontology/releases>`_ tab).
 
    - from the main page of the EDAM repository, click ``Releases``.
@@ -376,14 +376,14 @@ Before creating a new release, please make sure you have the approval of leader 
    - paste an excerpt from ``changelog.md`` into
      
 7. submit this new release to BioPortal.  OLS will pull the file automatically from edamontology.org every night.
-8. download the ``EDAM.csv`` file from BioPortal and copy this to https://github.com/edamontology/edamontology/tree/master/releases
-9. create a tsv equivalent of ``EDAM.csv`` (*e.g.* by hacking in a text editor) and copy the resulting ``EDAM.tsv``file to https://github.com/edamontology/edamontology/tree/master/releases
+8. download the ``EDAM.csv`` file from BioPortal and copy this to https://github.com/edamontology/edamontology/tree/main/releases
+9. create a tsv equivalent of ``EDAM.csv`` (*e.g.* by hacking in a text editor) and copy the resulting ``EDAM.tsv``file to https://github.com/edamontology/edamontology/tree/main/releases
 10. close GitHub issues labelled *done - staged for release*.
 11. create the next milestone tag in GitHub, *e.g.* "1.25"
 12. review any GitHub issues tagged for the release milestone which we're not acted upon; remove the milestone and (if applicable) tag them with the next milestone tag
 13. confirm everything is working in `bio.tools <http://bio.tools>`_ by mailing `bio.tools Lead Curator <mailto:hans@bio.tools>`_.
 14. let the developers of IFB EDAM browser know a new release is available by posting `here <https://github.com/IFB-ElixirFr/edam-browser/issues>`_     
-15. Update the content of https://github.com/edamontology/edamontology.org/blob/master/page.html (add a line linking to the download of the latest release)
+15. Update the content of https://github.com/edamontology/edamontology.org/blob/main/page.html (add a line linking to the download of the latest release)
 16. ensure http://edamontology.org is updated
 17. announce the new release on Twitter and mailing lists (edam-announce@elixir-dk.org, edam@elixir-dk.org) including thanks and a summary of changes.
 18. help applications that implement EDAM to update to the new version.
@@ -393,8 +393,8 @@ Editing the ChangeLog
 ^^^^^^^^^^^^^^^^^^^^^
 The ChangeLog includes:
 
-1. `changelog <https://github.com/edamontology/edamontology/blob/master/changelog.md>`_ - a summary of the major changes and what motivated them
-2. `detailed changelog <https://github.com/edamontology/edamontology/blob/master/changelog-detailed.md>`_ - fine-grained details obtained using `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_
+1. `changelog <https://github.com/edamontology/edamontology/blob/main/changelog.md>`_ - a summary of the major changes and what motivated them
+2. `detailed changelog <https://github.com/edamontology/edamontology/blob/main/changelog-detailed.md>`_ - fine-grained details obtained using `Bubastis <http://www.ebi.ac.uk/efo/bubastis/>`_
 
 The changelog should include:
 
