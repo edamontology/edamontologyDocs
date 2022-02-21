@@ -17,7 +17,7 @@ Technical recipes
    - **"MUST NOT"** or **"SHALL NOT"** mean that the guideline is an absolute prohibition of the specification.
    - **"SHOULD"** or **"RECOMMENDED"** mean that there may exist valid reasons in particular circumstances to ignore a particular guideline, but the full implications must be understood and carefully weighed before doing so.
    - **"SHOULD NOT"** or the phrase **"NOT RECOMMENDED"** mean that there may exist valid reasons in particular circumstances when acting contrary to the geuideline is acceptable or even useful, but the full implications should be understood and the case carefully weighed before doing so.
-   - **"MAY** or **"OPTIONAL"** mean that the guideline is truly optional; you can choose to follow it or not.
+   - **"MAY"** or **"OPTIONAL"** mean that the guideline is truly optional; you can choose to follow it or not.
 
 
 
