@@ -1,44 +1,47 @@
 What is EDAM?
 =============
 
-EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions, organised into an intuitive hierarchy for convenient use.
+EDAM is a domain ontology of data analysis and data management in bio- and other sciences, and science-based applications. It comprises concepts related to analysis, modelling, optimisation, and data life-cycle. Targetting usability by diverse users, the structure of EDAM is relatively simple, divided into 4 main sections: Topic, Operation, Data (incl. Identifier), and Format.
+
+EDAM is particularly suitable for semantic annotations and categorisation of diverse resources related to data analysis and management: *e.g.* tools, workflows, learning materials, or standards. EDAM is also useful in data management itself, for recording provenance metadata of processed data.
 
 
 Browsing
 --------
-You can browse EDAM here: 
+You can browse EDAM visually here: 
 
-- `NCBO BioPortal <http://bioportal.bioontology.org/ontologies/EDAM/>`_
-- `OLS <http://www.ebi.ac.uk/ols/ontologies/edam>`_
-- `EDAM browser <https://edamontology.github.io/edam-browser/>`_
+- `NCBO BioPortal <http://bioportal.bioontology.org/ontologies/EDAM/>`_  (all-newest *unstable* version)
+- `OLS <http://www.ebi.ac.uk/ols/ontologies/edam>`_  (latest **stable** version)
+- `EDAM Browser <https://edamontology.github.io/edam-browser/>`_ (**new: all versions!**)
+- and other ontology browsers
   
 
 
 Download
 --------
-Latest stable version
+Latest version
 
 - http://edamontology.org/EDAM.owl
 
+The very latest, *unstable* version:
+
+- http://edamontology.org/EDAM_unstable.owl
+
 Versioned releases:
 
-- https://github.com/edamontology/edamontology/releases
-
-OBO format is no longer supported.
+- ..edamontology.org/EDAM_<x.y>.owl
 
 Scope
 -----
-EDAM includes 5 main sub-ontologies or 'branches' of concepts:
+EDAM comprises 5 main sections:
 
-- **Topic** - *“A category denoting a rather broad domain or field of interest, of study, application, work, data, or technology. Topics have no clearly defined borders between each other.”*
-- **Operation** - *“A function that processes a set of inputs and results in a set of outputs, or associates arguments (inputs) with values (outputs).”*
-- **Data** - *“Information, represented in an information artefact (data record) that is 'understandable' by dedicated computational tools that can use the data as input or produce it as output.”*
-- **Data->Identifier** - *“A text token, number or something else which identifies an entity, but which may not be persistent (stable) or unique (the same identifier may identify multiple things).”*
-- **Format** - *“A defined way or layout of representing and structuring data in a computer file, blob, string, message, or elsewhere.”*
+- **Topic** - *A category denoting a rather broad domain or field of interest, of study, application, work, data, or technology.*
+- **Operation** - *A function that processes a set of inputs and results in a set of outputs, or associates arguments (inputs) with values (outputs).*
+- **Data** - *Information, represented in an information artefact (data record) that is 'understandable' by dedicated computational tools that can use the data as input or produce it as output.*
+- **Data->Identifier** - *A text token, number or something else which identifies an entity, but which may not be persistent (stable) or unique (the same identifier may identify multiple things).*
+- **Format** - *A defined way or layout of representing and structuring data in a computer file, blob, string, message, or elsewhere.*
 
 .. image:: http://edamontology.org/EDAMconcepts.png 
-
-As a general rule, the **Operation**, **Data**, **Format** and branches include concepts strictly in the domain of informatics in the Life Sciences; primarily bioinformatics (broadly) and computational biology concepts useful for annotating software tools.  Concepts purely concerning biology, computer science *etc.* are not included. The **Topic** branch, in contrast, includes broader interdisciplinary concepts from the biological and biomedical domains. 
 
 
 Architecture
@@ -47,14 +50,14 @@ EDAM has 3 components:
 
 - **Concepts** - All concepts have a preferred label (or 'term') and definition. Further, a concept may have simple relations (see below) to other EDAM concepts, as well other intrinsic properties, *e.g.* an identifier may have a regular expression defining its syntax, and formats have links to their documentation/specification.
 - **Hierarchy** - Every concept (excluding top-level concepts) is related to one or more other concepts within the same branch by an **is a** (specialisation) relation. Hence EDAM has 4 primary hierarchies (for *Data*, *Format*, *Operation*, and *Topic*).
-- **Relations** - Concepts are defined as sharing specific relationships(see figure below), reflecting well established or self-evident principles; these relationships are used primarily to define internal consistency of EDAM.
+- **Relations** - Concepts are defined as sharing specific relationships (see figure below), reflecting well established or self-evident principles; these relationships are used primarily to define internal consistency of EDAM.
 
 .. image:: http://edamontology.org/EDAMrelations.png
 
 
 Status
 ------
-EDAM has been maturing steadily since its first creation ~2008.  It is under active development, developments are use-case driven, primarily by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_), [Galaxy](https://www.galaxyproject.org/) and other key bioinformatics infrastructure projects.  Future versions will not depart fundamentally from the current sub-ontologies or relations.  The development of EDAM can be followed at `GitHub <https://github.com/edamontology/edamontology>`_.
+EDAM has been maturing steadily since its first creation ~2008.  It is under active maintenance, developments are user-driven, for example by the `Bio.tools registry <https://bio.tools>`_, `Galaxy <https://www.galaxyproject.org>`_, and other key infrastructure services.  Future versions of EDAM will not depart fundamentally from the current structure (sections and relations).  The development of EDAM can be followed on `GitHub <https://github.com/edamontology/edamontology>`_.
 
 For ways to contribute, please see the `documentation <http://edamontology.readthedocs.org/en/latest/getting_involved.html>`_. 
 
@@ -75,11 +78,11 @@ Principles
 
 EDAM strives to uphold a few founding principles including:
 
-- **Quality** - a controlled vocabulary that is moderated
-- **Openness** - development in collaboration with the community
+- **Quality** - an ontology that is moderated
+- **Openness** - development by the open community
 - **Relevance** - prioritising use-case-driven development towards comprehensive but practical coverage
 - **Practicality** - practical utility is valued over ontological “strictness” or any metaphysical doctrine
-- **Clear scope** - respecting the scope of other complementary, well-developed ontologies
+- **Clear scope** - respecting the scope of other complementary, well-developed ontologies and open linked data efforts
 - **Familiarity** - including only concepts that are well established; familiar are prevalent and jargon is discouraged
 - **Usability** - conceptual hierarchy with sufficient richness but only necessary complexity
 - **Maintainability** - development must be efficient and sustainably up to date in the long term
@@ -89,11 +92,11 @@ EDAM is working towards implementing these principles fully and is open to sugge
 
 Motivation
 ----------
-Bioinformaticians handle an increasingly large and diverse set of tools and data. Meanwhile, researchers demand ever more powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks often rely on consistent, machine-understandable descriptions of the underlying components, but these have been generally lacking in *ad hoc* resource descriptions. The urgent need - filled by EDAM - is for an ontology that unifies semantically the bioinformatics concepts in common use, provides the curator with a comprehensive controlled vocabulary that is broadly applicable, and supports new and powerful search, browse and query functions.
+Scientists - professional and "citizen" - handle an increasingly large and diverse set of tools and data. Meanwhile, researchers demand ever more powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks often rely on consistent, machine-understandable descriptions of the underlying components, but these have been generally lacking in *ad hoc* resource descriptions. The urgent need - filled by EDAM - is for an ontology that unifies semantically the bioinformatics concepts in common use, provides the curator with a comprehensive controlled vocabulary that is broadly applicable, and supports new and powerful search, browse and query functions.
 
 Applications 
 ------------
-EDAM is suitable for large-scale semantic annotations and categorization of diverse bioinformatics resources, including:
+EDAM is suitable for large-scale semantic annotations and categorisation of diverse bioinformatics resources, including:
 
 - Web APIs including RESTful APIs and SOAP/WSDL Web Services
 - Application software
@@ -112,13 +115,18 @@ EDAM is suitable for diverse applications beyond annotation, for example within 
 
 Citing EDAM
 -----------
-If you use EDAM or its part, please cite:
+An up-to-date description of EDAM is available in the following extended abstract and poster.
+If you use, or refer to EDAM or its part, please cite:
 
-Ison, J., Kalaš, M., Jonassen, I., Bolser, D., Uludag, M., McWilliam, H., Malone, J., Lopez, R., Pettifer, S. and Rice, P. (2013). EDAM: an ontology of bioinformatics operations, types of data and identifiers, topics and formats. *Bioinformatics*, **29** (10): 1325-1332.
+Melissa Black, Lucie Lamothe, Hager Eldakroury, Mads Kierkegaard, Ankita Priya, Anne Machinda, Uttam Singh Khanduja, Drashti Patoliya, Rashika Rathi, Tawah Peggy Che Nico, Gloria Umutesi, Claudia Blankenburg, Anita Op, Precious Chieke, Omodolapo Babatunde, Steve Laurie, Steffen Neumann, Veit Schwämmle, Ivan Kuzmin, Chris Hunter, Jonathan Karr, Jon Ison, Alban Gaignard, Bryan Brancotte, Hervé Ménager, Matúš Kalaš (2022). `EDAM: the bioscientific data analysis ontology <https://doi.org/10.7490/f1000research.1118900.1>`_ (update 2021) [version 1; not peer reviewed]. *F1000Research*, **11**(ISCB Comm J): 1. Poster. DOI: `10.7490/f1000research.1118900.1 <https://doi.org/10.7490/f1000research.1118900.1>`_ *Open access*
 
-The article is `freely available <http://bioinformatics.oxfordjournals.org/content/29/10/1325.full>`_.
+The "source code" and releases of EDAM have DOIs:
 
-doi: `10.1093/bioinformatics/btt113 <http://doi.org/10.1093/bioinformatics/btt113>`_ 
- 
-PMID: `23479348 <http://www.ncbi.nlm.nih.gov/pubmed/23479348>`_
+-   DOI representing all stable versions, resolving to the latest: `10.5281/zenodo.822690 <https://doi.org/10.5281/zenodo.822690>`_
+-   DOI of the latest stable version: https://zenodo.org/badge/latestdoi/20960594
 
+The newest posters, available as PDF:
+
+- `EDAM <http://edamontology.org/poster.pdf>`_ (2022)
+- `EDAM Bioimaging <http://edamontology.org/poster-bioimaging.pdf>`_ (2020)
+- `EDAM Browser <http://edamontology.org/poster-browser.pdf>`_ (2021)
