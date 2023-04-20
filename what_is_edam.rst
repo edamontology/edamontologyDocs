@@ -118,7 +118,7 @@ Citing EDAM
 An up-to-date description of EDAM is available in the following extended abstract and poster.
 If you use, or refer to EDAM or its part, please cite:
 
-Melissa Black, Lucie Lamothe, Hager Eldakroury, Mads Kierkegaard, Ankita Priya, Anne Machinda, Uttam Singh Khanduja, Drashti Patoliya, Rashika Rathi, Tawah Peggy Che Nico, Gloria Umutesi, Claudia Blankenburg, Anita Op, Precious Chieke, Omodolapo Babatunde, Steve Laurie, Steffen Neumann, Veit Schwämmle, Ivan Kuzmin, Chris Hunter, Jonathan Karr, Jon Ison, Alban Gaignard, Bryan Brancotte, Hervé Ménager, Matúš Kalaš (2022). `EDAM: the bioscientific data analysis ontology <https://doi.org/10.7490/f1000research.1118900.1>`_ (update 2021) [version 1; not peer reviewed]. *F1000Research*, **11**(ISCB Comm J): 1. Poster. DOI: `10.7490/f1000research.1118900.1 <https://doi.org/10.7490/f1000research.1118900.1>`_ *Open access*
+Melissa Black, Lucie Lamothe, Hager Eldakroury, Mads Kierkegaard, Ankita Priya, Anne Machinda, Uttam Singh Khanduja, Drashti Patoliya, Rashika Rathi, Tawah Peggy Che Nico, Gloria Umutesi, Claudia Blankenburg, Anita Op, Precious Chieke, Omodolapo Babatunde, Steve Laurie, Steffen Neumann, Veit Schwämmle, Ivan Kuzmin, Chris Hunter, Jonathan Karr, Jon Ison, Alban Gaignard, Bryan Brancotte, Hervé Ménager, Matúš Kalaš (2022). `EDAM: the bioscientific data analysis ontology <https://doi.org/10.7490/f1000research.1118900.1>`_ (update 2021) [version 1; not peer reviewed]. *F1000Research*, **11** (ISCB Comm J): 1. Poster. DOI: `10.7490/f1000research.1118900.1 <https://doi.org/10.7490/f1000research.1118900.1>`_ *Open access*
 
 The "source code" and releases of EDAM have DOIs:
 
